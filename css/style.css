@@ -291,11 +291,21 @@ body {
 	background: #e8f0fe
 }
 
-.excel-table td:nth-child(2) {
+.excel-table td:first-child(2) {
+	font-family: 'SF Mono', 'Consolas', monospace;
+	font-weight: 500;
+	color: #0d3b66;
+	background: #fefdf7;
+	white-space: normal;
+	word-break: break-word;
+	cursor: pointer;
+	min-width: 100px
+}
+.excel-table td:nth-child(3) {
 	white-space: pre
 }
 
-.excel-table td:nth-child(3) {
+.excel-table td:nth-child(4) {
 	font-family: 'SF Mono', 'Consolas', monospace;
 	font-size: 11px;
 	background: #fafcff;
@@ -366,18 +376,21 @@ body {
 		padding: 5px 3px;
 	}
 
-	.excel-table td:nth-child(2) {
+	.excel-table td:nth-child(3) {
 		min-width: 300px;
 		white-space: normal;
 		font-size: 9px;
 	}
 
-	.excel-table td:nth-child(3) {
+	.excel-table td:nth-child(4) {
 		font-size: 9px;
 		/* 实例列再小一点 */
 	}
 
 	.excel-table td:last-child {
+		font-size: 9px;
+	}
+	.excel-table td:last-child(2) {
 		font-size: 9px;
 	}
 }

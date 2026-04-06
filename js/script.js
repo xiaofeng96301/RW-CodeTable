@@ -110,7 +110,7 @@ function renderAccordion() {
       tableWrapper.className = 'table-wrap';
       table = document.createElement('table');
       table.className = 'excel-table';
-      table.innerHTML = `<thead><tr><th>📌 代码</th><th>📖 介绍</th><th>💡 实例</th><th>🏷️ 版本</th></tr></thead><tbody></tbody>`;
+      table.innerHTML = `<thead><tr><th>📌 代码</th><th>📄 翻译</th><th>📖 介绍</th><th>💡 实例</th><th>🏷️ 版本</th></tr></thead><tbody></tbody>`;
       tableWrapper.appendChild(table);
       content.appendChild(tableWrapper);
     }
