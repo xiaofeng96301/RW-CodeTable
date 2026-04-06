@@ -1,0 +1,146 @@
+[
+  {
+    "code": "displayName:",
+    "intro": "Value Type: LocaleString\n描述: UI 中资源的名称。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "displayNameShort:",
+    "intro": "Value Type: LocaleString\n描述: 较小 UI 元素（如动作悬停文本）上的资源名称。默认为 displayName。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "hidden:",
+    "intro": "Value Type: bool\n描述: 向玩家隐藏此资源。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "priority:",
+    "intro": "Value Type: int\n描述: 如果 2 个或多个模组/单位定义了相同 NAME 的资源，则使用优先级最高的 displayName/displayColor。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "displayColor:",
+    "intro": "Value Type: color\n描述: 颜色，可以是带可选 alpha 的十六进制。",
+    "example": "#FF0000",
+    "version": "1.13.3"
+  },
+  {
+    "code": "displayRoundedDown:",
+    "intro": "Value Type: bool\n描述: 不向玩家显示小数位。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "displayTextPrefix:",
+    "intro": "Value Type: string\n描述: 在资源值之前添加字符串。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "displayTextPostfix:",
+    "intro": "Value Type: string\n描述: 在资源值之后添加字符串。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "displayTextAppendResource:",
+    "intro": "Value Type: resource\n描述: 在此资源之后附加另一个资源。建议在被附加的资源上设置 \"hidden\" 键以隐藏重复项。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "displayWhenZero:",
+    "intro": "Value Type: bool\n描述: 即使资源为空也显示。默认为 false。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "displayPos:",
+    "intro": "Value Type: int\n描述: 设置全局资源在屏幕上的位置。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "iconImage:",
+    "intro": "Value Type: image\n描述: 在 HUD 和文本中显示此资源的自定义图标。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "iconImageUseInText:",
+    "intro": "Value Type: bool\n描述: 默认为 true；在动作描述中显示资源图标。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "displayNameHideWhenIconShownInText:",
+    "intro": "Value Type: bool\n描述: 默认为 false。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "displayNameHideWhenIconShownInHUD:",
+    "intro": "Value Type: bool\n描述: 若为 true，在引用资源的菜单中隐藏图标。默认为 false。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "displayColorUseInText:",
+    "intro": "Value Type: bool\n描述: 在动作描述中显示颜色。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "displayInHud:",
+    "intro": "Value Type: bool\n描述: 对于在 appendResourceInHUD 中使用的资源，不应隐藏：true。默认为 true。",
+    "example": "displayInHud: false",
+    "version": "1.15"
+  },
+  {
+    "code": "appendResourceInHUD:",
+    "intro": "Value Type: resource\n描述: 在 HUD 上将此资源之后堆叠另一个指定资源。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "appendResourceInHUD_whenThisZero:",
+    "intro": "Value Type: bool\n描述: 默认为 true。设为 false 时，允许附加的资源与父资源一起隐藏。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "displayPrefixInHUD:",
+    "intro": "Value Type: string\n描述: 在资源值之前显示的文本 - 替换资源名称并移除冒号分隔符。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "displayPostfixInHUD:",
+    "intro": "Value Type: string\n描述: 类似于前缀，但显示在资源值之后。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "valueInStats:",
+    "intro": "Value Type: float\n描述: 影响游戏结束统计和回放排行榜。默认为 1。",
+    "example": "valueInStats: 0.5",
+    "version": "1.15"
+  },
+  {
+    "code": "displayTextAppendResourceWithGap:",
+    "intro": "Value Type: bool\n描述: 在此资源和附加资源之间添加空格。默认为 false。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "displayDigitGrouping:",
+    "intro": "Value Type: enum\n描述: 设置分隔位数的符号：none, comma, space",
+    "example": "",
+    "version": "1.15p9"
+  }
+]

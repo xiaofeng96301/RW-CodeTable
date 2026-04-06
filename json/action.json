@@ -1,0 +1,1112 @@
+[
+  {
+    "code": "text:",
+    "intro": "Value Type: string\n描述: 动作显示文本。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "textPostFix:",
+    "intro": "Value Type: string\n描述: 显示为后缀的文本，与 textAddUnitName 一起使用可创建文本 UI。",
+    "example": "text: [  textPostFix: ]  textAddUnitName: unitRef self.attachment(slot=\"${slotId}\")",
+    "version": ""
+  },
+  {
+    "code": "text_{LANG}:",
+    "intro": "Value Type: string\n描述: 本地化文本。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "description:",
+    "intro": "Value Type: string\n描述: 动作描述。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "description_{LANG}:",
+    "intro": "Value Type: string\n描述: 本地化描述。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "displayType:",
+    "intro": "Value Type: list\n描述: 显示类型，可选值：none, rally, upgrade, queueUnit, building, action, infoOnly, infoOnlyNoBox, infoOnlyStockpile。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "displayRemainingStockpile:",
+    "intro": "Value Type: bool\n描述: 队列显示为基于 price 可触发动作的次数。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "pos:",
+    "intro": "Value Type: float\n描述: 动作在 UI 中出现的顺序。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "iconImage:",
+    "intro": "Value Type: file (image)\n描述: 图标图像。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "iconExtraImage:",
+    "intro": "Value Type: file (image)\n描述: 绘制在图标图像之上。对升级图标等有用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "iconExtraColor:",
+    "intro": "Value Type: colour\n描述: 默认为 #64FFFFFF。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "iconExtraIsVisible:",
+    "intro": "Value Type: LogicBoolean\n描述: 额外图标是否可见。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "unitShownInUI:",
+    "intro": "Value Type: unitRef/unitType\n描述: 显示此单位（如同此动作建造了此单位）。",
+    "example": "unitShownInUI: unitRef self.transporting(slot=0)  or  unitShownInUI: heavyTank",
+    "version": "1.13.3"
+  },
+  {
+    "code": "guiBuildUnit:",
+    "intro": "Value Type: \n描述: GUI 建造单位。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "setBuilt:",
+    "intro": "Value Type: float\n描述: 设置单位已建成的百分比（0-1 之间的数字）。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "tags:",
+    "intro": "Value Type: tags\n描述: 用于 self.queueSize(withTag=x) 和 queueItemAdded/queueItemCanceled 事件。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "id:",
+    "intro": "Value Type: string\n描述: 允许相同/等效动作在单位转换时更容易连接，以保留队列等。",
+    "example": "",
+    "version": "1.15p11"
+  },
+  {
+    "code": "textAddUnitName:",
+    "intro": "Value Type: unitRef/unitType\n描述: 将此单位的名称添加到动作文本中。",
+    "example": "textAddUnitName: unitRef self.attachment(slot=\"1\")",
+    "version": "1.14"
+  },
+  {
+    "code": "descriptionAddFromUnit:",
+    "intro": "Value Type: unitRef/unitType\n描述: 将此单位的描述添加到动作描述中。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "descriptionAddUnitStats:",
+    "intro": "Value Type: unitRef/unitType\n描述: 将此单位的统计数据（如 HP、能量、资源）添加到动作描述中。",
+    "example": "descriptionAddUnitStats: unitRef self.parent()",
+    "version": "1.14"
+  },
+  {
+    "code": "unitShownInUIWithHpBar:",
+    "intro": "Value Type: bool\n描述: 默认为 true，仅在 unitShownInUI 为 unitRef 时使用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "unitShownInUIWithProgressBar:",
+    "intro": "Value Type: bool\n描述: 默认为 true，仅在 unitShownInUI 为 unitRef 时使用。激活时替换 HP 条。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "alwaysSinglePress:",
+    "intro": "Value Type: bool\n描述: 默认为 false。为 true 时移动端无需确认，与 canPlayerCancel:false 和 allowMultipleInQueue:false 一起使用时还会隐藏队列界面。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "price:",
+    "intro": "Value Type: resources\n描述: 动作的花费。如果不可用则禁用动作。默认为 credits。",
+    "example": "price: credits=5, energy=5, hp=100, shield=5, ammo=1",
+    "version": ""
+  },
+  {
+    "code": "isActive:",
+    "intro": "Value Type: LogicBoolean\n描述: 默认为 true。若为 false，动作被禁用并在 UI 中显示为红色。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "isVisible:",
+    "intro": "Value Type: LogicBoolean\n描述: 默认为 true。若为 false，动作在 UI 中隐藏并禁用。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "isLocked:",
+    "intro": "Value Type: LogicBoolean\n描述: 默认为 false。若为 true，动作被禁用并显示锁定图标。多用于无核弹游戏模式。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "isLockedMessage:",
+    "intro": "Value Type: LocaleString\n描述: 锁定消息。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "isLockedAlt:",
+    "intro": "Value Type: LogicBoolean\n描述: 另一个锁定原因。允许显示不同的消息。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "isLockedAltMessage:",
+    "intro": "Value Type: LocaleString\n描述: 替代锁定消息。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "isLockedAlt2:",
+    "intro": "Value Type: LogicBoolean\n描述: 另一个锁定原因。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "isLockedAlt2Message:",
+    "intro": "Value Type: LocaleString\n描述: 替代锁定消息2。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "allowMultipleInQueue:",
+    "intro": "Value Type: bool\n描述: 若为 false，则只能将一个此类动作加入队列。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "onlyOneUnitAtATime:",
+    "intro": "Value Type: bool\n描述: 当在 UI 中选择动作时，只有一个选中的单位会获得此动作。默认为 false。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "isGuiBlinking:",
+    "intro": "Value Type: LogicBoolean\n描述: 在 UI 中闪烁以吸引注意。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "isAlsoViewableByAllies:",
+    "intro": "Value Type: bool\n描述: 允许盟友玩家看到此单位的动作，对显示统计数据有用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "isAlsoViewableByEnemies:",
+    "intro": "Value Type: bool\n描述: 允许敌方玩家看到此单位的动作，对显示统计数据有用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "ai_isHighPriority:",
+    "intro": "Value Type: LogicBoolean\n描述: 用于派系选择动作或其他高优先级动作。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "ai_isDisabled:",
+    "intro": "Value Type: LogicBoolean\n描述: 默认为 false。阻止 AI 使用此动作。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "ai_considerSameAsBuilding:",
+    "intro": "Value Type: \n描述: 小心使用。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "autoTriggerOnEvent:",
+    "intro": "Value Type: event\n描述: 触发事件。参数：created, completeAndActive, destroyed, killedAnyUnit, queuedUnitFinished, queueItemAdded(withActionTag=\"#\"), queueItemCancelled(withActionTag=\"#\"), teleported, touchTargetSuccess, newWaypointGivenByPlayer, teamChanged, transportingNewUnit, transportUnloadedOrRemovedUnit, tookDamage(withTag=\"#\"), newMessage(withTag=\"#\"), enteredTransport, leftTransport, attachmentRemoved",
+    "example": "",
+    "version": "1.13.3 - 1.15p9"
+  },
+  {
+    "code": "autoTriggerOnEventRecursionLimit:",
+    "intro": "Value Type: int\n描述: 默认为 1。防止循环，对触发自身有用。",
+    "example": "autoTriggerOnEventRecursionLimit: 4",
+    "version": "1.15"
+  },
+  {
+    "code": "autoTrigger:",
+    "intro": "Value Type: LogicBoolean\n描述: 当为 true 时，立即触发此动作的效果（忽略 price、isActive、isVisible、buildSpeed 等）。",
+    "example": "autoTrigger: if self.overWater(), autoTrigger: if self.customTimer(laterThanSeconds=5)",
+    "version": ""
+  },
+  {
+    "code": "autoTriggerCheckRate:",
+    "intro": "Value Type: enum\n描述: 选项：everyFrame（默认）、every4Frames、every8Frames。覆盖 [core] 中的设置。",
+    "example": "autoTriggerCheckRate:every8Frames",
+    "version": ""
+  },
+  {
+    "code": "buildSpeed:",
+    "intro": "Value Type: time\n描述: 建造时间。",
+    "example": "buildSpeed: 5s",
+    "version": ""
+  },
+  {
+    "code": "highPriorityQueue:",
+    "intro": "Value Type: bool\n描述: 默认为 false。若为 true，此动作跳过队列中所有其他低优先级动作。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "canPlayerCancel:",
+    "intro": "Value Type: bool\n描述: 玩家是否可以取消。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "whenBuilding_cannotMove:",
+    "intro": "Value Type: bool\n描述: 应用动作时阻止单位移动。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "whenBuilding_playAnimation:",
+    "intro": "Value Type: animation ref\n描述: 播放动画。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "whenBuilding_rotateTo:",
+    "intro": "Value Type: float\n描述: 当动作在活动队列中时，将单位身体旋转到此方向。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "whenBuilding_rotateTo_orBackwards:",
+    "intro": "Value Type: bool\n描述: 若为 true，当角度较小时允许从 whenBuilding_rotateTo 旋转 180 度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "whenBuilding_rotateTo_waitTillRotated:",
+    "intro": "Value Type: bool\n描述: 暂停动作队列直到旋转完成。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "whenBuilding_temporarilyConvertTo:",
+    "intro": "Value Type: unit ref\n描述: 当动作在活动队列中时转换为另一个单位。原始单位的动作将被保留。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "whenBuilding_temporarilyConvertTo_keepFields:",
+    "intro": "Value Type: fields\n描述: 使用 whenBuilding_temporarilyConvertTo 时不要更改这些字段（双向）。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "whenBuilding_triggerAction:",
+    "intro": "Value Type: action ref\n描述: 触发另一个动作。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "whenBuilding_rotateTo_aimAtActionTarget:",
+    "intro": "Value Type: bool\n描述: BETA 注意：在某些情况下有 bug。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "whenBuilding_rotateTo_rotateTurretX:",
+    "intro": "Value Type: turret ref\n描述: 旋转指定炮塔。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "spawnEffectsOnQueue:",
+    "intro": "Value Type: effect ref\n描述: 当动作首次加入队列时在单位处生成的效果。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "playSoundToPlayerOnQueue:",
+    "intro": "Value Type: sound ref\n描述: 当动作首次加入队列时仅对单位玩家播放的全局声音。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "requireConditional:",
+    "intro": "Value Type: LogicBoolean\n描述: 如果此值为 false，跳过此动作的所有效果。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "convertTo:",
+    "intro": "Value Type: unit ref\n描述: 将单位转换为另一个单位，属性保留。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "convertTo_keepCurrentTags:",
+    "intro": "Value Type: \n描述: 保留当前和临时标签，忽略 convertTo 目标的默认标签。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "convertTo_keepCurrentFields:",
+    "intro": "Value Type: fields\n描述: 转换时不要更改这些字段，与 setUnitStats 一起使用。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "addEnergy:",
+    "intro": "Value Type: float\n描述: 向单位添加能量。除非设置了 energyMax，否则无效。（等同于 addResources: energy=X）",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "addResources:",
+    "intro": "Value Type: resources\n描述: 动作完成时添加这些资源。",
+    "example": "addResources: credits=5, energy=-5, hp=-100, shield=5, ammo=1",
+    "version": ""
+  },
+  {
+    "code": "addResourcesScaledByAIHandicaps:",
+    "intro": "Value Type: resources\n描述: 与 addResources 相同，但根据 AI 难度级别增减。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "addResourcesWithLogic:",
+    "intro": "Value Type: dynamic resources\n描述: 类似 addResources，但允许使用逻辑作为资源值。",
+    "example": "addResourcesWithLogic: hp = select( self.parent.energy>5, 10, 20 )",
+    "version": "1.15"
+  },
+  {
+    "code": "setResourcesWithLogic:",
+    "intro": "Value Type: dynamic resources\n描述: 将目标资源设置为此值而不是添加。小心全局资源。",
+    "example": "setResourcesWithLogic: hp=self.parent.hp - 10, energy = self.energy / 2",
+    "version": "1.15"
+  },
+  {
+    "code": "deleteSelf:",
+    "intro": "Value Type: bool\n描述: 移除自身，无爆炸或声音。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "resetCustomTimer:",
+    "intro": "Value Type: LogicBoolean\n描述: 重置与 self.customTimer() 一起使用的计时器。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "setBodyRotation:",
+    "intro": "Value Type: \n描述: 设置身体旋转。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "setUnitStats:",
+    "intro": "Value Type: fields values\n描述: 允许动态更改选定的字段而不进行转换。支持 =/+=/-= 以及动态数学/逻辑。可更改字段：maxHp, hp, maxShield, shield, shieldRegen, maxEnergy, energy, armour, mass, shootDelayMultiplier, shootDamageMultiplier, moveSpeed, maxTurnSpeed, maxAttackRange, fogOfWarSightRange, nanoRange, selfRegenRate",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "resetUnitStats:",
+    "intro": "Value Type: boolean\n描述: 将 setUnitStats 所做的更改重置为基本值。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "setUnitMemory:",
+    "intro": "Value Type: key value pairs\n描述: 更改此单位的内存，值可以用逻辑设置。内存必须先用 defineUnitMemory 定义。",
+    "example": "setUnitMemory: \"\"\"\n  customText=memory.customText+'hello',\n  nukeActive=true, \n  nextTarget=self.attacking.nearestUnit(withinRange=300, withTag='x', relation='enemy')\n\"\"\"",
+    "version": "1.15"
+  },
+  {
+    "code": "setUnitMemory (array):",
+    "intro": "Value Type: \n描述: 设置数组内存时，必须指定数组索引（支持动态值）。",
+    "example": "setUnitMemory: myTargets[4]=nearestUnit(withTag=\"fish\")",
+    "version": "1.15p11"
+  },
+  {
+    "code": "setHeight:",
+    "intro": "Value Type: logicNumber\n描述: 基于此高度值更改单位高度。",
+    "example": "setHeight: parent.height+5",
+    "version": "1.15"
+  },
+  {
+    "code": "setCustomTarget1:",
+    "intro": "Value Type: unit ref\n描述: 用于单位链接，无需单位内存或标记。默认为建造此单位的单位。",
+    "example": "setCustomTarget1: self.parent",
+    "version": "1.15"
+  },
+  {
+    "code": "setCustomTarget2:",
+    "intro": "Value Type: unit ref\n描述: 类似于 setCustomTarget1，用法相同。默认为 none。",
+    "example": "setCustomTarget2: lastDamagedBy",
+    "version": "1.15"
+  },
+  {
+    "code": "sendMessageTo:",
+    "intro": "Value Type: unit ref\n描述: 向目标单位发送消息。",
+    "example": "sendMessageTo: unitref nearestUnit(withinRange=100, withTag=\"fish\").",
+    "version": "1.15"
+  },
+  {
+    "code": "sendMessageWithTags:",
+    "intro": "Value Type: Message Tag\n描述: 用于 autoTriggerOnEvent 事件中的消息检测，例如 autoTriggerOnEvent:newMessage(withTag=xyz)。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "sendMessageWithData:",
+    "intro": "Value Type: key-value\n描述: 将发送到目标单位的数据。允许多个键值对和任何动态数据类型，使用 eventData() 读取。",
+    "example": "sendMessageWithData: fish=\"nice!\", cat=self.activeWaypointTarget, amount=4, xyz=memory.something",
+    "version": "1.15"
+  },
+  {
+    "code": "refundAllQueuedItems:",
+    "intro": "Value Type: boolean\n描述: 退还特定动作队列中花费的价格；包括 price 中设置的标志。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "removeAllQueuedItemsWithoutRefund:",
+    "intro": "Value Type: boolean\n描述: 清除队列而不退款。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "alsoTriggerAction:",
+    "intro": "Value Type: action refs\n描述: 同时触发另一个动作的结果。忽略动作的要求。",
+    "example": "alsoTriggerAction: addCredits, playSound",
+    "version": ""
+  },
+  {
+    "code": "alsoQueueAction:",
+    "intro": "Value Type: action refs\n描述: 将另一个动作添加到普通单位的队列中。忽略动作的要求。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "alsoTriggerOrQueueActionConditional:",
+    "intro": "Value Type: LogicBoolean\n描述: 默认为 true。如果此值为 false，则忽略 alsoTriggerAction 和 alsoQueueAction。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "alsoTriggerOrQueueActionWithTarget:",
+    "intro": "Value Type: unitref\n描述: 更改触发动作的目标，通常默认为当前动作目标。影响 fireTurretXAtGround、spawnUnits、thisActionTarget() 等。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "alsoTriggerActionRepeat:",
+    "intro": "Value Type: logicNumber\n描述: 重复 alsoTriggerAction 调用，每次重复时 thisActionIndex 改变。用于创建循环或处理数组。",
+    "example": "",
+    "version": "1.15p11"
+  },
+  {
+    "code": "playSoundAtUnit:",
+    "intro": "Value Type: sound ref\n描述: 动作完成时在单位处播放本地声音。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "playSoundGlobally:",
+    "intro": "Value Type: sound ref\n描述: 向游戏中所有玩家播放全局声音。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "playSoundToPlayer:",
+    "intro": "Value Type: sound ref\n描述: 仅向单位玩家播放全局声音。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "fireTurretXAtGround:",
+    "intro": "Value Type: turret ref\n描述: 动作完成时向地面点发射目标炮塔，绕过炮塔中的 canShoot 规则。",
+    "example": "fireTurretXAtGround: nukeSilo",
+    "version": ""
+  },
+  {
+    "code": "fireTurretXAtGround_withOffset:",
+    "intro": "Value Type: point\n描述: 如果未设置，玩家使用 GUI 瞄准地面；如果设置了点，则跳过此步骤。",
+    "example": "fireTurretXAtGround_withOffset: 0,0",
+    "version": ""
+  },
+  {
+    "code": "fireTurretXAtGround_withProjectile:",
+    "intro": "Value Type: projectile ref\n描述: 与 fireTurretXAtGround 一起使用。默认为目标炮塔的普通抛射物。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "fireTurretXAtGround_withTarget:",
+    "intro": "Value Type: unitref\n描述: 向指示单位或标记的位置发射炮塔。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "fireTurretXAtGround_count:",
+    "intro": "Value Type: \n描述: 发射的抛射物数量。默认为 1。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "fireTurretXAtGround_onlyOverPassableTileOf:",
+    "intro": "Value Type: \n描述: 仅允许选择此移动类型可穿越的瓦片。",
+    "example": "LAND,BUILDING,WATER,HOVER, etc",
+    "version": "1.13.3"
+  },
+  {
+    "code": "fireTurretXAtGround_showGuideDecals:",
+    "intro": "Value Type: decal refs\n描述: 在目标位置绘制贴花。建议设置图层为 inactive。",
+    "example": "",
+    "version": "1.15p11"
+  },
+  {
+    "code": "spawnUnits:",
+    "intro": "Value Type: \n描述: 在动作目标处生成单位。支持多个单位和参数。",
+    "example": "spawnUnits: heavyTank, tank*5, hoverTank(offsetX=10)",
+    "version": "1.13.3"
+  },
+  {
+    "code": "produceUnits:",
+    "intro": "Value Type: \n描述: 类似 spawnUnits，但单位像正常生产一样退出，并获得一个移动离开的路径点。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "spawnEffects:",
+    "intro": "Value Type: effect ref\n描述: 在单位处生成效果。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "offsetSelfAbsolute:",
+    "intro": "Value Type: point3d\n描述: 绝对偏移单位位置。",
+    "example": "offsetSelfAbsolute: 0, 0, 40 [x,y,height]",
+    "version": "1.14"
+  },
+  {
+    "code": "teleportTo:",
+    "intro": "Value Type: unit ref/marker\n描述: 将单位位置更改到此位置。",
+    "example": "",
+    "version": "1.15p11"
+  },
+  {
+    "code": "addUnitsIntoTransport:",
+    "intro": "Value Type: unitTypes\n描述: 创建并将单位添加到运输工具中。添加前使用 self.transportingCount() 检查空间。",
+    "example": "addUnitsIntoTransport: tank*3, heavyTank(neutralTeam=true)",
+    "version": ""
+  },
+  {
+    "code": "transportTargetNow:",
+    "intro": "Value Type: unit ref\n描述: 立即尝试将地图上现有的单位运输到此运输工具中。如果规则不允许，可能会失败。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "deleteNumUnitsFromTransport:",
+    "intro": "Value Type: int\n描述: 从运输工具中删除指定数量的单位。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "deleteNumUnitsFromTransport_onlyWithTags:",
+    "intro": "Value Type: string(s)\n描述: 仅删除带有这些标签的单位。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "startUnloadingTransport:",
+    "intro": "Value Type: bool\n描述: 开始卸载运输工具。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "forceUnloadTransportNow:",
+    "intro": "Value Type: bool\n描述: 强制卸载所有单位，或由 forceUnloadTransportNow_onlyOnSlot 指定的槽位。即使没有空间或在水上等也卸载。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "forceUnloadTransportNow_onlyOnSlot:",
+    "intro": "Value Type: int\n描述: 仅强制卸载指定槽位。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "clearAllWaypoints:",
+    "intro": "Value Type: bool\n描述: 清除所有路径点，小心不要因移除命令而惹恼玩家，通常前置添加路径点更好。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "clearActiveWaypoint:",
+    "intro": "Value Type: bool\n描述: 清除活动路径点。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "addWaypoint_type:",
+    "intro": "Value Type: enum\n描述: 路径点类型：move, attackMove, guard, loadInto, loadUp, attack, reclaim, repair, touchTarget, build, follow, setPassiveTarget",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "addWaypoint_unitType:",
+    "intro": "Value Type: \n描述: 仅与 addWaypoint_type:build 一起使用。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "addWaypoint_prepend:",
+    "intro": "Value Type: bool\n描述: 添加到路径点队列的开头还是结尾。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "addWaypoint_triggerActionIfFailed:",
+    "intro": "Value Type: actions\n描述: 如果 target_nearestUnit 未能找到匹配项而无法添加路径点，则触发此动作。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "addWaypoint_triggerActionIfMatched:",
+    "intro": "Value Type: actions\n描述: 如果匹配成功则触发动作。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "addWaypoint_maxTime:",
+    "intro": "Value Type: time\n描述: 如果此路径点活动时间超过此值，则自动移除。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "addWaypoint_target_nearestUnit_tagged:",
+    "intro": "Value Type: tags\n描述: 搜索带有这些标签的最近单位作为目标。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "addWaypoint_target_nearestUnit_team:",
+    "intro": "Value Type: relation\n描述: 队伍关系：own|neutral|allyNotOwn|ally|enemy|any|notOwn",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "addWaypoint_target_nearestUnit_maxRange:",
+    "intro": "Value Type: float\n描述: 最大搜索范围。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "addWaypoint_target_mapMustBeReachable:",
+    "intro": "Value Type: bool\n描述: 目标地图位置是否必须可达。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "addWaypoint_target_fromReference:",
+    "intro": "Value Type: unit ref\n描述: 从引用中获取目标位置。",
+    "example": "addWaypoint_target_fromReference: self.memory.lastDock",
+    "version": "1.15"
+  },
+  {
+    "code": "addWaypoint_position_offsetFromSelf:",
+    "intro": "Value Type: point\n描述: 相对自身的位置偏移。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "addWaypoint_position_fromAction:",
+    "intro": "Value Type: bool\n描述: 使用动作的目标位置。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "addWaypoint_position_randomOffsetFromSelf:",
+    "intro": "Value Type: \n描述: 随机偏移。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "addWaypoint_position_relativeOffsetFromSelf:",
+    "intro": "Value Type: point\n描述: 相对自身偏移。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "addWaypoint_target_randomUnit_tagged:",
+    "intro": "Value Type: \n描述: 随机选择带有标签的单位。",
+    "example": "",
+    "version": "1.14p6"
+  },
+  {
+    "code": "addWaypoint_target_randomUnit_team:",
+    "intro": "Value Type: \n描述: 随机选择指定队伍的单位。",
+    "example": "",
+    "version": "1.14p6"
+  },
+  {
+    "code": "addWaypoint_target_randomUnit_maxRange:",
+    "intro": "Value Type: \n描述: 最大范围。",
+    "example": "",
+    "version": "1.14p6"
+  },
+  {
+    "code": "addAllActionCooldownsTime:",
+    "intro": "Value Type: \n描述: 为所有动作添加冷却时间。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "addActionCooldownTime:",
+    "intro": "Value Type: \n描述: 玩家在此时间内无法再次使用此动作。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "addActionCooldownApplyToActions:",
+    "intro": "Value Type: action ids\n描述: 设置 addActionCooldownTime 的目标。默认为此动作。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "clearAllActionCooldowns:",
+    "intro": "Value Type: \n描述: 清除所有动作冷却。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "playAnimation:",
+    "intro": "Value Type: animation id\n描述: 播放动画。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "playAnimationIfNotPlaying:",
+    "intro": "Value Type: bool\n描述: 如果此动画已在播放，则不重新启动。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "finishPlayingLastAnimation:",
+    "intro": "Value Type: bool\n描述: 完成上一个动画，包括混合输出。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "stopLastAnimation:",
+    "intro": "Value Type: bool\n描述: 停止上一个动画，跳过混合输出。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "switchToNeutralTeam:",
+    "intro": "Value Type: boolean\n描述: 将队伍更改为中立。此队伍与所有其他队伍结盟。除非使用 [core]stayNeutral:true，否则会被附近单位捕获。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "switchToAggressiveTeam:",
+    "intro": "Value Type: boolean\n描述: 更改为一个对所有其他队伍具有攻击性的内置队伍。不会被捕获。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "switchToTeam:",
+    "intro": "Value Type: logicNumber\n描述: 要切换到的队伍 ID。从 0 开始（-1 为中立，-2 为攻击性队伍）。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "takeResources:",
+    "intro": "Value Type: customPrice\n描述: 要获取的资源（需要使用 take resources）。至少需要一个包含键。",
+    "example": "takeResources: hp=5, gold=10",
+    "version": "1.13.3"
+  },
+  {
+    "code": "takeResources_includeUnitsInTransport:",
+    "intro": "Value Type: bool\n描述: 是否包括运输工具中的单位。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "takeResources_includeParent:",
+    "intro": "Value Type: bool\n描述: 包括附件父级或运输父级。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "takeResources_includeReference:",
+    "intro": "Value Type: unit ref\n描述: 包括指定的单位引用。",
+    "example": "[action]takeResources_includeReference: self.lastDamagedBy",
+    "version": "1.15"
+  },
+  {
+    "code": "takeResources_includeUnitsWithinRange:",
+    "intro": "Value Type: float\n描述: 包括范围内的单位。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "takeResources_includeUnitsWithinRange_team:",
+    "intro": "Value Type: TeamRelation\n描述: 与 includeUnitsWithinRange 一起使用，默认为 own。可选：own|ally|allyNotOwn|enemy|neutral|any",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "takeResources_excludeUnitsWithoutTags:",
+    "intro": "Value Type: tags\n描述: 排除没有这些标签的单位。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "takeResources_excludeUnitsWithTheseResources:",
+    "intro": "Value Type: customPrice\n描述: 排除拥有这些资源的单位。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "takeResources_excludeUnitsWithoutAllResources:",
+    "intro": "Value Type: bool\n描述: 默认为 true。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "takeResources_triggerActionIfAnyCollected:",
+    "intro": "Value Type: action refs\n描述: 如果收集到任何资源则触发动作。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "takeResources_triggerActionIfNoneCollected:",
+    "intro": "Value Type: action refs\n描述: 如果没有收集到资源则触发动作。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "takeResources_triggerActionForEach:",
+    "intro": "Value Type: action refs\n描述: 为 takeResource 找到的每个单位调用此动作，并将该单位作为 thisActionTarget，thisActionIndex 从零开始递增。",
+    "example": "",
+    "version": "1.15p11"
+  },
+  {
+    "code": "takeResources_discardCollected:",
+    "intro": "Value Type: bool\n描述: 仅从目标获取资源，不添加（或移除）到自身。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "takeResources_keepResourcesOnTarget:",
+    "intro": "Value Type: bool\n描述: 不添加/移除目标资源。这会克隆资源。与 takeResources_discardCollected 和 takeResources_triggerActionIfAnyCollected 一起使用可制作资源探测器。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "takeResources_maxUnits:",
+    "intro": "Value Type: int\n描述: 默认为 1。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "takeResources_searchOnly:",
+    "intro": "Value Type: bool\n描述: 快捷方式：maxUnits: 200, discardCollected: true, keepResourcesOnTarget: true 仅检测资源。",
+    "example": "takeResources_searchOnly: true",
+    "version": "1.15"
+  },
+  {
+    "code": "takeResources_directTransferStoppingAtZero:",
+    "intro": "Value Type: bool\n描述: 如果目标资源少于转移量，仅转移剩余资源。不支持与其他一些 takeResources_* 键一起使用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "convertResource_from:",
+    "intro": "Value Type: customResource\n描述: 要从中获取的自定义资源名称。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "convertResource_to:",
+    "intro": "Value Type: customResource\n描述: 要给予的自定义资源名称。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "convertResource_minAmount:",
+    "intro": "Value Type: float\n描述: 如果 'from' 中的数量少于这个值则跳过。默认为 0。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "convertResource_maxAmount:",
+    "intro": "Value Type: float\n描述: 在 'from' 和 'to' 之间转移的最大数量。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "convertResource_multiplyAmountBy:",
+    "intro": "Value Type: float\n描述: 默认为 1。添加到 'to' 时的乘数（不影响从 'from' 获取的数量）。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "resourceAmount:",
+    "intro": "Value Type: customResource\n描述: 要设置的自定义资源名称，与下面三个键一起使用。所有键都是可选的，可以一起使用。",
+    "example": "resourceAmount: oil",
+    "version": "1.13.3"
+  },
+  {
+    "code": "resourceAmount_setValue:",
+    "intro": "Value Type: float\n描述: 将此资源设置为绝对数值，忽略当前值。默认跳过。",
+    "example": "resourceAmount_setValue: 20",
+    "version": "1.13.3"
+  },
+  {
+    "code": "resourceAmount_addOtherResource:",
+    "intro": "Value Type: customResource\n描述: 将另一个自定义资源添加到此资源。可以在没有 resourceAmount_setValue 的情况下使用，仅添加资源。或者与 resourceAmount_setValue:0 一起复制资源值。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "resourceAmount_multiplyBy:",
+    "intro": "Value Type: float\n描述: 默认为 1。乘以当前或新值。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "attachments_addNewUnits:",
+    "intro": "Value Type: unit types\n描述: 添加新单位到附件。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "attachments_deleteNumUnits:",
+    "intro": "Value Type: int\n描述: 删除指定数量的附件单位。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "attachments_onlyOnSlots:",
+    "intro": "Value Type: attachment ids\n描述: 将 attachments_* 动作限制在这些附件槽位上。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "disconnectFromParent:",
+    "intro": "Value Type: bool\n描述: 从父级断开。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "attachments_unload:",
+    "intro": "Value Type: bool\n描述: 卸载所有附件。可与 attachments_onlyOnSlots 一起使用。与卸载运输单位相同。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "attachments_disconnect:",
+    "intro": "Value Type: bool\n描述: 在当前位置断开所有附件。可与 attachments_onlyOnSlots 一起使用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "temporarilyAddTags:",
+    "intro": "Value Type: tags\n描述: 为此单位添加标签，直到转换或重置（除非使用 convertTo_keepCurrentTags）。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "temporarilyRemoveTags:",
+    "intro": "Value Type: tags\n描述: 为此单位移除标签，直到转换或重置。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "resetToDefaultTags:",
+    "intro": "Value Type: bool\n描述: 重置为标准标签。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "addGlobalTeamTags:",
+    "intro": "Value Type: tags\n描述: 为玩家队伍添加标签。使用 self.globalTeamTags() 创建解锁和升级。最好使用唯一标签以避免与其他模组冲突。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "removeGlobalTeamTags:",
+    "intro": "Value Type: tags\n描述: 从玩家队伍中移除标签。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "showMessageToPlayer:",
+    "intro": "Value Type: string\n描述: 向控制单位的玩家发送消息。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "showMessageToPlayer_{LANG}:",
+    "intro": "Value Type: string\n描述: 本地化消息。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "showMessageToAllPlayers:",
+    "intro": "Value Type: string\n描述: 向所有玩家发送消息。",
+    "example": "showMessageToAllPlayers: %{self.playerName} has captured a point",
+    "version": "1.13.3"
+  },
+  {
+    "code": "showMessageToAllEnemyPlayers:",
+    "intro": "Value Type: string\n描述: 向所有敌方玩家发送消息。",
+    "example": "showMessageToAllEnemyPlayers: Team %{self.playerName} has %{self.resource.gold}",
+    "version": "1.14"
+  },
+  {
+    "code": "showQuickWarLogToPlayer:",
+    "intro": "Value Type: string\n描述: 向控制单位的玩家发送快速战争日志消息（左下角）。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "showQuickWarLogToAllPlayers:",
+    "intro": "Value Type: string\n描述: 向所有玩家发送快速战争日志消息（左下角）。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "debugMessage:",
+    "intro": "Value Type: \n描述: 仅在沙盒中开启调试模式时显示。",
+    "example": "",
+    "version": "1.13.3"
+  }
+]

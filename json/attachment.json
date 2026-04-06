@@ -1,0 +1,182 @@
+[
+  {
+    "code": "x:",
+    "intro": "Value Type: float\n描述: X 坐标。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "y:",
+    "intro": "Value Type: float\n描述: Y 坐标。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "height:",
+    "intro": "Value Type: float\n描述: 高度。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "idleDir:",
+    "intro": "Value Type: int\n描述: 空闲方向。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "idleDirReversing:",
+    "intro": "Value Type: int\n描述: 倒车空闲方向。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "isVisible:",
+    "intro": "Value Type: bool\n描述: 是否可见。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "onCreateSpawnUnitOf:",
+    "intro": "Value Type: unit ref\n描述: 创建时生成此单位。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "isUnselectable:",
+    "intro": "Value Type: bool\n描述: 默认为 false。是否不可选中。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "canAttack:",
+    "intro": "Value Type: bool\n描述: 默认为 true。设为 false 以阻止此附件攻击。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "canBeAttackedAndDamaged:",
+    "intro": "Value Type: bool\n描述: 是否可被攻击和伤害。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "deattachIfWantingToMove:",
+    "intro": "Value Type: bool\n描述: 如果单位被命令移动，它将分离。包括来自动作的路径点。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "lockLegMovement:",
+    "intro": "Value Type: bool\n描述: 锁定腿移动。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "keepAliveWhenParentDies:",
+    "intro": "Value Type: bool\n描述: 默认为 false。父级死亡时是否保持存活。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "setDrawLayerOnTop:",
+    "intro": "Value Type: bool\n描述: 设置绘制层在顶部。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "setDrawLayerOnBottom:",
+    "intro": "Value Type: bool\n描述: 设置绘制层在底部。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "addTransportedUnits:",
+    "intro": "Value Type: bool\n描述: 添加运输的单位。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "lockRotation:",
+    "intro": "Value Type: bool\n描述: 锁定旋转。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "rotateWithParent:",
+    "intro": "Value Type: bool\n描述: 随父级旋转。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "resetRotationWhenNotAttacking:",
+    "intro": "Value Type: bool\n描述: 类似炮塔的 shouldResetTurret。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "prioritizeParentsMainTarget:",
+    "intro": "Value Type: bool\n描述: 它将优先瞄准主要目标。默认为 true。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "alwaysAllowedToAttackParentsMainTarget:",
+    "intro": "Value Type: bool\n描述: 将始终攻击父级的主要目标。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "onParentTeamChangeKeepCurrentTeam:",
+    "intro": "Value Type: bool\n描述: 默认为 false。如果为 true，父级转换队伍时附件不转换。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "onConvertKeepExistingUnitInSameSlot:",
+    "intro": "Value Type: bool\n描述: 转换时是否在同一槽位保留现有单位。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "unloadInCurrentPosition:",
+    "intro": "Value Type: bool\n描述: 默认为 false。如果为 true，卸载时保持当前附件位置。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "keepWaypointsNeedingMovement:",
+    "intro": "Value Type: bool\n描述: 默认为 false。如果为 true，附件单位即使无法移动也保留需要移动的路径点。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "smoothlyBlendPositionWhenExistingUnitAdded:",
+    "intro": "Value Type: bool\n描述: 添加现有单位时平滑混合位置。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "showAllActionsFrom:",
+    "intro": "Value Type: LogicBoolean\n描述: 选中时在父级单位列表中显示所有附件单位的动作。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "createIncompleteIfParentIs:",
+    "intro": "Value Type: bool\n描述: 如果父级未建成，以相同建成值创建附件。链接建成值直到附件完成。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "redirectDamageToParent:",
+    "intro": "Value Type: bool\n描述: 将对此附件的伤害重定向到父级，而不是直接伤害自身。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "redirectDamageToParent_shieldOnly:",
+    "intro": "Value Type: bool\n描述: 仅重定向护盾伤害到父级。",
+    "example": "",
+    "version": "1.14"
+  }
+]

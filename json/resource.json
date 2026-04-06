@@ -1,0 +1,32 @@
+[
+  {
+    "code": "displayName:",
+    "intro": "Value Type: LocaleString\n描述: UI 中资源的名称（例如悬停单位信息时）。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "displayNameShort:",
+    "intro": "Value Type: LocaleString\n描述: 短名称。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "hidden:",
+    "intro": "Value Type: bool\n描述: 向玩家隐藏此资源。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "equivalentGlobalResourceForAI:",
+    "intro": "Value Type: \n描述: 用于向 AI 提示具有本地资源的资源节点可用于获取不同的全局资源。例如，当收割者卸载资源时。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "displayRoundedDown:",
+    "intro": "Value Type: bool\n描述: 是否向下取整显示。",
+    "example": "",
+    "version": "1.14"
+  }
+]

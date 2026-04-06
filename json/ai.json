@@ -1,0 +1,116 @@
+[
+  {
+    "code": "useAsBuilder:",
+    "intro": "Value Type: bool\n描述: 若为 true，则 AI 会使用此单位建造或修复建筑。默认为 [core]isBuilder。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "useAsTransport:",
+    "intro": "Value Type: bool\n描述: 若单位可以运输其他单位，默认为 true。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "useAsHarvester:",
+    "intro": "Value Type: bool\n描述: 若单位可以回收资源，默认为 true。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "disableUse:",
+    "intro": "Value Type: bool\n描述: 禁止 AI 建造此单位或建筑。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "ai_upgradePriority:",
+    "intro": "Value Type: float\n描述: 默认为 0.06。设置在 0-1 之间，值越高 AI 越可能优先升级此单位。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "buildPriority:",
+    "intro": "Value Type: float\n描述: 0-1。AI 对首个陆地工厂使用 0.8，对空军工厂使用 0.48，对首个炮塔使用 0.47。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "noneInBaseExtraPriority:",
+    "intro": "Value Type: float\n描述: 如果此单位在 AI 基地中不存在，则添加到 buildPriority。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "noneGlobalExtraPriority:",
+    "intro": "Value Type: float\n描述: 如果地图上任何地方都不存在此单位，则添加到 buildPriority。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "recommendedInEachBaseNum:",
+    "intro": "Value Type: float\n描述: 默认为 0。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "recommendedInEachBasePriorityIfUnmet:",
+    "intro": "Value Type: float\n描述: 默认为 0.5。覆盖 buildPriority。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "upgradedFrom:",
+    "intro": "Value Type: string\n描述: 创建到另一个单位的链接，以保持同一基地中升级和非升级类型的最大数量。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "maxGlobal:",
+    "intro": "Value Type: int\n描述: 全局最大数量。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "maxEachBase:",
+    "intro": "Value Type: int\n描述: 每个基地最大数量。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "notPassivelyTargetedByOtherUnits:",
+    "intro": "Value Type: bool\n描述: 对墙等有用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "lowPriorityTargetForOtherUnits:",
+    "intro": "Value Type: \n描述: 对无法反击的单位（如墙）有用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "whenUsingAsHarvester_recommendedInEachBase:",
+    "intro": "Value Type: \n描述: 当用作收割者时，每个基地推荐数量。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "whenUsingAsHarvester_recommendedGlobal:",
+    "intro": "Value Type: \n描述: 当用作收割者时，全局推荐数量。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "whenUsingAsHarvester_includeOtherHarvesterCounts:",
+    "intro": "Value Type: \n描述: 当用作收割者时，包括其他收割者计数。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "onlyUseAsHarvester_ifBaseHasUnitTagged:",
+    "intro": "Value Type: \n描述: 仅当基地有带标签的单位时才用作收割者。",
+    "example": "",
+    "version": "1.13.3"
+  }
+]

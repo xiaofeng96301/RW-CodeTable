@@ -1,0 +1,92 @@
+[
+  {
+    "code": "name:",
+    "intro": "Value Type: string(s)\n描述: 此单位可以创建的单元标识符列表。可以是建筑或单位。添加 \"setRally\" 可创建集结点按钮。",
+    "example": "name: setRally, tank, hoverTank, heavyTank",
+    "version": ""
+  },
+  {
+    "code": "pos:",
+    "intro": "Value Type: float\n描述: 此单位UI中建造链接出现的顺序。",
+    "example": "pos: 0.1",
+    "version": ""
+  },
+  {
+    "code": "tech:",
+    "intro": "Value Type: int\n描述: 技术等级。主要影响此单位UI中建造链接的颜色。默认为1。",
+    "example": "tech: 2",
+    "version": ""
+  },
+  {
+    "code": "forceNano:",
+    "intro": "Value Type: bool\n描述: 若为 true，则目标作为建筑建造（即使是单位）。",
+    "example": "forceNano: true",
+    "version": ""
+  },
+  {
+    "code": "isVisible:",
+    "intro": "Value Type: LogicBoolean\n描述: 若为 true，在此单位UI中隐藏此建造链接。",
+    "example": "isVisible: if not self.energy(greaterThan=100)",
+    "version": ""
+  },
+  {
+    "code": "isLocked:",
+    "intro": "Value Type: LogicBoolean\n描述: 若为 true，动态锁定此建造选项并显示 isLockedMessage。",
+    "example": "isLocked: if self.hp(lessThan=100)",
+    "version": ""
+  },
+  {
+    "code": "isLockedMessage:",
+    "intro": "Value Type: string\n描述: 设置告知玩家单位被锁定的原因。",
+    "example": "isLockedMessage: -Needs 2 Barracks",
+    "version": ""
+  },
+  {
+    "code": "isLockedMessage_{LANG}:",
+    "intro": "Value Type: string\n描述: LANG = ISO 639-1 语言代码，当游戏为此语言时显示该文本。",
+    "example": "isLockedMessage_es: -Necesita 2 Cuarteles",
+    "version": ""
+  },
+  {
+    "code": "isLockedAlt:",
+    "intro": "Value Type: LogicBoolean\n描述: 另一个锁定原因。允许显示不同的消息。",
+    "example": "isLockedAlt: if self.energy(greaterThan=90)",
+    "version": ""
+  },
+  {
+    "code": "isLockedAltMessage:",
+    "intro": "Value Type: string\n描述: isLockedAlt 的消息。",
+    "example": "isLockedAltMessage: -Needs less energy",
+    "version": ""
+  },
+  {
+    "code": "isLockedAlt2:",
+    "intro": "Value Type: LogicBoolean\n描述: 类似 isLockedAlt，可再显示一条消息。",
+    "example": "isLockedAlt2: if self.isMoving()",
+    "version": ""
+  },
+  {
+    "code": "isLockedAlt2Message:",
+    "intro": "Value Type: string\n描述: isLockedAlt2 的消息。",
+    "example": "isLockedAlt2Message: -Needs to be quiet",
+    "version": ""
+  },
+  {
+    "code": "addResources:",
+    "intro": "Value Type: price(s)\n描述: 放置建筑或生产单位时向自身添加这些资源。",
+    "example": "addResources: ammo=5, setFlag=1",
+    "version": ""
+  },
+  {
+    "code": "price:",
+    "intro": "Value Type: price(s)\n描述: 覆盖建造的单位/建筑价格。默认为目标单位价格。",
+    "example": "price: credits=1000, ammo=5",
+    "version": ""
+  },
+  {
+    "code": "isGuiBlinking:",
+    "intro": "Value Type: LogicBoolean\n描述: 若为 true，在UI中产生闪烁效果。",
+    "example": "isGuiBlinking: true",
+    "version": ""
+  }
+]

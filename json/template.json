@@ -1,0 +1,56 @@
+[
+  {
+    "code": "@copyFromSection:",
+    "intro": "Value Type: section ref\n描述: 在任何段落中使用，以包含来自段落或模板的键。（逗号分隔多个）",
+    "example": "@copyFromSection: template_name/action_name/projectile_name",
+    "version": "1.13.3"
+  },
+  {
+    "code": "@copyFrom_skipThisSection:",
+    "intro": "Value Type: bool\n描述: 在任何段落中使用，使 [core]copyFrom 不复制到其中。例如在覆盖时不复制动作。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "@define X:",
+    "intro": "Value Type: variable\n描述: 在段落内定义局部变量（最好在模板外部）。",
+    "example": "@define targetEffect: boom",
+    "version": "1.13.3"
+  },
+  {
+    "code": "@global X:",
+    "intro": "Value Type: variable\n描述: 定义在所有段落中使用的全局变量。局部变量具有更高的优先级。",
+    "example": "@global targetEffect: pop",
+    "version": "1.13.3"
+  },
+  {
+    "code": "@memory X:",
+    "intro": "Value Type: variable\n描述: 为此单位定义内存，必须同时定义其类型。",
+    "example": "@memory transportCount: float",
+    "version": "1.15"
+  },
+  {
+    "code": "${X}",
+    "intro": "Value Type: variable reference\n描述: 可用于引用变量（也可以在模板外部进行）。在加载时计算并保持静态。对运行时性能没有影响。",
+    "example": "spawnEffects: effect_${targetEffect}",
+    "version": "1.13.3"
+  },
+  {
+    "code": "${section.key}",
+    "intro": "Value Type: key reference\n描述: 可用于引用另一个键（也可以在模板外部进行）。",
+    "example": "addResources: credits=${ core.price * 2 + 10 }",
+    "version": "1.13.3"
+  },
+  {
+    "code": "%{X}",
+    "intro": "Value Type: dynamic string\n描述: 可用于将动态逻辑添加到某些字符串中。（不能在任何地方使用）。该值每帧更新。",
+    "example": "[action]text: Missing hp %{self.maxHp - self.hp}",
+    "version": "1.15"
+  },
+  {
+    "code": "\"\"\" text \"\"\"",
+    "intro": "Value Type: multiline string\n描述: 可用于多行字符串。最终结果中的换行符将被移除。",
+    "example": "copyFrom:\"\"\"\nROOT:a.ini,\nROOT:b.ini,\nROOT:c.ini\n\"\"\"",
+    "version": "1.15"
+  }
+]

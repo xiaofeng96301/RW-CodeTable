@@ -267,24 +267,24 @@ body {
 	top: 0;
 	z-index: 10;
 	white-space: nowrap;
-	font-size: 13px
+	font-size: 6px
 }
 
 .excel-table td {
 	padding: 6px 12px;
 	border: 1px solid #e2e8f0;
-	vertical-align: top
+	vertical-align: top;
 }
 
 .excel-table td:first-child {
 	font-family: 'SF Mono', 'Consolas', monospace;
-	font-weight: 400;
+	font-weight: 500;
 	color: #0d3b66;
 	background: #fefdf7;
 	white-space: normal;
 	word-break: break-word;
 	cursor: pointer;
-	min-width: 210px
+	min-width: 200px
 }
 
 .excel-table td:first-child:hover {
@@ -349,11 +349,35 @@ body {
 	display: none
 }
 
-/* 手机端介绍栏最小宽度300px */
+/* 手机端进一步缩小字体 + 介绍栏最小宽度300px */
 @media (max-width: 768px) {
+	.excel-table {
+		font-size: 9px;
+		/* 整体基础字体缩小 */
+	}
+
+	.excel-table th {
+		font-size: 10px;
+		/* 表头缩小 */
+		padding: 6px 5px;
+	}
+
+	.excel-table td {
+		padding: 5px 3px;
+	}
+
 	.excel-table td:nth-child(2) {
 		min-width: 300px;
 		white-space: normal;
-		/* 允许换行，配合最小宽度 */
+		font-size: 9px;
+	}
+
+	.excel-table td:nth-child(3) {
+		font-size: 9px;
+		/* 实例列再小一点 */
+	}
+
+	.excel-table td:last-child {
+		font-size: 9px;
 	}
 }

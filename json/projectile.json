@@ -1,0 +1,620 @@
+[
+  {
+    "code": "life:",
+    "intro": "Value Type: int\n描述: 抛射物未命中目标前存活的时间，300 可能是一个好的起点，根据速度和范围调整。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "deflectionPower:",
+    "intro": "Value Type: float\n描述: 默认为 1。激光防御偏转所需的能量。设为 -1 禁用偏转（仅对火焰等特殊武器禁用）。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "explodeOnEndOfLife:",
+    "intro": "Value Type: bool\n描述: 默认为 false。若为 true，在生命周期结束时爆炸，产生所有副作用和范围伤害，而不是消失。适合制造区域拒止武器。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "autoTargetingOnDeadTarget:",
+    "intro": "Value Type: bool\n描述: 如果目标在飞行途中死亡，重新瞄准附近的单位。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "autoTargetingOnDeadTargetRange:",
+    "intro": "Value Type: int\n描述: 旧目标死亡后选择新目标的范围。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "autoTargetingOnDeadTargetLead:",
+    "intro": "Value Type: float\n描述: 对新的目标尝试的提前量。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "unloadUpToXUnitsFromSource:",
+    "intro": "Value Type: int\n描述: 从源单位卸载 X 个单位到抛射物爆炸位置。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "teleportSource:",
+    "intro": "Value Type: bool\n描述: 将发射此抛射物的单位传送到抛射物爆炸位置。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "spawnUnit:",
+    "intro": "Value Type: unit types\n描述: 在抛射物爆炸位置生成此类型的新单位。",
+    "example": "spawnUnit: heavyTank, tank*5, hoverTank(offsetX=10)",
+    "version": "1.13"
+  },
+  {
+    "code": "spawnProjectilesOnEndOfLife:",
+    "intro": "Value Type: projectile ref\n描述: 在生命周期结束时生成新的抛射物，对次级抛射物有用。",
+    "example": "spawnProjectilesOnEndOfLife: torpedo_split(offsetDir=90), torpedo_split(offsetDir=-90)",
+    "version": "1.14"
+  },
+  {
+    "code": "spawnProjectilesOnExplode:",
+    "intro": "Value Type: projectile ref\n描述: 当此抛射物命中目标时生成的抛射物。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "spawnProjectilesOnCreate:",
+    "intro": "Value Type: \n描述: 在此抛射物创建时生成抛射物，用于制造真正的霰弹枪式抛射物散布。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "convertHitToSourceTeam:",
+    "intro": "Value Type: bool\n描述: 将命中的单位转换为发射此抛射物的队伍。对制造捕获系统有用。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "tags:",
+    "intro": "Value Type: tags\n描述: 用于抛射物拦截（例如核弹和反核弹互动）。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "flameWeapon:",
+    "intro": "Value Type: bool\n描述: 命中时产生小火焰（仅装饰）。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "delayedStartTimer:",
+    "intro": "Value Type: float\n描述: 在显示和更新效果前隐藏 x 时间。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "directDamage:",
+    "intro": "Value Type: int\n描述: 命中时对目标单位造成的直接伤害。不适用于 targetGround:true，因为没有明确的目标单位。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "areaDamage:",
+    "intro": "Value Type: int\n描述: 到达目标时造成范围伤害，使用 areaRadius 调整伤害大小。targetGround 需要此参数来造成伤害。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "areaRadius:",
+    "intro": "Value Type: float\n描述: 范围伤害的宽度。注意伤害会衰减（除非使用 areaDamageNoFalloff）。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "areaDamageNoFalloff:",
+    "intro": "Value Type: bool\n描述: 移除 areaDamage 的衰减。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "areaRadiusFromEdge:",
+    "intro": "Value Type: bool\n描述: 从单位边缘而不是中心应用伤害。主要影响大型单位。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "areaExpandTime:",
+    "intro": "Value Type: float\n描述: 以扩展冲击波的形式应用范围伤害，而不是即时。对核弹抛射物有用。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "areaHitAirAndLandAtSameTime:",
+    "intro": "Value Type: bool\n描述: 默认为 false。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "areaHitUnderwaterAlways:",
+    "intro": "Value Type: bool\n描述: 默认为 false。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "areaIgnoreUnitsCloserThan:",
+    "intro": "Value Type: int\n描述: 比此范围更近的单位不受影响。很少需要。不推荐用于普通抛射物。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "buildingDamageMultiplier:",
+    "intro": "Value Type: float\n描述: 默认为 1。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "shieldDamageMultiplier:",
+    "intro": "Value Type: float\n描述: 默认为 1。例如 0 表示对护盾无伤害，2 表示双倍伤害。",
+    "example": "0 to do no damage to shields and 2 to do double damage",
+    "version": "1.13"
+  },
+  {
+    "code": "shieldDefectionMultiplier:",
+    "intro": "Value Type: float\n描述: 默认为 1。绕过护盾的量。例如 0 表示无视护盾直接伤害本体。",
+    "example": "0 to ignore shields and directly damage hull",
+    "version": "1.13"
+  },
+  {
+    "code": "hullDamageMultiplier:",
+    "intro": "Value Type: float\n描述: 默认为 1。可用于制造仅影响护盾的 EMP 武器。",
+    "example": "0 to ignore hull and only damage shields",
+    "version": "1.14"
+  },
+  {
+    "code": "ignoreParentShootDamageMultiplier:",
+    "intro": "Value Type: bool\n描述: 忽略父级的射击伤害倍率。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "armourIgnoreAmount:",
+    "intro": "Value Type: int\n描述: 忽略目标护甲的量，造成的伤害如同此护甲不存在。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "friendlyFire:",
+    "intro": "Value Type: bool/string\n描述: 让范围效果抛射物伤害己方队伍单位（不能伤害盟友）。对核弹类武器有用。",
+    "example": "friendlyFire: false / friendlyFire: true / friendlyFire: only-ignoreEnemy",
+    "version": "1.13"
+  },
+  {
+    "code": "mutatorX_ifUnitWithTags:",
+    "intro": "Value Type: tags\n描述: 如果目标具有相应标签，则对此抛射物应用修改器。",
+    "example": "mutator1_ifUnitWithTags: infantry",
+    "version": "1.13.3"
+  },
+  {
+    "code": "mutatorX_ifUnitWithoutTags:",
+    "intro": "Value Type: tags\n描述: 与 ifUnitWithTags 相同，但如果目标没有指定标签则应用。",
+    "example": "mutator1_ifUnitWithoutTags: strongArmour",
+    "version": "1.13.3"
+  },
+  {
+    "code": "mutatorX_directDamageMultiplier:",
+    "intro": "Value Type: float\n描述: 更改 directDamage。默认为 1。小心使用，因为效果可能不明确。尽可能使用 armour。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "mutatorX_areaDamageMultiplier:",
+    "intro": "Value Type: float\n描述: 与 directDamageMultiplier 相同，但用于 areaDamage。默认为 1。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "mutatorX_changedExplodeEffect:",
+    "intro": "Value Type: effect\n描述: 如果此修改器激活，更改爆炸效果。例如制作弹开护甲的效果。有助于让玩家更清楚地看到伤害变化（不适用于 targetGround）。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "mutatorX_addResourcesDirectHit:",
+    "intro": "Value Type: resource\n描述: 向所有被直接命中的单位添加资源。警告：小心不要因添加随机资源而破坏其他模组的单位。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "mutatorX_addResourcesAreaHit:",
+    "intro": "Value Type: resource\n描述: 向所有被范围命中的单位添加资源。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "targetGround:",
+    "intro": "Value Type: bool\n描述: 瞄准地面，不制导目标。注意：如果瞄准地面，仅应用 areaDamage。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "targetGround_includeTargetHeight:",
+    "intro": "Value Type: bool\n描述: 默认为 false。用于范围效果的对空武器。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "targetGroundHeightOffset:",
+    "intro": "Value Type: float\n描述: 默认为 0。用于越过或低于目标射击。对分裂和雨点般落下的抛射物有用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "speed:",
+    "intro": "Value Type: float\n描述: 抛射物的默认飞行速度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "targetSpeed:",
+    "intro": "Value Type: float\n描述: 加速到此速度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "targetSpeedAcceleration:",
+    "intro": "Value Type: float\n描述: 控制 targetSpeed 的加速斜率。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "ballistic:",
+    "intro": "Value Type: bool\n描述: 使抛射物飞向空中然后落下，而不是直线飞行。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "ballistic_delaymove_height:",
+    "intro": "Value Type: float\n描述: 弹道延迟移动高度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "ballistic_height:",
+    "intro": "Value Type: float\n描述: 弹道高度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "targetGroundSpread:",
+    "intro": "Value Type: float\n描述: 随机使射击偏离此量。也用于火焰喷射器等武器。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "speedSpread:",
+    "intro": "Value Type: float\n描述: 随机改变抛射物的起始速度此量。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "instant:",
+    "intro": "Value Type: bool\n描述: 瞬间命中目标。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "instantReuseLast:",
+    "intro": "Value Type: bool\n描述: 回收最后发射的抛射物，始终只存在一个抛射物。通过降低射速并将此项设为 true，可将激光变成光束武器。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "instantReuseLast_alsoChangeTurretAim:",
+    "intro": "Value Type: bool\n描述: 使炮塔的瞄准包含上次抛射物的散布和扫射偏移，对光束武器有用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "instantReuseLast_keepAreaDamageList:",
+    "intro": "Value Type: bool\n描述: 默认为 false。保留列表是 1.13 中的正常行为，使范围伤害不会第二次应用，但这没有用。仅在需要旧行为时使用此选项。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "interceptProjectile_removeTargetLifeOnly:",
+    "intro": "Value Type: bool\n描述: 默认为 false。若为 false，抛射物仅被移除。可设为 true 使被命中的抛射物爆炸或分裂。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "disableLeadTargeting:",
+    "intro": "Value Type: bool\n描述: 禁用瞄准移动目标时的提前量计算。默认为 false。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "leadTargetingSpeedCalculation:",
+    "intro": "Value Type: float\n描述: 用于 targetGround 提前量计算时此抛射物的预期速度。如果设置了 targetSpeed 则默认为 targetSpeed，否则为 speed。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "initialUnguidedSpeedHeight:",
+    "intro": "Value Type: \n描述: 为 targetGround 的抛射物设置垂直速度。使用 gravity 制作平滑的弧形抛射物。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "gravity:",
+    "intro": "Value Type: \n描述: 控制瞄准地面的抛射物的引力。与 initialUnguidedSpeedHeight 一起使用。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "turnSpeed:",
+    "intro": "Value Type: float\n描述: 限制抛射物的转向速度，使它们即使有 directDamage 也不准确。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "wobbleAmplitude:",
+    "intro": "Value Type: float\n描述: 抛射物摇晃的幅度。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "wobbleFrequency:",
+    "intro": "Value Type: float\n描述: 抛射物摇晃的频率。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "pushForce:",
+    "intro": "Value Type: float\n描述: 推动（负值为拉动）被击中的单位。除以目标质量。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "pushVelocity:",
+    "intro": "Value Type: float\n描述: 推动（负值为拉动）被击中的单位。忽略目标质量。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "moveWithParent:",
+    "intro": "Value Type: bool\n描述: 抛射物随父级移动。对需要附着在源炮塔上的光束效果有用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "sweepOffset:",
+    "intro": "Value Type: float\n描述: 对光束效果有用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "sweepOffsetFromTargetRadius:",
+    "intro": "Value Type: float\n描述: 按目标半径的因子添加到 sweepOffset。0.4 表示 40%。",
+    "example": "sweepOffsetFromTargetRadius: 0.4",
+    "version": "1.14"
+  },
+  {
+    "code": "sweepSpeed:",
+    "intro": "Value Type: float\n描述: 对光束效果有用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "retargetingInFlight:",
+    "intro": "Value Type: bool\n描述: 可以在飞行中重新瞄准新目标，非常适合高射炮类武器和碰撞抛射物。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "retargetingInFlightSearchDelay:",
+    "intro": "Value Type: float/time\n描述: 搜索新目标之间的时间间隔。默认为 5。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "retargetingInFlightSearchRange:",
+    "intro": "Value Type: int\n描述: 重新选择目标的范围。默认为 120。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "retargetingInFlightSearchLead:",
+    "intro": "Value Type: float\n描述: 抛射物试图命中目标的提前量。默认为 15。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "retargetingInFlightSearchOnlyTags:",
+    "intro": "Value Type: tag ref\n描述: 仅重新瞄准带有这些标签的单位。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "color:",
+    "intro": "Value Type: color\n描述: 使用十六进制值重新着色此抛射物。",
+    "example": "color: #bebe50",
+    "version": ""
+  },
+  {
+    "code": "invisible:",
+    "intro": "Value Type: bool\n描述: 抛射物是否不可见。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "image:",
+    "intro": "Value Type: file (image)\n描述: 使用自定义图像。覆盖 drawType 和 frame。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "drawType:",
+    "intro": "Value Type: int\n描述: 使用的内置图像。0:projectiles.png 1:projectiles_large.png 2:projectiles2.png",
+    "example": "drawType:1",
+    "version": ""
+  },
+  {
+    "code": "drawSize:",
+    "intro": "Value Type: float\n描述: 缩放图像。默认为 1。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "frame:",
+    "intro": "Value Type: int\n描述: 使用的内置图像帧，从 0 开始。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "hitSound:",
+    "intro": "Value Type: bool\n描述: 默认为 true。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "explodeEffect:",
+    "intro": "Value Type: effect ref list\n描述: 爆炸效果。",
+    "example": "explodeEffect: smallExplosion, CUSTOM:myExplodeEffect",
+    "version": "1.13"
+  },
+  {
+    "code": "explodeEffectOnShield:",
+    "intro": "Value Type: effect ref list\n描述: 如果目标有护盾，使用此效果。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "teamColorRatio:",
+    "intro": "Value Type: float\n描述: 将 0-1 的队伍颜色混合到颜色字段中。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "teamColorRatio_sourceRatio:",
+    "intro": "Value Type: float\n描述: 默认为 (1-teamColorRatio)。混合时保留更多颜色。注意这可能会使颜色饱和。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "drawUnderUnits:",
+    "intro": "Value Type: bool\n描述: 是否在单位下方绘制。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "effectOnCreate:",
+    "intro": "Value Type: effect ref list\n描述: 创建时的效果。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "shouldRevealFog:",
+    "intro": "Value Type: bool\n描述: 爆炸时向玩家揭示迷雾。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "alwaysVisibleInFog:",
+    "intro": "Value Type: bool\n描述: 在迷雾中始终可见。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "nukeWeapon:",
+    "intro": "Value Type: bool\n描述: 发射时在小地图上显示。还有其他一些副作用。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "trailEffect:",
+    "intro": "Value Type: bool/effect\n描述: true 表示内置默认效果，也可以指向任何自定义效果。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "trailEffectRate:",
+    "intro": "Value Type: float\n描述: 默认为 3。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "lightCastOnGround:",
+    "intro": "Value Type: bool\n描述: 是否在地面投射光线。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "lightSize:",
+    "intro": "Value Type: float\n描述: 光线大小。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "lightColor:",
+    "intro": "Value Type: color\n描述: 光线颜色。",
+    "example": "lightColor: #ffe92b",
+    "version": ""
+  },
+  {
+    "code": "largeHitEffect:",
+    "intro": "Value Type: bool\n描述: 命中时产生大爆炸和伴随声音（仅装饰）。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "lightingEffect:",
+    "intro": "Value Type: bool\n描述: 绘制为闪电效果，与 instant:true 搭配最佳。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "laserEffect:",
+    "intro": "Value Type: bool\n描述: 绘制为激光效果，与 instant:true 搭配最佳。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "beamImage:",
+    "intro": "Value Type: file (image)\n描述: 用于光束和激光效果类型抛射物的图像。图像根据到目标的距离垂直重复。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "beamImageOffsetRate:",
+    "intro": "Value Type: float\n描述: 光束图像偏移速率。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "beamImageStart:",
+    "intro": "Value Type: int\n描述: 光束动画效果的起始帧。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "beamImageStartRotated:",
+    "intro": "Value Type: bool\n描述: 默认为 false。若为 true，随炮塔角度旋转。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "beamImageEnd:",
+    "intro": "Value Type: int\n描述: 光束动画效果的结束帧。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "beamImageEndRotated:",
+    "intro": "Value Type: bool\n描述: 默认为 false。",
+    "example": "",
+    "version": "1.14"
+  }
+]

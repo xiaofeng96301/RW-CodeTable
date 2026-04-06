@@ -1,0 +1,116 @@
+[
+  {
+    "code": "movementType:",
+    "intro": "Value Type: string\n描述: 定义单位可以移动的地形类型，以及单位类型的其他属性。",
+    "example": "movementType: LAND",
+    "version": ""
+  },
+  {
+    "code": "slowDeathFall:",
+    "intro": "Value Type: bool\n描述: 用于大型飞行器。使单位缓慢坠落，同时保持死亡时的速度。",
+    "example": "slowDeathFall: true",
+    "version": ""
+  },
+  {
+    "code": "moveSpeed:",
+    "intro": "Value Type: float\n描述: 单位最大移动速度。",
+    "example": "moveSpeed: 1.2",
+    "version": ""
+  },
+  {
+    "code": "moveAccelerationSpeed:",
+    "intro": "Value Type: float\n描述: 定义单位加速到最大速度的快慢。",
+    "example": "moveAccelerationSpeed: 0.07",
+    "version": ""
+  },
+  {
+    "code": "moveDecelerationSpeed:",
+    "intro": "Value Type: float\n描述: 不要将此值设得太低，否则单位在路径点难以停下。",
+    "example": "moveDecelerationSpeed: 0.17",
+    "version": ""
+  },
+  {
+    "code": "reverseSpeedPercentage:",
+    "intro": "Value Type: float\n描述: 默认为 0.6。超过 0.4 时会以 40% 的速度短距离倒车。如果设为 1，倒车速度与前进相同。对慢速转向的单位有用。",
+    "example": "reverseSpeedPercentage: 0",
+    "version": ""
+  },
+  {
+    "code": "landOnGround:",
+    "intro": "Value Type: bool\n描述: 飞行单位空闲时是否降落。",
+    "example": "landOnGround: false",
+    "version": ""
+  },
+  {
+    "code": "targetHeight:",
+    "intro": "Value Type: float\n描述: 默认为 0，但如果 movementType 为 AIR，默认为 35。",
+    "example": "targetHeight: 25",
+    "version": ""
+  },
+  {
+    "code": "targetHeightDrift:",
+    "intro": "Value Type: float\n描述: 平滑的高度变化动画。默认为 0，但如果 movementType 为 AIR，默认为 1.5。",
+    "example": "targetHeightDrift: 1",
+    "version": ""
+  },
+  {
+    "code": "startingHeightOffset:",
+    "intro": "Value Type: float\n描述: 起始高度偏移。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "heightChangeRate:",
+    "intro": "Value Type: float\n描述: 单位改变高度的速率，无论是转换还是漂移。",
+    "example": "heightChangeRate: 3",
+    "version": "1.14"
+  },
+  {
+    "code": "fallingAcceleration:",
+    "intro": "Value Type: float\n描述: 单位下落的加速度。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "fallingAccelerationDead:",
+    "intro": "Value Type: float\n描述: 单位被摧毁时的下落加速度。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "maxTurnSpeed:",
+    "intro": "Value Type: float\n描述: 最大转向速度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "turnAcceleration:",
+    "intro": "Value Type: float\n描述: 转向加速度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "moveSlidingMode:",
+    "intro": "Value Type: bool\n描述: 当 moveDecelerationSpeed 较低时使单位滑动，产生漂移和自然感。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "moveIgnoringBody:",
+    "intro": "Value Type: bool\n描述: 允许单位在不完全转向移动方向的情况下移动，对舰船和飞行器有用。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "moveSlidingDir:",
+    "intro": "Value Type: int\n描述: 滑动方向。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "joinsGroupFormations:",
+    "intro": "Value Type: bool\n描述: 默认为 true。不建议更改。",
+    "example": "",
+    "version": ""
+  }
+]

@@ -1,0 +1,452 @@
+[
+  {
+    "code": "x:",
+    "intro": "Value Type: float\n描述: 炮塔 X 坐标。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "y:",
+    "intro": "Value Type: float\n描述: 炮塔 Y 坐标。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "copyFrom:",
+    "intro": "Value Type: turret ref\n描述: 从另一个炮塔复制所有值作为此炮塔的默认值。",
+    "example": "copyFrom: 1",
+    "version": ""
+  },
+  {
+    "code": "projectile:",
+    "intro": "Value Type: projectile ref\n描述: 从此炮塔发射的抛射物。",
+    "example": "projectile: torpedo",
+    "version": ""
+  },
+  {
+    "code": "altProjectile:",
+    "intro": "Value Type: projectile ref\n描述: 当 altProjectileCondition 为 true 时，从此炮塔发射的替代抛射物。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "altProjectileCondition:",
+    "intro": "Value Type: LogicBoolean\n描述: 与 altProjectile 一起使用。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "barrelX:",
+    "intro": "Value Type: float\n描述: 默认为 0。控制抛射物生成点的水平位置。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "barrelY:",
+    "intro": "Value Type: float\n描述: 默认为 size。注意：size 和 barrelY 含义相同。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "barrelHeight:",
+    "intro": "Value Type: float\n描述: 3D 中炮管的高度。影响抛射物和射击火焰的起始高度。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "height:",
+    "intro": "Value Type: float\n描述: 单位的 3D 高度，与贴花一起使用。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "size:",
+    "intro": "Value Type: float\n描述: 控制炮塔中心与抛射物生成点之间的距离。",
+    "example": "size: 5",
+    "version": ""
+  },
+  {
+    "code": "turnSpeed:",
+    "intro": "Value Type: float\n描述: 炮塔的最大转动速度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "turnSpeedAcceleration:",
+    "intro": "Value Type: float\n描述: 默认为禁用，使用完整转动速度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "turnSpeedDeceleration:",
+    "intro": "Value Type: float\n描述: 默认为 turnSpeedAcceleration。设置得比转动加速度高可能更容易命中快速目标。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "idleDir:",
+    "intro": "Value Type: float\n描述: 默认为 0。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "idleDirReversing:",
+    "intro": "Value Type: float\n描述: 默认为 idleDir+180，除非附加到另一个炮塔（因为附加炮塔倒车时常会旋转）。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "shouldResetTurret:",
+    "intro": "Value Type: bool\n描述: 默认为 true。设为 false 可禁用空闲时重置炮塔角度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "idleSweepAngle:",
+    "intro": "Value Type: int\n描述: 默认禁用。控制炮塔空闲时左右“扫视”的范围。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "idleSweepDelay:",
+    "intro": "Value Type: float\n描述: 控制空闲扫视移动之间的延迟。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "idleSweepSpeed:",
+    "intro": "Value Type: float\n描述: 控制空闲扫视的速度。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "idleSweepCondition:",
+    "intro": "Value Type: LogicBoolean\n描述: 若为 false，禁用空闲扫视。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "idleSweepAddRandomDelay:",
+    "intro": "Value Type: float\n描述: 默认为 1-20，取决于 idleSweepDelay，用于阻止扫视与其他单位同步。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "idleSweepAddRandomAngle:",
+    "intro": "Value Type: int\n描述: 默认为 0。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "attachedTo:",
+    "intro": "Value Type: turret ref\n描述: 要附加到的另一个炮塔的 ID，将相对于它定位并随其旋转。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "slave:",
+    "intro": "Value Type: bool\n描述: 将此炮塔的方向和射击冷却锁定到附加的炮塔。常与 warmup 一起用于多管炮。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "isMainNanoTurret:",
+    "intro": "Value Type: bool\n描述: 默认为 false。用于创建建筑等的炮塔，应仅在一个炮塔上为 true，且应设置 canShoot 为 false。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "energyUsage:",
+    "intro": "Value Type: float\n描述: 开火所需能量。等同于 resourceUsage: energy=X。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "resourceUsage:",
+    "intro": "Value Type: price\n描述: 可以是 credits/energy/hp/shield/ammo。若不满足则停止开火。",
+    "example": "resourceUsage: credits=5, energy=5, hp=100, shield=5, ammo=1",
+    "version": ""
+  },
+  {
+    "code": "delay:",
+    "intro": "Value Type: float\n描述: 覆盖此炮塔的全局 shootDelay。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "linkDelayWithTurret:",
+    "intro": "Value Type: turret ref\n描述: 当另一个炮塔开火时，此炮塔的冷却延迟将被重置/移除。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "warmup:",
+    "intro": "Value Type: float\n描述: 开火前的延迟。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "warmupCallDownRate:",
+    "intro": "Value Type: float\n描述: 当炮塔未准备好向任何目标开火时，减少 warmup 的速率。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "warmupNoReset:",
+    "intro": "Value Type: bool\n描述: 默认为 false。若为 true，开火后不重置 warmup，且炮塔不等待 warmup。与 warmupCallDownRate 和 warmupShootDelayTransfer 一起使用。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "warmupShootDelayTransfer:",
+    "intro": "Value Type: float\n描述: 默认为 0，根据 warmup 减少下次射击延迟的量。与 warmupNoReset 一起使用时，可使每次射击更快。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "onShoot_freezeBodyMovementFor:",
+    "intro": "Value Type: \n描述: 射击时冻结身体移动。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "barrelOffsetX_onOddShots:",
+    "intro": "Value Type: float\n描述: 默认为 0。仅在奇数次射击时设置 barrelX 偏移，对双管单位有用。与 barrelX 一起使用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "aimOffsetSpread:",
+    "intro": "Value Type: \n描述: 瞄准偏移散布。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "canShoot:",
+    "intro": "Value Type: bool\n描述: 默认为 true。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "canAttackFlyingUnits:",
+    "intro": "Value Type: LogicBoolean\n描述: 缩小此炮塔的瞄准范围，注意整个单位在 [attack] 中的瞄准首先应用（因此只能用来减少目标，不能增加）。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "canAttackLandUnits:",
+    "intro": "Value Type: LogicBoolean\n描述: 缩小此炮塔的瞄准范围。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "canAttackUnderwaterUnits:",
+    "intro": "Value Type: LogicBoolean\n描述: 缩小此炮塔的瞄准范围。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "canAttackNotTouchingWaterUnits:",
+    "intro": "Value Type: LogicBoolean\n描述: 默认为 true。若为 false，单位只能攻击接触水面的单位。用于鱼雷单位。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "canOnlyAttackUnitsWithTags:",
+    "intro": "Value Type: tags\n描述: 只能攻击具有指定标签的单位。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "canOnlyAttackUnitsWithoutTags:",
+    "intro": "Value Type: tags\n描述: 只能攻击没有指定标签的单位。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "canAttackCondition:",
+    "intro": "Value Type: LogicBoolean\n描述: 通常用于根据 LogicBoolean 可选地禁用炮塔。例如：此单位的高度。",
+    "example": "canAttackCondition: if not self.flying",
+    "version": ""
+  },
+  {
+    "code": "canAttackMaxAngle:",
+    "intro": "Value Type: float\n描述: 允许炮塔开火的最大目标角度。默认为 5，不要设置更低。可设为 181 用于无需转向即可发射导弹的炮塔。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "clearTurretTargetAfterFiring:",
+    "intro": "Value Type: bool\n描述: 使用多重瞄准时清除炮塔的子目标。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "limitingRange:",
+    "intro": "Value Type: float\n描述: 使此炮塔的范围小于 maxAttackRange。不要将此应用于所有炮塔，而应更改 maxAttackRange。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "limitingAngle:",
+    "intro": "Value Type: \n描述: 与 idleDir 关联。炮塔只能在此角度 ± 范围内向单位开火。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "limitingMinRange:",
+    "intro": "Value Type: \n描述: 设置炮塔的最小范围。",
+    "example": "limitingMinRange: 200",
+    "version": "1.13"
+  },
+  {
+    "code": "interceptProjectiles_withTags:",
+    "intro": "Value Type: \n描述: 目前用于反核单位。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "interceptProjectiles_andTargetingGroundUnderDistance:",
+    "intro": "Value Type: \n描述: 拦截抛射物并瞄准地面以下距离。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "interceptProjectiles_andUnderDistance:",
+    "intro": "Value Type: \n描述: 默认为 2000，开火前飞行中的距离。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "interceptProjectiles_andOverHeight:",
+    "intro": "Value Type: \n描述: 默认为 0。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "laserDefenceEnergyUse:",
+    "intro": "Value Type: float\n描述: 设置从此炮塔启用抛射物激光防御。还应在 core 中设置 energyMax。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "invisible:",
+    "intro": "Value Type: LogicBoolean\n描述: 不渲染此炮塔，但仍可射击等。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "image:",
+    "intro": "Value Type: file (image)\n描述: 使用自定义图像。覆盖单位的默认炮塔图像。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "image_applyTeamColors:",
+    "intro": "Value Type: bool\n描述: 是否对图像应用队伍颜色。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "image_drawOffsetX:",
+    "intro": "Value Type: float\n描述: 图像绘制 X 偏移。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "image_drawOffsetY:",
+    "intro": "Value Type: float\n描述: 图像绘制 Y 偏移。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "chargeEffectImage:",
+    "intro": "Value Type: file (image)\n描述: 与 warmup 一起使用。充能时在炮管上显示缩放效果图像。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "warmupStartEffect:",
+    "intro": "Value Type: effect ref\n描述: 充能开始效果。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "shoot_sound:",
+    "intro": "Value Type: string\n描述: 可链接到 .ogg 或 .wav 文件，或内置游戏声音之一。",
+    "example": "shoot_sound: tank_firing | shoot_sound: missile.wav | shoot_sound: ROOT:audio/shoot.ogg",
+    "version": ""
+  },
+  {
+    "code": "shoot_sound_vol:",
+    "intro": "Value Type: float\n描述: 射击声音音量。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "shoot_flame:",
+    "intro": "Value Type: effects\n描述: 当前类型有：small, large, smoke, shockwave, 或 CUSTOM: effectSectionName。",
+    "example": "shoot_flame: smoke, CUSTOM:lightFade, CUSTOM:pop*5",
+    "version": ""
+  },
+  {
+    "code": "shoot_light:",
+    "intro": "Value Type: color\n描述: 射击光效颜色。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "idleSpin:",
+    "intro": "Value Type: float\n描述: 空闲时旋转速率，用于导弹炮塔。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "onShoot_playAnimation:",
+    "intro": "Value Type: animation ref\n描述: 从此炮塔开火后播放 [animation] 段落中的自定义动画。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "onShoot_triggerActions:",
+    "intro": "Value Type: action refs\n描述: 每次此炮塔开火时触发这些动作。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "onShoot_freezeBodyMovementFor:",
+    "intro": "Value Type: time\n描述: 射击时冻结身体移动的时间。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "unloadUpToXUnitsAndGiveAttackOrder:",
+    "intro": "Value Type: int\n描述: 在炮管位置卸载 X 个单位，并给予它们炮塔目标的攻击命令。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "recoilOffset:",
+    "intro": "Value Type: float\n描述: 射击后将炮塔向前或向后推以实现后坐力效果。单位为像素。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "recoilOutTime:",
+    "intro": "Value Type: float\n描述: 射击后到达偏移位置的时间。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "recoilReturnTime:",
+    "intro": "Value Type: float\n描述: 返回默认位置的时间。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "showRangeUIGuide:",
+    "intro": "Value Type: bool\n描述: 是否显示范围指示器。",
+    "example": "",
+    "version": "1.13.3"
+  }
+]

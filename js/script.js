@@ -1,5 +1,26 @@
 // 配置
-const FILES = ['core.json', 'move.json'];
+const FILES = [
+	'core.json',
+	'canBuild.json',
+	'graphics.json',
+	'attack.json',
+	'turret.json',
+	'projectile.json',
+	'movement.json',
+	'ai.json',
+	'leg arm.json',
+	'attachment.json',
+	'action.json',
+	'effect.json',
+	'animation.json',
+	'placementRule.json',
+	'global_resource.json',
+	'resource.json',
+	'template.json',
+	'decal.json',
+	'LogicBoolean.json'
+	
+	];
 let cats = {};               // 存储每个文件数据与DOM引用
 let allVers = [];            // 所有版本列表
 let selectedVers = new Set(); // 已选版本
@@ -147,6 +168,7 @@ function updateTable(file, filtered) {
       const tr = document.createElement('tr');
       tr.innerHTML = `
         <td>${escapeHtml(it.code ?? '—')}</td>
+		<td>${escapeHtml(it.code_translation ?? '—')}</td>
         <td>${escapeHtml(it.intro ?? it.description ?? '—')}</td>
         <td>${escapeHtml(it.example ?? it.instance ?? '—')}</td>
         <td>${(it.version && it.version !== '') ? escapeHtml(it.version) : '通用'}</td>

@@ -1,0 +1,80 @@
+[
+  {
+    "code": "anyRuleInGroup:",
+    "intro": "Value Type: string\n描述: （仅需要此组中的一条规则通过，而不是全部。在其他放置规则上使用相同的组名以创建组。）",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "searchTags:",
+    "intro": "Value Type: tag list\n描述: 搜索至少具有这些标签之一的任何单位。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "searchTeam:",
+    "intro": "Value Type: relation\n描述: 要包含在搜索中的队伍，可以是：own|neutral|allyNotOwn|ally|enemy|any",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "searchOffsetX:",
+    "intro": "Value Type: float\n描述: 默认为 0。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "searchOffsetY:",
+    "intro": "Value Type: float\n描述: 默认为 0。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "searchDistance:",
+    "intro": "Value Type: float\n描述: 必需。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "excludeIncompleteBuildings:",
+    "intro": "Value Type: bool\n描述: 默认为 false。根据需求原因可能需要设为 true。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "excludeNonBuildings:",
+    "intro": "Value Type: bool\n描述: 默认为 false。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "minCount:",
+    "intro": "Value Type: int\n描述: 设置搜索中需要找到的最小单位数量。默认为 0。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "maxCount:",
+    "intro": "Value Type: int\n描述: 设置匹配失败前的最大单位数量。默认为无限制。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "blocksPlacement:",
+    "intro": "Value Type: bool\n描述: 默认为 true。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "cannotPlaceMessage:",
+    "intro": "Value Type: LocaleString\n描述: 强烈推荐。如果此规则失败，向玩家显示的消息。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "checkEachTile:",
+    "intro": "Value Type: bool\n描述: 默认为 true（设为 false 仅测试单位中心，true 检查单位下的每个瓦片，这会在放置网格上显示）。",
+    "example": "",
+    "version": "1.14"
+  }
+]

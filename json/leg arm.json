@@ -1,0 +1,236 @@
+[
+  {
+    "code": "x:",
+    "intro": "Value Type: float\n描述: 设置脚在 X 轴上的位置。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "y:",
+    "intro": "Value Type: float\n描述: 设置脚在 Y 轴上的位置。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "copyFrom:",
+    "intro": "Value Type: int\n描述: 从另一个腿复制。只需设置一次腿值即可。",
+    "example": "copyFrom: 1",
+    "version": ""
+  },
+  {
+    "code": "attach_x:",
+    "intro": "Value Type: float\n描述: 设置腿在 X 轴上的附着点。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "attach_y:",
+    "intro": "Value Type: float\n描述: 设置腿在 Y 轴上的附着点。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "rotateSpeed:",
+    "intro": "Value Type: float\n描述: 旋转速度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "endDirOffset:",
+    "intro": "Value Type: \n描述: 目标脚/末端的旋转相对身体的角度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "lockMovement:",
+    "intro": "Value Type: bool\n描述: 锁定到单位身体。如果步行单位转换为飞行单位时有用。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "heightSpeed:",
+    "intro": "Value Type: float\n描述: 高度变化速度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "moveSpeed:",
+    "intro": "Value Type: \n描述: 移动速度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "moveWarmUp:",
+    "intro": "Value Type: \n描述: 移动预热。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "holdDisMin:",
+    "intro": "Value Type: float\n描述: 默认为 7。如果相邻腿尚未重新定位，则在此距离重新定位腿。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "holdDisMax:",
+    "intro": "Value Type: float\n描述: 默认为 16。在此距离强制重新定位腿。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "holdDisMin_maxMovingLegs:",
+    "intro": "Value Type: \n描述: 移动腿的最大最小保持距离。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "hold_moveOnlyIfFurthest:",
+    "intro": "Value Type: \n描述: 仅当最远时才移动。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "holdDisMin_checkNeighbours:",
+    "intro": "Value Type: \n描述: 检查邻居的保持最小距离。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "hardLimit:",
+    "intro": "Value Type: float\n描述: 默认为 50。强制腿永远不要走这么远。最好不达到。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "estimatingPositionMultiplier:",
+    "intro": "Value Type: float\n描述: 默认为 1。根据单位速度预测腿放置位置。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "hidden:",
+    "intro": "Value Type: logic boolean\n描述: 是否隐藏。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "image_end:",
+    "intro": "Value Type: file (image)\n描述: 末端图像。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "image_end_shadow:",
+    "intro": "Value Type: file (image)\n描述: 末端阴影图像。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "image_end_teamColors:",
+    "intro": "Value Type: \n描述: 是否对末端图像应用队伍颜色。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "image_foot:",
+    "intro": "Value Type: file (image)\n描述: 与 image_end 相同。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "image_foot_shadow:",
+    "intro": "Value Type: file (image)\n描述: 脚阴影图像。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "image_middle:",
+    "intro": "Value Type: file (image)\n描述: 中间图像。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "image_leg:",
+    "intro": "Value Type: file (image)\n描述: 与 image_middle 相同。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "draw_foot_on_top:",
+    "intro": "Value Type: bool\n描述: 是否将脚绘制在顶部。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "drawOverBody:",
+    "intro": "Value Type: bool\n描述: 绘制在身体之上。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "drawUnderAllUnits:",
+    "intro": "Value Type: bool\n描述: 绘制在所有单位之下。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "drawDirOffset:",
+    "intro": "Value Type: float\n描述: 绘制方向偏移。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "dust_effect:",
+    "intro": "Value Type: bool\n描述: 每一步产生尘埃粒子。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "spinRate:",
+    "intro": "Value Type: float\n描述: 使手臂/腿旋转，类似炮塔的 idleSpin。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "favourOppositeSideNeighbours:",
+    "intro": "Value Type: \n描述: 计算邻居时，X 轴比 Y 轴近 10 倍。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "drawLegWhenZoomedOut:",
+    "intro": "Value Type: \n描述: 为性能考虑，默认根据单位大小改变。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "drawFootWhenZoomedOut:",
+    "intro": "Value Type: \n描述: 为性能考虑，默认根据单位大小改变。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "liftingHeightOffset:",
+    "intro": "Value Type: int\n描述: 提升高度偏移。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "targetHeight:",
+    "intro": "Value Type: int\n描述: 目标高度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "targetHeightRelative:",
+    "intro": "Value Type: bool\n描述: 目标高度是否相对。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "resetAngle:",
+    "intro": "Value Type: float\n描述: 未使用。",
+    "example": "",
+    "version": ""
+  }
+]

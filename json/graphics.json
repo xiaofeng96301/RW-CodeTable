@@ -1,0 +1,404 @@
+[
+  {
+    "code": "image:",
+    "intro": "Value Type: file (image)\n描述: PNG 图像的文件路径。",
+    "example": "image: ",
+    "version": ""
+  },
+  {
+    "code": "image_back:",
+    "intro": "Value Type: file (image)\n描述: 绘制在其他单位后面的可选图像。对工厂等有单位退出的建筑有用。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "image_shield:",
+    "intro": "Value Type: file (image)\n描述: 显示为自定义护盾的图像。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "image_wreak:",
+    "intro": "Value Type: file (image)\n描述: 单位死亡时使用的图像。可设为 NONE 不留残骸。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "image_offsetX:",
+    "intro": "Value Type: int\n描述: 如果单位图形偏离一侧太远，可用此调整。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "image_offsetY:",
+    "intro": "Value Type: int\n描述: 如果单位图形偏离一侧太远，可用此调整。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "image_offsetH:",
+    "intro": "Value Type: int\n描述: 调整图形高度，尤其是在使用贴花时。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "image_floatingPointSize:",
+    "intro": "Value Type: int\n描述: 修复宽度和/或高度为奇数值的图像出现的 1 像素尺寸偏差。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "isVisible:",
+    "intro": "Value Type: logic\n描述: 若为 false，将隐藏单位。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "isVisibleToEnemies:",
+    "intro": "Value Type: bool\n描述: 若为 false，仅对玩家和盟友可见。建议与 showOnMinimapToEnemies 一起使用。对隐身单位有用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "teamColoringMode:",
+    "intro": "Value Type: enum\n描述: 像素如何用于队伍着色，选项：pureGreen（默认）、hueAdd、hueShift、disabled。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "teamColorsUseHue:",
+    "intro": "Value Type: bool\n描述: false：将单位上的绿色像素转换为队伍颜色。true：整个单位染上队伍颜色。默认为 false。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "scaleImagesTo:",
+    "intro": "Value Type: float\n描述: 调整图像大小以适应此像素值。同时影响腿部和阴影图像。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "imageScale:",
+    "intro": "Value Type: float\n描述: 调整图像大小。默认为 1。同时影响腿部和阴影图像。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "drawLayer:",
+    "intro": "Value Type: string\n描述: 陆地单位通常默认为 ground 或 ground2（如果是运输工具）。可选值：wreaks、underwater、bottom、ground、ground2、experimentals、air、top。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "whenBeingBuiltMakeTransparentTill:",
+    "intro": "Value Type: float\n描述: 不完整单位应用透明效果的时间长度，设为 0 完全禁用。默认值：1。",
+    "example": "Default: 1",
+    "version": "1.13"
+  },
+  {
+    "code": "icon_zoomed_out:",
+    "intro": "Value Type: file (image)\n描述: 缩小时显示的图标。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "icon_zoomed_out_neverShow:",
+    "intro": "Value Type: bool\n描述: 若为 true，永不显示缩小图标。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "icon_build:",
+    "intro": "Value Type: file (image)\n描述: 在建造面板上显示的单位图标。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "image_turret:",
+    "intro": "Value Type: file (image)\n描述: 所有炮塔的默认图像，也可按每个炮塔单独设置。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "teamColorsOnTurret:",
+    "intro": "Value Type: bool\n描述: 默认为 false。是否在炮塔上也应用队伍颜色。也影响炮塔前图像。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "scaleTurretImagesTo:",
+    "intro": "Value Type: float\n描述: 如果未指定 image_turret（即使按炮塔设置了图像），将导致崩溃。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "lock_body_rotation_with_main_turret:",
+    "intro": "Value Type: bool\n描述: 将身体图像锁定到第一个炮塔的方向。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "lock_leg_rotation_with_main_turret:",
+    "intro": "Value Type: bool\n描述: 将腿部和臂部锁定到第一个炮塔的方向。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "image_shadow:",
+    "intro": "Value Type: file (image)\n描述: 图像文件、NONE 或 AUTO（AUTO 将使用图像并仅将其变为透明黑色）。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "shadowOffsetX:",
+    "intro": "Value Type: float\n描述: 阴影 X 轴偏移。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "shadowOffsetY:",
+    "intro": "Value Type: float\n描述: 阴影 Y 轴偏移。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "image_shadow_frames:",
+    "intro": "Value Type: bool\n描述: 阴影图像是否应使用主图像的帧动画。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "lock_shadow_rotation_with_main_turret:",
+    "intro": "Value Type: bool\n描述: 将身体图像的阴影锁定到第一个炮塔的方向。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "total_frames:",
+    "intro": "Value Type: int\n描述: 默认为 1。动画需要此值。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "frame_width:",
+    "intro": "Value Type: int\n描述: 如果设置了 total_frames 会自动计算，但也可覆盖。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "frame_height:",
+    "intro": "Value Type: int\n描述: 默认为图像高度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "default_frame:",
+    "intro": "Value Type: int\n描述: 不播放动画时的默认帧。",
+    "example": "",
+    "version": "1.14?"
+  },
+  {
+    "code": "splastEffect:",
+    "intro": "Value Type: bool\n描述: 若为 true，在水上时产生水花效果。默认为 false。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "dustEffect:",
+    "intro": "Value Type: bool\n描述: 若为 true，在陆地上时产生尘埃效果。默认为 false。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "splastEffectReverse:",
+    "intro": "Value Type: bool\n描述: 若为 true，单位倒车时也产生效果。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "dustEffectReverse:",
+    "intro": "Value Type: bool\n描述: 若为 true，单位倒车时也产生效果。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "movementEffect:",
+    "intro": "Value Type: effect\n描述: 自定义移动效果，可以是任何效果。",
+    "example": "movementEffect: smoke, CUSTOM:fastDust*2, CUSTOM:pop*5",
+    "version": "1.13"
+  },
+  {
+    "code": "movementEffectReverse:",
+    "intro": "Value Type: effect\n描述: 倒车时的移动效果。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "movementEffectRate:",
+    "intro": "Value Type: float\n描述: 移动效果的产生速率。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "movementEffectReverseFlipEffects:",
+    "intro": "Value Type: bool\n描述: 产生效果时如同单位旋转了 180 度倒车。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "repairEffect:",
+    "intro": "Value Type: effect ref\n描述: 自定义移动效果，可以是任何效果。替换建造者的默认效果。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "repairEffectAtTarget:",
+    "intro": "Value Type: effect\n描述: 在目标处产生的修复效果。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "repairEffectRate:",
+    "intro": "Value Type: int\n描述: 默认为 5。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "reclaimEffect:",
+    "intro": "Value Type: effect\n描述: 回收效果。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "reclaimEffectAtTarget:",
+    "intro": "Value Type: effect\n描述: 在目标处产生的回收效果。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "reclaimEffectRate:",
+    "intro": "Value Type: int\n描述: 回收效果速率。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "rotate_with_direction:",
+    "intro": "Value Type: bool\n描述: 默认为 true。若为 false，将单位身体图像锁定在 0 度。常与 animation_direction_* 一起使用。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "animation_direction_units:",
+    "intro": "Value Type: float\n描述: 45 表示 8 方向动画，90 表示 4 方向动画。与 rotate_with_direction:false 一起使用。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "animation_direction_strideX:",
+    "intro": "Value Type: int\n描述: 方向改变时动画帧的 X 偏移量。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "animation_direction_strideY:",
+    "intro": "Value Type: int\n描述: 方向改变时动画帧的 Y 偏移量。与 frame_height 一起使用。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "animation_direction_starting:",
+    "intro": "Value Type: float\n描述: 第一帧的方向。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "disableLowHpFire:",
+    "intro": "Value Type: bool\n描述: 禁用低生命值时的火焰效果。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "disableLowHpSmoke:",
+    "intro": "Value Type: bool\n描述: 禁用低生命值时的烟雾效果。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "showTransportBar:",
+    "intro": "Value Type: bool\n描述: 是否显示运输栏。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "showHealthBar:",
+    "intro": "Value Type: bool\n描述: 是否显示生命条。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "showEnergyBar:",
+    "intro": "Value Type: bool\n描述: 是否显示能量条。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "showShieldBar:",
+    "intro": "Value Type: bool\n描述: 是否显示护盾条。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "showQueueBar:",
+    "intro": "Value Type: bool\n描述: 是否显示队列条。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "showShotDelayBar:",
+    "intro": "Value Type: bool\n描述: 是否显示射击延迟条。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "showSelectionIndicator:",
+    "intro": "Value Type: bool\n描述: 若为 true，显示选中圆圈/方框。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "animation_TYPE_start:",
+    "intro": "Value Type: int\n描述: TYPE 可设为：attack、moving、idle。请改用 [animation] 段落以获得更多控制。",
+    "example": "animation_moving_start: 0",
+    "version": "depr. 1.13"
+  },
+  {
+    "code": "animation_TYPE_end:",
+    "intro": "Value Type: int\n描述: 结束帧，必须大于 start。",
+    "example": "animation_moving_end: 3",
+    "version": "depr. 1.13"
+  },
+  {
+    "code": "animation_TYPE_scale_start:",
+    "intro": "Value Type: float\n描述: 缩放单位图像。默认为 1。对生物单位或呼吸效果有用。",
+    "example": "",
+    "version": "depr. 1.13"
+  },
+  {
+    "code": "animation_TYPE_scale_end:",
+    "intro": "Value Type: float\n描述: 缩放单位图像。默认为 1。对生物单位或呼吸效果有用。",
+    "example": "",
+    "version": "depr. 1.13"
+  },
+  {
+    "code": "animation_TYPE_speed:",
+    "intro": "Value Type: float\n描述: 动画每帧的延迟。值越大动画越慢。",
+    "example": "",
+    "version": "depr. 1.13"
+  },
+  {
+    "code": "animation_TYPE_pingPong:",
+    "intro": "Value Type: bool\n描述: 在重复播放前反向播放动画。与 scale_start/scale_end 一起使用有用。",
+    "example": "",
+    "version": "depr. 1.13"
+  }
+]

@@ -1,0 +1,818 @@
+[
+  {
+    "code": "true",
+    "intro": "Value Type: bool\n描述: 返回真。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "false",
+    "intro": "Value Type: bool\n描述: 返回假。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "if",
+    "intro": "Value Type: conditional\n描述: 所有逻辑布尔值以 if 开头，除非仅使用布尔值（true/false）。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "and",
+    "intro": "Value Type: connector\n描述: 添加另一个条件到列表。所有由 and 链接的条件必须满足才能返回 true。",
+    "example": "if self.isInWater and self.energy>=1",
+    "version": ""
+  },
+  {
+    "code": "or",
+    "intro": "Value Type: connector\n描述: 添加另一个条件到列表。只需满足其中一个条件即可返回 true。",
+    "example": "if (self.energy>=2 or self.ammo>=1) and self.isFlying",
+    "version": ""
+  },
+  {
+    "code": "not",
+    "intro": "Value Type: conditional\n描述: 反转下一个逻辑布尔值的含义。用于设置否定条件。",
+    "example": "if not self.isOverLiquid (the opposite of being over liquid)",
+    "version": ""
+  },
+  {
+    "code": "<",
+    "intro": "Value Type: operator\n描述: 如果左边的数字较小，返回 true。表示小于下一个值。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": ">",
+    "intro": "Value Type: operator\n描述: 如果右边的数字较小，返回 true。表示大于下一个值。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "<=",
+    "intro": "Value Type: operator\n描述: 如果左边的数字小于或等于，返回 true。表示小于或等于下一个值。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": ">=",
+    "intro": "Value Type: operator\n描述: 如果右边的数字小于或等于，返回 true。表示大于或等于下一个值。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "==",
+    "intro": "Value Type: operator\n描述: 如果两边的数字、单位、字符串、布尔值相同，返回 true。表示等于下一个值。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "!=",
+    "intro": "Value Type: operator\n描述: 如果两边的数字、单位、字符串、布尔值不同，返回 true。表示不等于下一个值。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "+",
+    "intro": "Value Type: operator\n描述: 将两个数字相加或连接两个字符串。表示加到此值。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "-",
+    "intro": "Value Type: operator\n描述: 两个数字相减。表示从此值减去。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "/",
+    "intro": "Value Type: operator\n描述: 两个数字相除。表示两个值的除法。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "*",
+    "intro": "Value Type: operator\n描述: 两个数字相乘。表示两个值的乘法。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "%",
+    "intro": "Value Type: operator\n描述: 两个数字相除并返回余数。表示一个值的百分比。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "self.isUnderwater()",
+    "intro": "Value Type: bool\n描述: 单位是否在水下。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isAtGroundHeight()",
+    "intro": "Value Type: bool\n描述: 单位是否在地面高度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isFlying()",
+    "intro": "Value Type: bool\n描述: 单位是否在飞行。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isMoving()",
+    "intro": "Value Type: bool\n描述: 单位是否在移动。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isReversing()",
+    "intro": "Value Type: bool\n描述: 单位是否在倒车。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "self.isAtTopSpeed()",
+    "intro": "Value Type: bool\n描述: 单位是否达到最高速度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isInWater()",
+    "intro": "Value Type: bool\n描述: 单位是否接触水面。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isOverwater()",
+    "intro": "Value Type: bool\n描述: 单位是否接触或位于水面上方。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isOverLiquid()",
+    "intro": "Value Type: bool\n描述: 单位是否在液体上方。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isOverClift()",
+    "intro": "Value Type: bool\n描述: 单位是否在悬崖上方。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isOverPassableTile()",
+    "intro": "Value Type: bool (parameters: type)\n描述: 单位是否在可通过的瓦片上。类型值：NONE, LAND, BUILDING, HOVER, OVER_CLIFF, OVER_CLIFF_WATER, AIR, WATER",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isOverOpenLand()",
+    "intro": "Value Type: bool\n描述: self.isOverPassableTile(type='LAND') 的快捷方式。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.hasResources()",
+    "intro": "Value Type: bool (parameters: resource list)\n描述: 检查单位是否拥有这些资源。可以同时检查多个资源。",
+    "example": "self.hasResources(credits=1, energy=2)",
+    "version": "1.13.3"
+  },
+  {
+    "code": "self.resource()",
+    "intro": "Value Type: float / bool (parameters: type, greaterThan, lessThan)\n描述: 检查单个资源。1.15 无参数时返回 float。",
+    "example": "self.resource(type=gold) >= 10",
+    "version": ""
+  },
+  {
+    "code": "self.resource.RESOURCE_TYPE",
+    "intro": "Value Type: float\n描述: self.resource(type='RESOURCE_TYPE') 的快捷方式。",
+    "example": "addResourcesWithLogic: hp += self.resource.gold",
+    "version": "1.15"
+  },
+  {
+    "code": "self.isResourceLargerThan()",
+    "intro": "Value Type: bool (parameters: source=x, compareTarget=x, byMoreThan=x, multiplyTargetBy=x)\n描述: 比较两个资源，注意 multiplyTargetBy 不会产生任何更改。",
+    "example": "",
+    "version": "1.14?"
+  },
+  {
+    "code": "self.hp()",
+    "intro": "Value Type: float / bool (parameters: greaterThan, lessThan, empty, full)\n描述: 单位生命值。1.15 无参数时返回 float。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.maxHp()",
+    "intro": "Value Type: float / bool (parameters: greaterThan, lessThan, empty, full)\n描述: 单位最大生命值。1.15 无参数时返回 float。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "self.height()",
+    "intro": "Value Type: float / bool (parameters: greaterThan, lessThan, empty, full)\n描述: 单位高度。1.15 无参数时返回 float。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.ammo()",
+    "intro": "Value Type: int / bool (parameters: greaterThan, lessThan, empty, full)\n描述: 单位弹药量。无参数返回 int，有参数返回 bool。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isAmmoEmpty()",
+    "intro": "Value Type: bool\n描述: self.ammo(empty=true) 的快捷方式。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.ammoIncludingQueued()",
+    "intro": "Value Type: int / bool (parameters: greaterThan, lessThan, empty, full)\n描述: 包括仍在队列中的动作的弹药。",
+    "example": "if self.ammoIncludingQueued(lessThan=12)",
+    "version": ""
+  },
+  {
+    "code": "self.energy()",
+    "intro": "Value Type: float / bool (parameters: greaterThan, lessThan, empty, full)\n描述: 单位能量。1.15 无参数时返回 float。",
+    "example": "if self.energy() > 50",
+    "version": ""
+  },
+  {
+    "code": "self.energyIncludingQueued()",
+    "intro": "Value Type: float / bool (parameters: greaterThan, lessThan, empty, full)\n描述: 包括仍在队列中的动作的能量。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isEnergyFull()",
+    "intro": "Value Type: bool\n描述: self.energy(full=true) 的快捷方式。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isEnergyEmpty()",
+    "intro": "Value Type: bool\n描述: self.energy(empty=true) 的快捷方式。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.maxEnergy()",
+    "intro": "Value Type: float / bool\n描述: 返回最大能量（默认为 core 中的 energyMax 值，动态调整 setUnitStats 所做的更改）。",
+    "example": "",
+    "version": "1.15p10"
+  },
+  {
+    "code": "self.isEnergyRecharging()",
+    "intro": "Value Type: bool\n描述: 检查单位能量是否在被动充电。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.shield()",
+    "intro": "Value Type: float / bool (parameters: greaterThan, lessThan, empty, full)\n描述: 单位护盾值。1.15 无参数时返回 float。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.maxShield()",
+    "intro": "Value Type: float / bool\n描述: 返回最大护盾值（默认为 core 中的 maxShield，但动态调整 setUnitStats 的更改）。",
+    "example": "",
+    "version": "1.15p10"
+  },
+  {
+    "code": "self.kills()",
+    "intro": "Value Type: int / bool (parameters: greaterThan, lessThan)\n描述: 单位击杀数。1.15 无参数时返回 int。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.queueSize()",
+    "intro": "Value Type: int / bool (parameters: greaterThan, lessThan, full, empty, equalTo)\n描述: 队列大小。1.15 无参数时返回 float。1.15p9 添加新参数：withActionTag=\"#\"。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "self.teamId()",
+    "intro": "Value Type: int\n描述: 返回单位或标记的队伍 ID。从 0 开始（-1 表示中立队伍）。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "self.teamName()",
+    "intro": "Value Type: string\n描述: 返回联盟队伍名称。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.playerName()",
+    "intro": "Value Type: string\n描述: 返回玩家名称。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.x()",
+    "intro": "Value Type: float\n描述: 返回单位的 X 坐标。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.y()",
+    "intro": "Value Type: float\n描述: 返回单位的 Y 坐标。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.z()",
+    "intro": "Value Type: float\n描述: 返回单位的 Z 坐标（高度）。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.dir()",
+    "intro": "Value Type: float\n描述: 返回单位的方向。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.priceCredits()",
+    "intro": "Value Type: int\n描述: 返回单位的价格。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.speed()",
+    "intro": "Value Type: float\n描述: 返回单位的当前速度。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "self.builtAmount()",
+    "intro": "Value Type: float\n描述: 返回单位的建造进度值。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.completed()",
+    "intro": "Value Type: bool\n描述: self.builtAmount() == 1 的快捷方式。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.maxMoveSpeed()",
+    "intro": "Value Type: float\n描述: 返回单位的最大速度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.hasFlag()",
+    "intro": "Value Type: bool (parameters: id=0-31)\n描述: 为模组保存到单位的布尔标志。使用动作中的 addResources 更改此值。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.tags()",
+    "intro": "Value Type: bool (parameters: includes)\n描述: 检查单位是否包含指定标签。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.globalTeamTags()",
+    "intro": "Value Type: bool (parameters: includes)\n描述: 检查全局队伍标签。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "self.transportingCount()",
+    "intro": "Value Type: int (parameters: greaterThan, lessThan, empty)\n描述: 运输单位数量。1.15 无参数时返回 int。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.numberOfAttachedUnits()",
+    "intro": "Value Type: int / bool (parameters: withTag, greaterThan, lessThan)\n描述: 附件单位数量。1.15 无参数时返回 int。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isAttacking()",
+    "intro": "Value Type: bool\n描述: 单位是否在攻击。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.hasActiveWaypoint()",
+    "intro": "Value Type: bool (parameters: type=WAYPOINT_TYPE)\n描述: 是否有活动路径点。",
+    "example": "self.hasActiveWaypoint(type='move')",
+    "version": ""
+  },
+  {
+    "code": "self.numberOfQueuedWaypoints()",
+    "intro": "Value Type: int / bool (parameters: type=WAYPOINT_TYPE)\n描述: 队列中的路径点数量。",
+    "example": "self.numberOfQueuedWaypoints(type='attackMove') >= 2",
+    "version": "1.15"
+  },
+  {
+    "code": "self.transportingUnitWithTags()",
+    "intro": "Value Type: bool (parameters: includes)\n描述: 运输单位是否带有这些标签。",
+    "example": "self.transportingUnitWithTags(includes='human')",
+    "version": ""
+  },
+  {
+    "code": "self.hasParent()",
+    "intro": "Value Type: bool (parameters: [withTag=x])\n描述: 是否有父级（附件或运输）。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.hasTakenDamage()",
+    "intro": "Value Type: float / bool (parameters: withinSeconds=X, laterThanSeconds=X)\n描述: 是否受到伤害。1.15 无参数时返回 float 秒数。",
+    "example": "self.hasTakenDamage(withinSeconds=1)",
+    "version": ""
+  },
+  {
+    "code": "self.timeAlive()",
+    "intro": "Value Type: float / bool (parameters: withinSeconds=X, laterThanSeconds=X)\n描述: 存活时间。1.15 无参数时返回 float 秒数。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.lastConverted()",
+    "intro": "Value Type: float / bool (parameters: withinSeconds=X, laterThanSeconds=X)\n描述: 最后转换时间。1.15 无参数时返回 float 秒数。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.customTimer()",
+    "intro": "Value Type: float / bool (parameters: withinSeconds=X, laterThanSeconds=X)\n描述: 自定义计时器。1.15 无参数时返回 float 秒数。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isOnNeutralTeam()",
+    "intro": "Value Type: bool\n描述: 单位是否在中立队伍。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.numberOfUnitsInTeam()",
+    "intro": "Value Type: int / bool (parameters: withTag, greaterThan, lessThan, withinRange, incompleteBuildings, factoryQueue)\n描述: 队伍中单位数量。1.15 无参数时返回 int。",
+    "example": "numberOfUnitsInTeam(withTag='techUnlockBuilding', greaterThan=0)",
+    "version": ""
+  },
+  {
+    "code": "self.numberOfUnitsInAllyTeam()",
+    "intro": "Value Type: int / bool\n描述: 盟友队伍中单位数量。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.numberOfUnitsInAllyNotOwnTeam()",
+    "intro": "Value Type: int / bool (parameters: withTag, greaterThan, lessThan, withinRange, incompleteBuildings, factoryQueue)\n描述: 非自己的盟友队伍中单位数量。1.15 无参数时返回 int。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "self.numberOfUnitsInEnemyTeam()",
+    "intro": "Value Type: int / bool (parameters: withTag, greaterThan, lessThan, withinRange, incompleteBuildings, factoryQueue)\n描述: 敌方队伍中单位数量。1.15 无参数时返回 int。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "numberOfUnitsInNeutralTeam()",
+    "intro": "Value Type: int / bool (parameters: withTag, greaterThan, lessThan, withinRange, incompleteBuildings, factoryQueue)\n描述: 中立队伍中单位数量。1.15 无参数时返回 int。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "numberOfUnitsInAggressiveTeam()",
+    "intro": "Value Type: int / bool (parameters: withTag, greaterThan, lessThan, withinRange, incompleteBuildings, factoryQueue)\n描述: 特殊“对所有人敌对”队伍中的单位数量。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "numberOfUnitsInAllTeams()",
+    "intro": "Value Type: int / bool (parameters: withTag, greaterThan, lessThan, withinRange, incompleteBuildings, factoryQueue)\n描述: 所有队伍中的单位数量。1.15 无参数时返回 int。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "self.hasUnitInTeam()",
+    "intro": "Value Type: bool (parameters: withTag, withinRange, incompleteBuildings, factoryQueue)\n描述: numberOfUnitsInTeam 的别名。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "self.noUnitInTeam()",
+    "intro": "Value Type: bool (parameters: withTag, withinRange, incompleteBuildings, factoryQueue)\n描述: numberOfUnitsInTeam 的别名（检查没有单位）。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.isControlledByAI()",
+    "intro": "Value Type: bool\n描述: 单位是否由 AI 控制。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.readUnitMemory()",
+    "intro": "Value Type: any type (parameters: name, type, [default])\n描述: 读取单位内存。",
+    "example": "if parent.readUnitMemory('boostTarget', type='unit') == self",
+    "version": "1.15"
+  },
+  {
+    "code": "thisActionTarget",
+    "intro": "Value Type: unit / marker\n描述: 当前目标或位置。",
+    "example": "fireTurretXAtGround: mainGun (thisActionTarget==Marker with ground location)",
+    "version": "1.15"
+  },
+  {
+    "code": "thisActionIndex",
+    "intro": "Value Type: int\n描述: 与 alsoTriggerActionRepeat 和 takeResources_triggerActionForEach 一起使用。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "eventSource",
+    "intro": "Value Type: unit / marker\n描述: 来自 autoTriggerOnEvent 的当前触发器，否则为 null。",
+    "example": "autoTriggerOnEvent: tookDamage (eventSource==Unit that caused damage)",
+    "version": ""
+  },
+  {
+    "code": "attachment()",
+    "intro": "Value Type: unit (parameters: [slot], [withTag])\n描述: 返回附件单位。",
+    "example": "self.attachment(withTag='x').lastDamagedBy.getAsMarker()",
+    "version": ""
+  },
+  {
+    "code": "transporting()",
+    "intro": "Value Type: unit (parameters: [slot])\n描述: 返回运输的单位。",
+    "example": "if self.transporting(slot=0).hasResources(gold=100)",
+    "version": ""
+  },
+  {
+    "code": "attacking",
+    "intro": "Value Type: unit\n描述: 当前攻击的目标，可能不是当前的路径点目标。",
+    "example": "if attacking.tags(includes='bug') and attacking.hp < 20",
+    "version": ""
+  },
+  {
+    "code": "lastDamagedBy",
+    "intro": "Value Type: unit\n描述: 最后攻击此单位的单位。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "parent",
+    "intro": "Value Type: unit\n描述: 运输工具或附件父级。",
+    "example": "autoTrigger: if parent.energy > 100",
+    "version": ""
+  },
+  {
+    "code": "activeWaypointTarget",
+    "intro": "Value Type: unit\n描述: 当前活动路径点目标。",
+    "example": "if distanceBetween(self, activeWaypointTarget) < 100",
+    "version": ""
+  },
+  {
+    "code": "customTarget1",
+    "intro": "Value Type: unit\n描述: 自定义内存，默认为创建此单位的单位。",
+    "example": "if parent.customTarget1 == self",
+    "version": ""
+  },
+  {
+    "code": "customTarget2",
+    "intro": "Value Type: unit\n描述: 自定义内存，默认为 null。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "nearestUnit()",
+    "intro": "Value Type: unit (parameters: withinRange, withTag, relation)\n描述: 搜索最近的单位（不推荐在 autoTrigger 检查中使用，影响性能）。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "globalSearchForFirstUnit()",
+    "intro": "Value Type: unit (parameters: withTag, relation)\n描述: 返回找到的第一个（最旧的）匹配过滤器的单位。速度慢，避免在 autoTrigger 检查中使用。",
+    "example": "self.globalSearchForFirstUnit(withTag='gameController', relation='neutral')",
+    "version": ""
+  },
+  {
+    "code": "nullUnit",
+    "intro": "Value Type: unit\n描述: 返回一个空单位引用，用于比较。",
+    "example": "if self.parent == nullUnit",
+    "version": ""
+  },
+  {
+    "code": "getAsMarker()",
+    "intro": "Value Type: marker\n描述: 在单位当前位置创建一个临时标记。标记创建非常快，不再需要时自动移除。",
+    "example": "lastDamagedBy.getAsMarker()",
+    "version": "1.15"
+  },
+  {
+    "code": "getOffsetAbsolute()",
+    "intro": "Value Type: marker (parameters: [x], [y], [height])\n描述: 返回具有绝对偏移的标记（-y 为北，+x 为东）。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "getOffsetRelative()",
+    "intro": "Value Type: marker (parameters: [x], [y], [height], [dirOffset])\n描述: 返回具有相对偏移的标记（y+ 为前方）。",
+    "example": "self.getOffsetRelative(y=100).nearestUnit(withinRange=70, withTag='mouse') != null",
+    "version": ""
+  },
+  {
+    "code": "eventSource (marker)",
+    "intro": "Value Type: event\n描述: 返回 autoTriggerOnEvent 中的事件，如果在有效的 autoTriggerOnEvent 之外使用则为 null。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "readUnitMemory()",
+    "intro": "Value Type: any type (parameters: unit reference, name, type, [index])\n描述: 从单位引用读取内存。",
+    "example": "self.readUnitMemory('ammoType', type='string'), parent.readUnitMemory('attachmentArray', type='unit[]', index=5)",
+    "version": ""
+  },
+  {
+    "code": "memory.NAME",
+    "intro": "Value Type: any type\n描述: 读取当前 self 的 defineUnitMemory 类型的快捷方式。不能用于其他单位，请使用 readUnitMemory。不要用 self. 调用。",
+    "example": "autoTrigger: if memory.experience > 100",
+    "version": "1.15"
+  },
+  {
+    "code": "distance()",
+    "intro": "Value Type: float (parameters: x1, y1, x2, y2)\n描述: 返回两点之间的距离。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "distanceSquared()",
+    "intro": "Value Type: float (parameters: x1, y1, x2, y2)\n描述: 返回两点之间距离的平方，比 distance 稍快。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "distanceBetween()",
+    "intro": "Value Type: float (parameters: unit1, unit2)\n描述: 返回两个单位或标记之间的距离。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "distanceBetweenSquared()",
+    "intro": "Value Type: float (parameters: unit1, unit2)\n描述: 返回两个单位之间距离的平方，比 distanceBetween 稍快。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "game.nukesEnabled()",
+    "intro": "Value Type: bool\n描述: 如果在此游戏设置中启用了核弹，返回 true。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "int()",
+    "intro": "Value Type: int (parameter: number)\n描述: 移除数字的小数位。",
+    "example": "int(4.2) == 4",
+    "version": ""
+  },
+  {
+    "code": "select()",
+    "intro": "Value Type: any (parameters: bool, textA, textB)\n描述: 如果 bool 为 true，返回 textA，否则返回 textB。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "debug()",
+    "intro": "Value Type: string (parameter: logicBoolean)\n描述: 返回帮助解释当前结果原因的文本字符串。可以查看嵌套逻辑、比较和运算符。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "str()",
+    "intro": "Value Type: string (parameter: x)\n描述: 将数字、单位或布尔值转换为字符串。",
+    "example": "str(self.energy)+'x' == '100x'",
+    "version": ""
+  },
+  {
+    "code": "substring()",
+    "intro": "Value Type: string (parameters: text, start, end)\n描述: 从指示的开始和结束部分提取字符串的一部分。",
+    "example": "substring('hello',0,2) == 'he'",
+    "version": ""
+  },
+  {
+    "code": "length()",
+    "intro": "Value Type: int (parameter: string)\n描述: 返回字符串长度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "squareRoot()",
+    "intro": "Value Type: float (parameter: num)\n描述: 返回数字的平方根。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "min()",
+    "intro": "Value Type: float (parameters: num1, num2)\n描述: 返回最小的数字。",
+    "example": "damage = min(self.hp, self.energy)",
+    "version": ""
+  },
+  {
+    "code": "max()",
+    "intro": "Value Type: float (parameters: num1, num2)\n描述: 返回最大的数字。",
+    "example": "max(5, 10) == 10",
+    "version": ""
+  },
+  {
+    "code": "createMarker()",
+    "intro": "Value Type: marker (parameters: x, y, [height], [teamId], [dir])\n描述: 创建一个标记。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "eventData()",
+    "intro": "Value Type: any type (parameters: name, type, [default])\n描述: 显示来自某个单位的指定消息中的数据。仅在 autoTriggerOnEvent:newMessage 事件中使用。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "sin()",
+    "intro": "Value Type: float (parameter: angle)\n描述: 返回指定角度的正弦值。",
+    "example": "sin(10) = 0.173",
+    "version": ""
+  },
+  {
+    "code": "cos()",
+    "intro": "Value Type: float (parameter: angle)\n描述: 返回指定角度的余弦值。",
+    "example": "cos(60) = 0.5",
+    "version": ""
+  },
+  {
+    "code": "rnd()",
+    "intro": "Value Type: float (parameters: min, max)\n描述: 在最小和最大输入之间产生一个随机数。",
+    "example": "rnd(666, 888)",
+    "version": ""
+  },
+  {
+    "code": "lowercase()",
+    "intro": "Value Type: string (parameter: string)\n描述: 将字符串中的所有字母转换为小写。",
+    "example": "lowercase(\"Spaghetti Macaroni Lasagna\") -> \"spaghetti macaroni lasagna\"",
+    "version": ""
+  },
+  {
+    "code": "uppercase()",
+    "intro": "Value Type: string (parameter: string)\n描述: 将字符串中的所有字母转换为大写。",
+    "example": "uppercase(\"fish dish wish\") -> \"FISH DISH WISH\"",
+    "version": ""
+  },
+  {
+    "code": "direction()",
+    "intro": "Value Type: float (parameters: x1, y1, x2, y2)\n描述: 返回 x1/y1 和 x2/y2 之间的相对角度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "directionBetween()",
+    "intro": "Value Type: float (parameters: unit1, unit2)\n描述: 返回单位/标记 A 和单位/标记 B 之间的相对角度。",
+    "example": "directionBetween(self, lastDamagedBy)",
+    "version": ""
+  },
+  {
+    "code": "self.isInMap()",
+    "intro": "Value Type: bool\n描述: 如果单位（或标记）在游戏区域内，返回 true；如果在边界外，返回 false。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "game.mapWidth()",
+    "intro": "Value Type: float\n描述: 返回地图的宽度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "game.mapHeight()",
+    "intro": "Value Type: float\n描述: 返回地图的高度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "self.teamDefeatedTech()",
+    "intro": "Value Type: bool\n描述: 队伍是否被技术击败。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "self.teamWipedOut()",
+    "intro": "Value Type: bool\n描述: 如果队伍被击败并全灭，返回 true。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "self.teamVictory()",
+    "intro": "Value Type: bool\n描述: 如果队伍胜利，返回 true。",
+    "example": "",
+    "version": "1.15p9"
+  }
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "code": "onActions:",
+    "intro": "Value Type: enum\n描述: 触发动画的动作类型：move, attack, idle, underConstruction, underConstructionWithLinkedBuiltTime, queuedUnits",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "onActionsQueuedUnitPlayAt:",
+    "intro": "Value Type: float\n描述: 用于 onAction: queuedUnits。队列需要达到的数量才能开始，设置在 0-1 之间。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "blendIn:",
+    "intro": "Value Type: time\n描述: 在此时间内与上一个动画混合。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "blendOut:",
+    "intro": "Value Type: time\n描述: 在此时间内与下一个动画混合。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "pingPong:",
+    "intro": "Value Type: bool\n描述: 动画结束后反向播放。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "KeyframeTimeScale:",
+    "intro": "Value Type: float\n描述: 缩放所有关键帧时间，用于快速/慢速动画而不更改所有内容。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "arm#_[time]:",
+    "intro": "Value Type: keyframe\n描述: 在指定时间添加关键帧。多次使用创建动画。",
+    "example": "arm1_5s: {x: 5, dir: 90 }",
+    "version": "1.13"
+  },
+  {
+    "code": "leg#_[time]:",
+    "intro": "Value Type: keyframe\n描述: 在指定时间添加关键帧。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "body_[time]:",
+    "intro": "Value Type: keyframe\n描述: 为身体添加关键帧。仅允许 frame 和 scale。",
+    "example": "body_4s: {frame: 4, scale: 0.5}",
+    "version": "1.13"
+  },
+  {
+    "code": "effect_[time]:",
+    "intro": "Value Type: keyframe\n描述: 播放动画时生成效果。",
+    "example": "effect_2s: {name:CUSTOM|myExplode,  x: 0,y: 5}",
+    "version": "1.14"
+  },
+  {
+    "code": "direction_units:",
+    "intro": "Value Type: float\n描述: 覆盖 [graphics]animation_direction_units 在此动画播放期间的值。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "direction_strideX:",
+    "intro": "Value Type: int\n描述: 覆盖 [graphics]animation_direction_strideX。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "direction_strideY:",
+    "intro": "Value Type: int\n描述: 覆盖 [graphics]animation_direction_strideY。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "direction_starting:",
+    "intro": "Value Type: float\n描述: 覆盖 [graphics]animation_direction_starting。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "start:",
+    "intro": "Value Type: int\n描述: 已弃用。起始图像帧。",
+    "example": "",
+    "version": "depr. 1.13"
+  },
+  {
+    "code": "end:",
+    "intro": "Value Type: int\n描述: 已弃用。结束图像帧。",
+    "example": "",
+    "version": "depr. 1.13"
+  },
+  {
+    "code": "scale_start:",
+    "intro": "Value Type: float\n描述: 已弃用。起始缩放。请改用 body 关键帧。",
+    "example": "",
+    "version": "depr. 1.13"
+  },
+  {
+    "code": "scale_end:",
+    "intro": "Value Type: float\n描述: 已弃用。结束缩放。请改用 body 关键帧。",
+    "example": "",
+    "version": "depr. 1.13"
+  },
+  {
+    "code": "speed:",
+    "intro": "Value Type: float\n描述: 已弃用。速度，值越小越快。仅影响 start, end, scale_start, scale_end。",
+    "example": "",
+    "version": "depr. 1.13"
+  }
+]

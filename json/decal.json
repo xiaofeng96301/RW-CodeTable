@@ -1,0 +1,302 @@
+[
+  {
+    "code": "layer:",
+    "intro": "Value Type: enum\n描述: 设置贴花的图层，值从低到高：shadow, beforeBody, afterBody, onTop, beforeUI, inactive",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "order:",
+    "intro": "Value Type: float\n描述: 默认为 0，如果 2 个或更多贴花使用相同的图层类型，则设置更离散的分层。否则将使用 INI 文件中的顺序。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "onlyWhenSelectedByOwnPlayer:",
+    "intro": "Value Type: bool\n描述: 默认为 false，仅当拥有者玩家点击单位时显示贴花。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "onlyWhenSelectedByEnemyPlayer:",
+    "intro": "Value Type: bool\n描述: 仅当敌方玩家选中时显示。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "onlyWhenSelectedByAllyNotOwnPlayer:",
+    "intro": "Value Type: bool\n描述: 仅当盟友（非自己）选中时显示。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "onlyWhenSelectedByAnyPlayer:",
+    "intro": "Value Type: bool\n描述: 任何玩家选中时显示。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "includeParentsSelection:",
+    "intro": "Value Type: bool\n描述: 若为 true，onlyWhenSelectedBy* 也会检查父级的选择。对附件有用。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "onlyPlayersWithUnitControl:",
+    "intro": "Value Type: bool\n描述: 如果选中它的玩家拥有控制权（包括多人游戏中的共享单位），则绘制贴花。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "onlyTeam:",
+    "intro": "Value Type: TeamRelation\n描述: 如果值与以下队伍匹配，则绘制贴花：own, notOwn, ally, allyNotOwn, enemy, any",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "onlyWithZoomLevelOrMore:",
+    "intro": "Value Type: float\n描述: 仅当缩放级别达到或超过此值时绘制贴花，对优化 3D 单位非常有用。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "onlyWhileActive:",
+    "intro": "Value Type: bool\n描述: 仅当单位完全建成时绘制贴花。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "onlyWhileAlive:",
+    "intro": "Value Type: bool\n描述: 仅当单位存活时绘制贴花（如果 beforeUI 图层默认 true，否则默认 false）。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "onlyInPreview:",
+    "intro": "Value Type: bool\n描述: 仅在侧边栏和建筑放置预览中显示。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "onlyOnNonPreview:",
+    "intro": "Value Type: bool\n描述: 仅在单位本身上绘制贴花，而不是在建筑预览或侧边栏界面中。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "onlyOnBodyFrameOf:",
+    "intro": "Value Type: int\n描述: 仅当身体帧等于此值时绘制贴花。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "isVisible:",
+    "intro": "Value Type: LogicBoolean\n描述: 动态值，在特定条件下绘制贴花。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "imageScale:",
+    "intro": "Value Type: logicNumber\n描述: 动态值，缩放贴花。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "imageScaleX:",
+    "intro": "Value Type: logicNumber\n描述: 动态值，X 轴缩放。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "imageScaleY:",
+    "intro": "Value Type: logicNumber\n描述: 动态值，Y 轴缩放。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "image:",
+    "intro": "Value Type: image\n描述: 用于贴花的单个图像 - 不要与 IMAGE STACK 混淆。",
+    "example": "image: fish.png",
+    "version": "1.15p9"
+  },
+  {
+    "code": "imageStack:",
+    "intro": "Value Type: images\n描述: 一个或多个图像，可带乘数用于堆叠。也可用于使用 MagicaVoxel 切片导出的图像堆栈。",
+    "example": "imageStack: carFloor.png, carBody.png*3, carRoof.png*2, antenna.png*10",
+    "version": "1.15p9"
+  },
+  {
+    "code": "teamColors:",
+    "intro": "Value Type: bool\n描述: 若为 true，自动将队伍颜色重新分配给相应队伍。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "stack_hOffset:",
+    "intro": "Value Type: int\n描述: 设置堆叠中每一层的高度。1 层 = 1 像素。可以是负值。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "stack_frameOffset:",
+    "intro": "Value Type: int\n描述: 对制作 3D 单位有用，在 imageStack 中偏移的帧。在精灵表单中通常使用值 1。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "stack_drawInReverseOrder:",
+    "intro": "Value Type: bool\n描述: 以相反顺序渲染堆叠 - 最后一帧在底部，第一帧在顶部。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "stack_indexStart:",
+    "intro": "Value Type: logicNumber\n描述: 开始绘制图像堆叠中图像的偏移量。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "stack_indexCount:",
+    "intro": "Value Type: logicNumber\n描述: 要绘制的图像堆叠中的图像数量。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "total_frames:",
+    "intro": "Value Type: int\n描述: 设置使用精灵表单的 imageStack 中的图像帧数。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "frame_width:",
+    "intro": "Value Type: int\n描述: 帧宽度。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "frame_height:",
+    "intro": "Value Type: int\n描述: 帧高度。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "frame:",
+    "intro": "Value Type: logicNumber\n描述: 动态值，对动画有用。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "addBodyFrameMultipliedBy:",
+    "intro": "Value Type: int\n描述: 当设置为 1 时，将身体帧号添加到此贴花。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "xOffsetRelative:",
+    "intro": "Value Type: int\n描述: 设置相对于单位的水平偏移。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "yOffsetRelative:",
+    "intro": "Value Type: int\n描述: 设置相对于单位的垂直偏移。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "xOffsetAbsolute:",
+    "intro": "Value Type: logicNumber\n描述: 动态值，绝对 X 偏移。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "yOffsetAbsolute:",
+    "intro": "Value Type: logicNumber\n描述: 动态值，绝对 Y 偏移。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "hOffset:",
+    "intro": "Value Type: int\n描述: 设置整个贴花的高度。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "dirOffset:",
+    "intro": "Value Type: int\n描述: 设置整个贴花的方向。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "pivotOffset:",
+    "intro": "Value Type: int\n描述: 仅影响相对偏移而不旋转图像。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "alwaysStartDirAtZero:",
+    "intro": "Value Type: bool\n描述: 无论单位方向值如何，将贴花保持向北方向，对自定义单位内界面有用。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "image_shadow:",
+    "intro": "Value Type: image\n描述: 设置贴花的阴影。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "shadowOffsetX:",
+    "intro": "Value Type: int\n描述: 阴影 X 偏移。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "shadowOffsetY:",
+    "intro": "Value Type: int\n描述: 阴影 Y 偏移。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "basePosition:",
+    "intro": "Value Type: marker\n描述: 将贴花附加到指定的标记。如果附加到单位本身，使用 \"self\"。",
+    "example": "basePosition: self",
+    "version": "1.15p9"
+  },
+  {
+    "code": "basePositionFromLegEnd:",
+    "intro": "Value Type: leg/arm\n描述: 将贴花附加到指定的腿或臂的末端。",
+    "example": "basePositionFromLeg: leg_3",
+    "version": "1.15p9"
+  },
+  {
+    "code": "basePositionFromTurret:",
+    "intro": "Value Type: turret\n描述: 将贴花附加到指定的炮塔。",
+    "example": "basePositionFromTurret: rocketLauncherBase",
+    "version": "1.15p9"
+  },
+  {
+    "code": "drawLineTo:",
+    "intro": "Value Type: marker ref\n描述: 从单位到指定标记绘制一条线，对自定义路径点有用。",
+    "example": "drawLineTo: attacking.customTarget2",
+    "version": "1.15p9"
+  },
+  {
+    "code": "color:",
+    "intro": "Value Type: color hex\n描述: 设置绘制线的颜色。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "lineWidth:",
+    "intro": "Value Type: float\n描述: 设置绘制线的宽度。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "alpha:",
+    "intro": "Value Type: logicNumber\n描述: 0-1，设置贴花（图像或线）的透明度。",
+    "example": "",
+    "version": "1.15p9"
+  }
+]

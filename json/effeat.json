@@ -1,0 +1,410 @@
+[
+  {
+    "code": "drawType:",
+    "intro": "Value Type: enum\n描述: normal|displacement（位移仅在开启着色器效果时显示）。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "life:",
+    "intro": "Value Type: float\n描述: 默认为 200。效果被移除的时间。尽量设置低以减少开销。",
+    "example": "life: 70",
+    "version": "1.13"
+  },
+  {
+    "code": "lifeRandom:",
+    "intro": "Value Type: float\n描述: 随机偏移生命周期 +/- 此值。",
+    "example": "lifeRandom: 12",
+    "version": "1.14"
+  },
+  {
+    "code": "alsoEmitEffects:",
+    "intro": "Value Type: effect ref\n描述: 创建时生成更多效果，对元效果有用。注意：创建效果上的其他 'alsoEmitEffects' 将被忽略。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "alsoEmitEffectsOnDeath:",
+    "intro": "Value Type: effect ref\n描述: 生命周期结束时生成这些效果。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "ifSpawnFailsEmitEffects:",
+    "intro": "Value Type: effect ref\n描述: 如果此效果的 'spawnChance' 失败，则生成这些效果。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "alsoPlaySound:",
+    "intro": "Value Type: sound ref\n描述: 同时播放声音。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "createWhenOffscreen:",
+    "intro": "Value Type: bool\n描述: 默认为 false。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "createWhenZoomedOut:",
+    "intro": "Value Type: bool\n描述: 默认为 true。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "createWhenOverLiquid:",
+    "intro": "Value Type: bool\n描述: 默认为 true。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "createWhenOverLand:",
+    "intro": "Value Type: bool\n描述: 默认为 true。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "spawnChance:",
+    "intro": "Value Type: float\n描述: 默认为 1。如果小于 1，效果只有随机机会被创建。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "showInFog:",
+    "intro": "Value Type: bool\n描述: 默认为 false。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "delayedStartTimer:",
+    "intro": "Value Type: float\n描述: 在显示和更新效果前隐藏 x 时间。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "liveAfterAttachedDies:",
+    "intro": "Value Type: bool\n描述: 当使用 attachedToUnit 时，默认为 false。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "priority:",
+    "intro": "Value Type: string\n描述: 默认为 high。可选：verylow/low/high/veryhigh/critical。当同时显示过多效果时生效。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "attachedToUnit:",
+    "intro": "Value Type: bool\n描述: 附加到创建此效果的单位或抛射物。将随此对象移动。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "alwayStartDirAtZero:",
+    "intro": "Value Type: bool\n描述: 忽略源/附加单位的方向。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "atmospheric:",
+    "intro": "Value Type: bool\n描述: 应用阻力减慢此效果并添加轻微的风效果。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "physics:",
+    "intro": "Value Type: bool\n描述: 落向地面并弹跳。需要高度才能生效。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "physicsGravity:",
+    "intro": "Value Type: float\n描述: 默认为 1。当 physics: true 时的高度速度加速度。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "xOffsetRelative:",
+    "intro": "Value Type: float\n描述: 偏移起始效果位置。相对于附加的炮塔、抛射物、单位的方向。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "yOffsetRelative:",
+    "intro": "Value Type: float\n描述: 偏移起始效果位置。相对于附加的炮塔、抛射物、单位的方向。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "xOffsetRelativeRandom:",
+    "intro": "Value Type: float\n描述: 随机偏移 +/- 此值。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "yOffsetRelativeRandom:",
+    "intro": "Value Type: float\n描述: 随机偏移 +/- 此值。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "xOffsetAbsolute:",
+    "intro": "Value Type: float\n描述: 偏移起始效果位置，忽略附加的炮塔、抛射物、单位的方向。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "yOffsetAbsolute:",
+    "intro": "Value Type: float\n描述: 偏移起始效果位置，忽略方向。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "xOffsetAbsoluteRandom:",
+    "intro": "Value Type: float\n描述: 随机偏移 +/- 此值。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "yOffsetAbsoluteRandom:",
+    "intro": "Value Type: float\n描述: 随机偏移 +/- 此值。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "xSpeedRelative:",
+    "intro": "Value Type: float\n描述: X 轴相对速度。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "ySpeedRelative:",
+    "intro": "Value Type: float\n描述: Y 轴相对速度。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "xSpeedRelativeRandom:",
+    "intro": "Value Type: float\n描述: 随机变化 -value 到 value。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "ySpeedRelativeRandom:",
+    "intro": "Value Type: float\n描述: 随机变化 -value 到 value。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "xSpeedAbsolute:",
+    "intro": "Value Type: float\n描述: X 轴绝对速度。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "ySpeedAbsolute:",
+    "intro": "Value Type: float\n描述: Y 轴绝对速度。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "xSpeedAbsoluteRandom:",
+    "intro": "Value Type: float\n描述: 随机变化 -value 到 value。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "ySpeedAbsoluteRandom:",
+    "intro": "Value Type: float\n描述: 随机变化 -value 到 value。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "hOffset:",
+    "intro": "Value Type: float\n描述: 相对于源的高度偏移。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "hOffsetRandom:",
+    "intro": "Value Type: float\n描述: 随机变化 -value 到 value。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "hSpeed:",
+    "intro": "Value Type: float\n描述: 高度变化速度。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "hSpeedRandom:",
+    "intro": "Value Type: float\n描述: 随机变化 -value 到 value。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "dirOffset:",
+    "intro": "Value Type: float\n描述: 旋转角度。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "dirOffsetRandom:",
+    "intro": "Value Type: float\n描述: 随机变化 -value 到 value。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "dirSpeed:",
+    "intro": "Value Type: float\n描述: 旋转速度。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "dirSpeedRandom:",
+    "intro": "Value Type: float\n描述: 随机变化 -value 到 value。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "frameIndex:",
+    "intro": "Value Type: int\n描述: 要使用的帧。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "frameIndexRandom:",
+    "intro": "Value Type: \n描述: 随机帧。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "stripIndex:",
+    "intro": "Value Type: int/string\n描述: 要使用的内置图像集。不能与自定义图像一起使用。可选：effects/explode_big/light_50/flame/effects/effects2/projectiles/projectiles2/explode_bits",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "image:",
+    "intro": "Value Type: image\n描述: 要使用的自定义图像文件。不能与 stripIndex 一起使用。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "imageShadow:",
+    "intro": "Value Type: image\n描述: 用于阴影的自定义图像文件。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "scaleTo:",
+    "intro": "Value Type: float\n描述: 默认为 1。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "scaleFrom:",
+    "intro": "Value Type: float\n描述: 默认为 1。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "color:",
+    "intro": "Value Type: color\n描述: 默认为 #FFFFFFFF。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "teamColorRatio:",
+    "intro": "Value Type: 0-1\n描述: 队伍颜色混合比例。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "drawUnderUnits:",
+    "intro": "Value Type: bool\n描述: 是否在单位下方绘制。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "fadeInTime:",
+    "intro": "Value Type: float\n描述: 开始时在此时间内将 alpha 从 0% 淡入到 100%。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "fadeOut:",
+    "intro": "Value Type: bool\n描述: 根据生命周期将 alpha 从 100% 淡出到 0%。设置 alpha 大于 1 以延迟淡出效果。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "alpha:",
+    "intro": "Value Type: float\n描述: 限制在 0-1 之间。可以设置大于 1 以延迟淡出效果。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "shadow:",
+    "intro": "Value Type: bool\n描述: 若为 true，绘制阴影。如果使用 imageShadow，则强制为 true。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "pivotOffset:",
+    "intro": "Value Type: float\n描述: 类似于 dirOffset，但也会旋转相对键和子元素。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "pivotOffsetRandom:",
+    "intro": "Value Type: float\n描述: 随机偏移。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "total_frames:",
+    "intro": "Value Type: int\n描述: 'image' 的总帧数，与 animation 或 frameIndex 一起使用。仅需要自定义图像。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "animateFrameStart:",
+    "intro": "Value Type: int\n描述: 动画起始帧。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "animateFrameEnd:",
+    "intro": "Value Type: int\n描述: 动画结束帧。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "animateFramePingPong:",
+    "intro": "Value Type: int\n描述: 乒乓动画。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "animateFrameSpeed:",
+    "intro": "Value Type: time\n描述: 动画速度。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "animateFrameSpeedRandom:",
+    "intro": "Value Type: time\n描述: 随机速度。",
+    "example": "",
+    "version": "1.13"
+  },
+  {
+    "code": "animateFrameLooping:",
+    "intro": "Value Type: bool\n描述: 默认为 false。若为 false，动画结束时效果被移除。",
+    "example": "",
+    "version": "1.14"
+  }
+]
