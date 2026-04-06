@@ -1,0 +1,27 @@
+[
+    {
+        "code": "touchmove 事件",
+        "intro": "当手指在屏幕上移动时触发，用于实现滑动交互。",
+        "example": "element.addEventListener('touchmove', (e) => {\n  e.preventDefault();\n  console.log(e.touches[0].clientX);\n});"
+    },
+    {
+        "code": "viewport 适配",
+        "intro": "移动端视口meta设置，控制布局宽度与缩放。",
+        "example": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">"
+    },
+    {
+        "code": "CSS 媒体查询",
+        "intro": "根据设备特征（如宽度）应用不同样式，实现响应式设计。",
+        "example": "@media (max-width: 768px) {\n  .container { padding: 10px; }\n}"
+    },
+    {
+        "code": "Web Animations API",
+        "intro": "使用 JavaScript 控制元素动画，比 CSS 更灵活。",
+        "example": "element.animate([{ transform: 'translateX(0px)' }, { transform: 'translateX(100px)' }], { duration: 500 });"
+    },
+    {
+        "code": "移动端 click 延迟",
+        "intro": "移动端300ms延迟解决方案，可使用touch事件或CSS touch-action。",
+        "example": "html { touch-action: manipulation; } /* 移除延迟 */"
+    }
+]

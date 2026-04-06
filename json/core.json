@@ -1,0 +1,1046 @@
+[
+  {
+    "code": "name:",
+    "intro": "Value Type: string\n描述: 定义单位的原始名称，游戏用它作为唯一标识（不在游戏中显示）。",
+    "example": "name: customTank1",
+    "version": ""
+  },
+  {
+    "code": "mass:",
+    "intro": "Value Type: int\n描述: 单位的“重量”，影响与其他单位的碰撞，值越大越难被推动。",
+    "example": "mass: 3000",
+    "version": ""
+  },
+  {
+    "code": "radius:",
+    "intro": "Value Type: int\n描述: 单位周围的圆形区域，用于鼠标点击/触摸选中。",
+    "example": "radius: 20",
+    "version": ""
+  },
+  {
+    "code": "price:",
+    "intro": "Value Type: int / price\n描述: 单位从建造器/建筑中的花费。若不指定资源类型，默认为 credits。",
+    "example": "price: 500, gold=5, stone=10",
+    "version": ""
+  },
+  {
+    "code": "class:",
+    "intro": "Value Type: string\n描述: 预留未来使用，默认必须为 CustomUnitMetadata。",
+    "example": "class: CustomUnitMetadata",
+    "version": ""
+  },
+  {
+    "code": "maxHp:",
+    "intro": "Value Type: int\n描述: 单位的最大生命值（生成时即为此值）。",
+    "example": "maxHp: 200",
+    "version": ""
+  },
+  {
+    "code": "techLevel:",
+    "intro": "Value Type: int\n描述: 定义单位的技术等级，共3级，不同等级在界面中显示不同颜色。",
+    "example": "techLevel: 1",
+    "version": ""
+  },
+  {
+    "code": "buildSpeed:",
+    "intro": "Value Type: float / s\n描述: 建造该单位所需时间（可能与建造器速度相乘）。",
+    "example": "buildSpeed: 3s",
+    "version": ""
+  },
+  {
+    "code": "altNames:",
+    "intro": "Value Type: string(s)\n描述: 逗号分隔的名称列表，优先级低于 name，用于多可选模组。",
+    "example": "altNames: custTank1, customTank1, cTank1",
+    "version": ""
+  },
+  {
+    "code": "strictLevel:",
+    "intro": "Value Type: float\n描述: 默认为0。1 = 键重复时报错。添加到根目录的 all-units.template 可应用于所有单位。",
+    "example": "strictLevel: 1",
+    "version": "1.13.3"
+  },
+  {
+    "code": "isBio:",
+    "intro": "Value Type: bool\n描述: 选择单位是否为生物，影响声音和飞溅效果（除非 hideScorchMark:true）。",
+    "example": "isBio: true",
+    "version": ""
+  },
+  {
+    "code": "isBug:",
+    "intro": "Value Type: bool\n描述: 更改一些死亡默认行为，以及沙盒中的排序。",
+    "example": "isBug: false",
+    "version": ""
+  },
+  {
+    "code": "isBuilder:",
+    "intro": "Value Type: bool\n描述: 如果此单位可以放置建筑，通常需要设为 true。默认值为 [ai]useAsBuilder。",
+    "example": "isBuilder: true",
+    "version": "1.13"
+  },
+  {
+    "code": "streamingCost:",
+    "intro": "Value Type: price\n描述: 类似于 price，但在单位排队或建造期间按时间支付。建造过程中若资源耗尽，建造或队列会暂停。",
+    "example": "streamingCost: gem=420",
+    "version": "1.15"
+  },
+  {
+    "code": "switchPriceWithStreamingCost:",
+    "intro": "Value Type: bool\n描述: 快捷方式：将 streamingCost 设为 price 值并清空 price，添加到 all-units.template 可快速将模组切换为流式资源。",
+    "example": "switchPriceWithStreamingCost: true",
+    "version": "1.15"
+  },
+  {
+    "code": "selfRegenRate:",
+    "intro": "Value Type: float\n描述: 被动自我修复速率。",
+    "example": "selfRegenRate: 0.01",
+    "version": ""
+  },
+  {
+    "code": "maxShield:",
+    "intro": "Value Type: int\n描述: 单位最大护盾值。如果 startShieldAtZero:true，初始护盾可为0。",
+    "example": "maxShield: 500",
+    "version": ""
+  },
+  {
+    "code": "startShieldAtZero:",
+    "intro": "Value Type: bool\n描述: 若为 true，单位生成时护盾值为0。",
+    "example": "startShieldAtZero: true",
+    "version": ""
+  },
+  {
+    "code": "shieldRegen:",
+    "intro": "Value Type: float\n描述: 被动护盾恢复速率。",
+    "example": "shieldRegen: 0.15",
+    "version": ""
+  },
+  {
+    "code": "energyMax:",
+    "intro": "Value Type: float\n描述: 默认为0。可用作炮塔弹药、激光防御和行动的能量。",
+    "example": "energyMax: 1",
+    "version": ""
+  },
+  {
+    "code": "energyRegen:",
+    "intro": "Value Type: float\n描述: 被动能量恢复速率。",
+    "example": "energyRegen: 0.001",
+    "version": ""
+  },
+  {
+    "code": "energyStartingPercentage:",
+    "intro": "Value Type: float\n描述: 单位首次建成时已充能能量的百分比。",
+    "example": "energyStartingPercentage: 0.5",
+    "version": ""
+  },
+  {
+    "code": "energyNeedsToRechargeToFull:",
+    "intro": "Value Type: float\n描述: 若为 true，能量归零后需完全充满才能再次使用武器。",
+    "example": "energyNeedsToRechargeToFull: true",
+    "version": ""
+  },
+  {
+    "code": "energyRegenWhenRecharging:",
+    "intro": "Value Type: float\n描述: 重新充电时的恢复速率。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "armour:",
+    "intro": "Value Type: int\n描述: 每次命中减免的伤害（目前未在任何原版单位中使用）。",
+    "example": "armour: 6",
+    "version": "1.13"
+  },
+  {
+    "code": "armourMinDamageToKeep:",
+    "intro": "Value Type: int\n描述: 受击时保留的最小伤害，默认为1。",
+    "example": "armourMinDamageToKeep: 2",
+    "version": "1.13"
+  },
+  {
+    "code": "borrowResourcesWhileAlive:",
+    "intro": "Value Type: price\n描述: 创建时获取这些资源，移除或销毁时返还。",
+    "example": "borrowResourcesWhileAlive: gold=10",
+    "version": "1.13.3"
+  },
+  {
+    "code": "borrowResourcesWhileBuilt:",
+    "intro": "Value Type: price\n描述: 类似 borrowResourcesWhileAlive，但直到建成后才生效。主要用于建筑（如房屋）添加负资源来影响单位上限等。",
+    "example": "borrowResourcesWhileBuilt: supplyCap = -10",
+    "version": "1.15"
+  },
+  {
+    "code": "generation_resources:",
+    "intro": "Value Type: price\n描述: 单位产生的收入（自定义资源版本）。",
+    "example": "generation_resources: credits=5, gold=20",
+    "version": "1.13.3"
+  },
+  {
+    "code": "generation_active:",
+    "intro": "Value Type: logicBoolean\n描述: 当值为 false 时禁用 generation_resources/credits（逻辑布尔值）。",
+    "example": "generation_active: if not self.hp(lessThan=100)",
+    "version": "1.13.3"
+  },
+  {
+    "code": "generation_credits:",
+    "intro": "Value Type: int\n描述: 单位产生的收入（仅 credits）。",
+    "example": "generation_credits: 2",
+    "version": ""
+  },
+  {
+    "code": "generation_delay:",
+    "intro": "Value Type: int\n描述: generation_resources/credits 的添加频率，默认为40（不建议更改）。",
+    "example": "generation_delay: 40",
+    "version": ""
+  },
+  {
+    "code": "showInEditor:",
+    "intro": "Value Type: bool\n描述: 设为 false 以在沙盒编辑器中隐藏单位（默认为 true）。",
+    "example": "showInEditor: false",
+    "version": ""
+  },
+  {
+    "code": "displayText:",
+    "intro": "Value Type: LocaleString\n描述: 游戏中显示给玩家的单位名称。",
+    "example": "displayText: Custom Tank",
+    "version": ""
+  },
+  {
+    "code": "displayText_{LANG}:",
+    "intro": "Value Type: string\n描述: LANG = ISO 639-1 语言代码，当游戏为此语言时显示该文本。",
+    "example": "displayText_es: Tanque Personalizado",
+    "version": "1.13"
+  },
+  {
+    "code": "displayDescription:",
+    "intro": "Value Type: LocaleString\n描述: 游戏中显示给玩家的单位描述。",
+    "example": "displayDescription: -Fast movement\\n-Light damage",
+    "version": ""
+  },
+  {
+    "code": "displayDescription_{LANG}:",
+    "intro": "Value Type: string\n描述: LANG = ISO 639-1 语言代码，当游戏为此语言时显示该描述。",
+    "example": "displayDescription_es: -Movimiento rápido\\n-Daño ligero",
+    "version": "1.13"
+  },
+  {
+    "code": "displayLocaleKey:",
+    "intro": "Value Type: string\n描述: 单位名称和描述的翻译文件键。",
+    "example": "displayLocaleKey: units.mechArtillery",
+    "version": ""
+  },
+  {
+    "code": "displayRadius:",
+    "intro": "Value Type: int\n描述: 默认为 radius 值。设置单位显示更大或更小的选中圆圈UI。",
+    "example": "displayRadius: 20",
+    "version": ""
+  },
+  {
+    "code": "uiTargetRadius",
+    "intro": "Value Type: int\n描述: 默认为 displayRadius 值。攻击/回收等单位时使用的半径。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "shieldRenderRadius:",
+    "intro": "Value Type: int\n描述: 默认比 radius 稍大。设置单位显示更大或更小的护盾圆圈。",
+    "example": "shieldRenderRadius: 12",
+    "version": ""
+  },
+  {
+    "code": "shieldDisplayOnlyDeflection:",
+    "intro": "Value Type: bool\n描述: 若为 true，仅在偏转射击时显示护盾。",
+    "example": "shieldDisplayOnlyDeflection: true",
+    "version": ""
+  },
+  {
+    "code": "shieldDeflectionDisplayRate:",
+    "intro": "Value Type: float\n描述: 默认为4。值越高，护盾偏转效果消失越快。",
+    "example": "shieldDeflectionDisplayRate: 3",
+    "version": ""
+  },
+  {
+    "code": "showOnMinimap:",
+    "intro": "Value Type: bool\n描述: 默认为 true。若 false 则在小地图上隐藏单位。",
+    "example": "showOnMinimap: false",
+    "version": "1.13.3"
+  },
+  {
+    "code": "showActionsWithMixedSelectionIfOtherUnitsHaveTag:",
+    "intro": "Value Type: bool\n描述: 如果选中的所有单位包含这些标签，则显示合并的动作列表。对转换后的单位很有用。",
+    "example": "showActionsWithMixedSelectionIfOtherUnitsHaveTag: true",
+    "version": "1.13.3"
+  },
+  {
+    "code": "showOnMinimapToEnemies",
+    "intro": "Value Type: bool\n描述: 对隐身单位有用。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "isBuilding:",
+    "intro": "Value Type: bool\n描述: 定义单位是否为建筑。",
+    "example": "isBuilding: true",
+    "version": ""
+  },
+  {
+    "code": "footprint:",
+    "intro": "Value Type: ints\n描述: 左、上、右、下。占据的瓦片，会阻挡单位移动。默认为 0,0,0,0 = 1个中心瓦片。",
+    "example": "footprint: 0,0,1,1",
+    "version": ""
+  },
+  {
+    "code": "constructionFootprint:",
+    "intro": "Value Type: ints\n描述: 放置其他建筑时占用的瓦片。默认为 0,0,0,0 = 1个中心瓦片。",
+    "example": "constructionFootprint: -1,-1,1,3",
+    "version": ""
+  },
+  {
+    "code": "displayFootprint:",
+    "intro": "Value Type: ints\n描述: 左、上、右、下。仅适用于建筑，仅用于GUI。默认为 footprint。",
+    "example": "displayFootprint: 0,0,1,1",
+    "version": ""
+  },
+  {
+    "code": "buildingSelectionOffset:",
+    "intro": "Value Type: int\n描述: 默认为0。在UI中增加或减少所选矩形上的内边距。",
+    "example": "buildingSelectionOffset: 4",
+    "version": ""
+  },
+  {
+    "code": "buildingToFootprintOffsetX:",
+    "intro": "Value Type: float\n描述: 默认为10。在X轴上更改建筑在足迹中的位置。",
+    "example": "buildingToFootprintOffsetX: 4",
+    "version": ""
+  },
+  {
+    "code": "buildingToFootprintOffsetY:",
+    "intro": "Value Type: float\n描述: 默认为10。在Y轴上更改建筑在足迹中的位置。",
+    "example": "buildingToFootprintOffsetY: 6",
+    "version": ""
+  },
+  {
+    "code": "placeOnlyOnResPool:",
+    "intro": "Value Type: bool\n描述: 通常用于提取器，强制建筑建造在资源池上。",
+    "example": "placeOnlyOnResPool: true",
+    "version": ""
+  },
+  {
+    "code": "selfBuildRate:",
+    "intro": "Value Type: float\n描述: 单位在没有建造者放置时自我建造的速率。",
+    "example": "selfBuildRate: 0.0008",
+    "version": ""
+  },
+  {
+    "code": "ignoreInUnitCapCalculation",
+    "intro": "Value Type: bool\n描述: 建筑默认为 true，否则为 false。设为 true 则不计入单位上限。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "copyFrom:",
+    "intro": "Value Type: file(s) (ini)\n描述: 使用另一个ini文件的单位数据作为此单位的默认值，支持多个文件。",
+    "example": "copyFrom: ROOT:defaultTanks.template, tankT1.ini",
+    "version": ""
+  },
+  {
+    "code": "dont_load:",
+    "intro": "Value Type: bool\n描述: 不加载单位，且不报告缺失数据错误。与 copyFrom 一起使用时有用。",
+    "example": "dont_load: true",
+    "version": ""
+  },
+  {
+    "code": "overrideAndReplace:",
+    "intro": "Value Type: string(s)\n描述: 用此单位覆盖另一个单位。建筑链接和地图位置将被替换。",
+    "example": "overrideAndReplace: builder, combatEngineer",
+    "version": ""
+  },
+  {
+    "code": "onNewMapSpawn:",
+    "intro": "Value Type: string\n描述: 可选值：emptyResourcePools_asNeutral, emptyOrOccupiedResourcePools_asNeutral, mapCenter_asNeutral, mapCenter_eachActiveTeam, spawnPoint_eachActiveTeam",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "globalScale:",
+    "intro": "Value Type: float\n描述: 默认为1。不建议更改。",
+    "example": "globalScale: 2",
+    "version": ""
+  },
+  {
+    "code": "isLocked:",
+    "intro": "Value Type: bool\n描述: 禁止建造此单位。可与 overrideAndReplace 一起使用以限制玩家可建造的单位。",
+    "example": "isLocked: true",
+    "version": ""
+  },
+  {
+    "code": "isLockedIfGameModeNoNuke:",
+    "intro": "Value Type: bool\n描述: 如果在比赛设置中禁用了核弹，则禁止建造此单位。",
+    "example": "isLockedIfGameModeNoNuke: true",
+    "version": "1.13"
+  },
+  {
+    "code": "experimental:",
+    "intro": "Value Type: bool\n描述: 将单位标记为实验单位。影响缩放后的图标和游戏结束统计。",
+    "example": "experimental: true",
+    "version": ""
+  },
+  {
+    "code": "stayNeutral:",
+    "intro": "Value Type: bool\n描述: 设为 false 以禁用单位在中立队伍时的捕获能力。",
+    "example": "stayNeutral: false",
+    "version": ""
+  },
+  {
+    "code": "createNeutral:",
+    "intro": "Value Type: bool\n描述: 设为 true 则始终在中立队伍生成单位。",
+    "example": "createNeutral: true",
+    "version": "1.13"
+  },
+  {
+    "code": "createOnAggressiveTeam:",
+    "intro": "Value Type: bool\n描述: 设为 true 则在单人游戏中始终在好战队伍生成单位。",
+    "example": "createOnAggressiveTeam: true",
+    "version": "1.13"
+  },
+  {
+    "code": "tags:",
+    "intro": "Value Type: string(s)\n描述: 逗号分隔的字符串列表。用于对单位分类、创建特殊动作和平衡性调整。",
+    "example": "tags: tank, smallTank, piercingDamage",
+    "version": "1.13"
+  },
+  {
+    "code": "defineUnitMemory",
+    "intro": "Value Type: (key-value pairs)\n描述: 可以为自定义存储定义几个变量，每个单位唯一。允许的类型：布尔、浮点/数字、单位、字符串。",
+    "example": "defineUnitMemory: boolean nukeActive, boolean laserReady, float experience, unit nextTarget, unit homeBase, string customText",
+    "version": "1.15"
+  },
+  {
+    "code": "defineUnitMemory (array)",
+    "intro": "Value Type: array\n描述: 添加一对方括号可将特定数据类型转为数组。",
+    "example": "defineUnitMemory: unit[] squad, float[] mango",
+    "version": "1.15p11"
+  },
+  {
+    "code": "fogOfWarSightRange:",
+    "intro": "Value Type: int\n描述: 设置此单位能通过战争迷雾看到的瓦片数量。默认为15。",
+    "example": "fogOfWarSightRange: 18",
+    "version": ""
+  },
+  {
+    "code": "fogOfWarSightRangeWhileNotBuilt",
+    "intro": "Value Type: int\n描述: 单位/建筑未完成时的战争迷雾视野范围。默认为 fogOfWarSightRange。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "softCollisionOnAll:",
+    "intro": "Value Type: int\n描述: 与其他单位接触时产生软碰撞效果。",
+    "example": "softCollisionOnAll: 3",
+    "version": ""
+  },
+  {
+    "code": "disableAllUnitCollisions:",
+    "intro": "Value Type: bool\n描述: 若为 true，单位无法与其他单位碰撞。",
+    "example": "disableAllUnitCollisions: true",
+    "version": ""
+  },
+  {
+    "code": "isUnrepairableUnit:",
+    "intro": "Value Type: bool\n描述: 若为 true，没有单位可以修理此单位。",
+    "example": "isUnrepairableUnit: true",
+    "version": "1.13"
+  },
+  {
+    "code": "isUnselectable:",
+    "intro": "Value Type: bool\n描述: 若为 true，单位无法被选中（包括AI玩家）。",
+    "example": "isUnselectable: true",
+    "version": "1.13"
+  },
+  {
+    "code": "isUnselectableAsTarget",
+    "intro": "Value Type: bool\n描述: 默认为 isUnselectable。可用于创建无法被选中但可以被攻击/回收等单位。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "isPickableStartingUnit:",
+    "intro": "Value Type: bool\n描述: 若为 true，单位会出现在游戏设置菜单的初始单位下拉列表中。",
+    "example": "isPickableStartingUnit: true",
+    "version": "1.13"
+  },
+  {
+    "code": "startFallingWhenStartingUnit:",
+    "intro": "Value Type: bool\n描述: 若为 true，作为初始单位时将从天而降。",
+    "example": "startFallingWhenStartingUnit: true",
+    "version": "1.13"
+  },
+  {
+    "code": "soundOnAttackOrder:",
+    "intro": "Value Type: sound(s)\n描述: 声音名称列表。每次攻击命令只播放其中一个。仅支持 .ogg 和 .wav 格式。",
+    "example": "soundOnAttackOrder: tankAttackOrder1.ogg, tankAttackOrder2.ogg",
+    "version": ""
+  },
+  {
+    "code": "soundOnMoveOrder:",
+    "intro": "Value Type: sound(s)\n描述: 声音名称列表。每次移动命令只播放其中一个。仅支持 .ogg 和 .wav 格式。",
+    "example": "soundOnMoveOrder: tankMoveOrder1.ogg, tankMoveOrder2.ogg",
+    "version": ""
+  },
+  {
+    "code": "soundOnNewSelection:",
+    "intro": "Value Type: sound(s)\n描述: 声音名称列表。每次选中单位时播放其中一个。仅支持 .ogg 和 .wav 格式。",
+    "example": "soundOnNewSelection: tankSelection1.ogg, tankSelection2.ogg",
+    "version": "1.13.3"
+  },
+  {
+    "code": "canNotBeDirectlyAttacked:",
+    "intro": "Value Type: bool\n描述: 没有单位可以直接瞄准此单位。若为 true，此单位也会跳过胜利/失败检查。",
+    "example": "canNotBeDirectlyAttacked: true",
+    "version": ""
+  },
+  {
+    "code": "canNotBeDamaged",
+    "intro": "Value Type: bool\n描述: 默认为 canNotBeDirectlyAttacked 的值（小心设置此值而不设置 canNotBeDirectlyAttacked，否则 AI 会永远攻击）。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "canNotBeGivenOrdersByPlayer:",
+    "intro": "Value Type: bool\n描述: 若为 true，单位不接受玩家或 AI 命令。",
+    "example": "canNotBeGivenOrdersByPlayer: true",
+    "version": "1.13.3"
+  },
+  {
+    "code": "canOnlyBeAttackedByUnitsWithTags:",
+    "intro": "Value Type: strings(s)\n描述: 标签字符串列表，只有带有这些标签的单位才能直接瞄准此单位。",
+    "example": "canOnlyBeAttackedByUnitsWithTags: piercingTank, powerfulTank",
+    "version": "1.13.3"
+  },
+  {
+    "code": "disableDeathOnZeroHp",
+    "intro": "Value Type: bool\n描述: 设为 true 允许单位在生命值为0时继续存在，对自定义“死亡”动作有用。警告：如果不与 autoTrigger 等配合，单位会被永久攻击。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "allowCaptureWhenNeutralByAI",
+    "intro": "Value Type: bool\n描述: 若为 true，AI 也可通过接触捕获此单位。默认为 false。",
+    "example": "",
+    "version": "1.15p9"
+  },
+  {
+    "code": "transportSlotsNeeded:",
+    "intro": "Value Type: int\n描述: 默认为1。此单位在运输工具中占用的槽位数，实验单位通常设为5。",
+    "example": "transportSlotsNeeded: 2",
+    "version": "1.13"
+  },
+  {
+    "code": "maxTransportingUnits",
+    "intro": "Value Type: int\n描述: 此单位运输其他单位时的槽位数。",
+    "example": "maxTransportingUnits: 5",
+    "version": ""
+  },
+  {
+    "code": "transportUnitsRequireTag:",
+    "intro": "Value Type: string(s)\n描述: 只允许运输带有这些标签之一的单位。",
+    "example": "transportUnitsRequireTag: smallTank, soldier",
+    "version": "1.13"
+  },
+  {
+    "code": "transportUnitsRequireMovementType:",
+    "intro": "Value Type: movementTypes\n描述: 只允许运输具有这些移动类型之一的单位。",
+    "example": "transportUnitsRequireMovementType: AIR, WATER",
+    "version": ""
+  },
+  {
+    "code": "transportUnitsBlockAirAndWaterUnits:",
+    "intro": "Value Type: bool\n描述: 默认为 true。若为 true，此单位只能运输陆地单位。",
+    "example": "transportUnitsBlockAirAndWaterUnits: false",
+    "version": ""
+  },
+  {
+    "code": "transportUnitsEachUnitAlwaysUsesSingleSlot:",
+    "intro": "Value Type: bool\n描述: 默认为 false。若为 true，此运输工具中的单位始终占用1个槽位，忽略 transportSlotsNeeded。",
+    "example": "transportUnitsEachUnitAlwaysUsesSingleSlot: true",
+    "version": ""
+  },
+  {
+    "code": "transportUnitsKeepBuiltUnits:",
+    "intro": "Value Type: bool\n描述: 若为 true，建造完成的单位会留在运输工具内，而不是立即退出。",
+    "example": "transportUnitsKeepBuiltUnits: true",
+    "version": ""
+  },
+  {
+    "code": "transportUnitsCanUnloadUnits:",
+    "intro": "Value Type: LogicBoolean\n描述: 默认为：if not self.isOverLiquid() and not self.isMoving()。若为 false，此单位无法卸载单位。",
+    "example": "transportUnitsCanUnloadUnits: false",
+    "version": ""
+  },
+  {
+    "code": "transportUnitsAddUnloadOption:",
+    "intro": "Value Type: bool\n描述: 定义是否在单位菜单中添加卸载按钮。",
+    "example": "transportUnitsAddUnloadOption: false",
+    "version": ""
+  },
+  {
+    "code": "transportUnitsUnloadDelayBetweenEachUnit:",
+    "intro": "Value Type: float\n描述: 更改每个单位卸载之间的延迟时间。",
+    "example": "transportUnitsUnloadDelayBetweenEachUnit: 12",
+    "version": "1.13.3"
+  },
+  {
+    "code": "transportUnitsKillOnDeath:",
+    "intro": "Value Type: LogicBoolean\n描述: 默认为 true。若为 false，运输工具死亡时，被运输的单位不会死亡。",
+    "example": "transportUnitsKillOnDeath: if self.isOverLiquid()",
+    "version": "1.13"
+  },
+  {
+    "code": "transportUnitsHealBy:",
+    "intro": "Value Type: float\n描述: 运输过程中治疗被运输单位的速率。",
+    "example": "transportUnitsHealBy: 0.1",
+    "version": "1.13"
+  },
+  {
+    "code": "transportUnitsBlockOtherTransports:",
+    "intro": "Value Type: bool\n描述: 默认为 true，若为 false，此运输工具可以装载其他运输工具。",
+    "example": "transportUnitsBlockOtherTransports: false",
+    "version": ""
+  },
+  {
+    "code": "whileNeutralTransportAnyTeam:",
+    "intro": "Value Type: bool\n描述: 若为 true，此单位在中立时可以运输任何队伍的单位。",
+    "example": "whileNeutralTransportAnyTeam: true",
+    "version": "1.13.3"
+  },
+  {
+    "code": "whileNeutralConvertToTransportedTeam:",
+    "intro": "Value Type: bool\n描述: 在中立时将此单位转换为被运输队伍的单位。与 whileNeutralTransportAnyTeam 一起使用。",
+    "example": "whileNeutralConvertToTransportedTeam: true",
+    "version": ""
+  },
+  {
+    "code": "convertToNeutralIfNotTransporting:",
+    "intro": "Value Type: bool\n描述: 卸载后还原此单位为中立。与 whileNeutralTransportAnyTeam 一起使用。",
+    "example": "convertToNeutralIfNotTransporting: true",
+    "version": ""
+  },
+  {
+    "code": "transportUnitsOnTeamChangeKeepCurrentTeam:",
+    "intro": "Value Type: bool\n描述: 若为 true，当此单位转换队伍时，被运输的单位保留原队伍。",
+    "example": "transportUnitsOnTeamChangeKeepCurrentTeam: true",
+    "version": ""
+  },
+  {
+    "code": "resourceRate:",
+    "intro": "Value Type: float\n描述: 与 canReclaimResources 一起使用。允许其他队伍回收此单位。通常与中立队伍一起使用。使用 price 设置获得的资源。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "similarResourcesHaveTag:",
+    "intro": "Value Type: string(s)\n描述: 当此资源被回收后，收割单位会移动到具有这些标签的其他资源。",
+    "example": "similarResourcesHaveTag: goldResource",
+    "version": ""
+  },
+  {
+    "code": "resourceMaxConcurrentReclaimingThis:",
+    "intro": "Value Type: int\n描述: 默认为无限制。设置可限制同时回收此资源的单位数量。",
+    "example": "resourceMaxConcurrentReclaimingThis: 3",
+    "version": "1.13.3"
+  },
+  {
+    "code": "reclaimPrice:",
+    "intro": "Value Type: int\n描述: 类似于 price，但用于资源。对可建造的资源有用。",
+    "example": "reclaimPrice: gold=1000",
+    "version": ""
+  },
+  {
+    "code": "canReclaimResources:",
+    "intro": "Value Type: bool\n描述: 若为 true，此单位可以收集资源，与 resourceRate 一起使用。",
+    "example": "canReclaimResources: true",
+    "version": ""
+  },
+  {
+    "code": "canReclaimResourcesNextSearchRange:",
+    "intro": "Value Type: int\n描述: 当主要收集的资源耗尽时，定义此单位的资源搜索范围。",
+    "example": "canReclaimResourcesNextSearchRange: 100",
+    "version": ""
+  },
+  {
+    "code": "canReclaimResourcesOnlyWithTags:",
+    "intro": "Value Type: string(s)\n描述: 此单位只允许收集带有这些标签的资源。",
+    "example": "canReclaimResourcesOnlyWithTags: foodResource, goldResource",
+    "version": ""
+  },
+  {
+    "code": "canReclaimUnitsOnlyWithTags",
+    "intro": "Value Type: string(s)\n描述: 这是用于回收单位，而不是资源。参见 canReclaimResourcesOnlyWithTags。",
+    "example": "canReclaimUnitsOnlyWithTags: reclaimable",
+    "version": ""
+  },
+  {
+    "code": "resourceReclaimMultiplier",
+    "intro": "Value Type: float\n描述: 乘以建造者的回收速度。不同于相关的键 'nanoUnbuildSpeed'。",
+    "example": "resourceReclaimMultiplier: 1.5",
+    "version": "1.15"
+  },
+  {
+    "code": "canRepairUnitsOnlyWithTags",
+    "intro": "Value Type: string(s)\n描述: 修复带有指定标签的单位。",
+    "example": "canRepairUnitsOnlyWithTags: vulnerable",
+    "version": ""
+  },
+  {
+    "code": "canRepairBuildings:",
+    "intro": "Value Type: bool\n描述: 是否可以治疗盟友建筑（需要 isBuilder:true）。",
+    "example": "canRepairBuildings: true",
+    "version": ""
+  },
+  {
+    "code": "canRepairUnits:",
+    "intro": "Value Type: bool\n描述: 是否可以治疗盟友单位（需要 isBuilder:true），治疗建筑需要 canRepairBuildings。",
+    "example": "canRepairUnits: true",
+    "version": ""
+  },
+  {
+    "code": "autoRepair:",
+    "intro": "Value Type: bool\n描述: 自动尝试修复纳米范围内的受损单位（需要 isBuilder:true）。",
+    "example": "autoRepair: true",
+    "version": ""
+  },
+  {
+    "code": "nanoRange:",
+    "intro": "Value Type: int\n描述: 默认为85。定义单位建造/修复/回收的范围。",
+    "example": "nanoRange: 110",
+    "version": ""
+  },
+  {
+    "code": "nanoRepairSpeed:",
+    "intro": "Value Type: float\n描述: 默认为0.2。定义单位纳米修复/回收的速度。",
+    "example": "nanoRepairSpeed: 0.01",
+    "version": ""
+  },
+  {
+    "code": "nanoBuildSpeed:",
+    "intro": "Value Type: float\n描述: 默认为1。定义单位纳米建造速度（可能与目标的 buildSpeed 相乘）。",
+    "example": "nanoBuildSpeed: 0.9",
+    "version": ""
+  },
+  {
+    "code": "nanoUnbuildSpeed:",
+    "intro": "Value Type: float\n描述: 建造者回收未完成建筑的速度（默认为1）。",
+    "example": "",
+    "version": "1.15"
+  },
+  {
+    "code": "nanoReclaimSpeed:",
+    "intro": "Value Type: float\n描述: 建造者回收普通单位（非资源单位）的速度。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "nanoRangeForRepairIsMelee:",
+    "intro": "Value Type: bool\n描述: 定义此单位是否必须接触目标才能修复。",
+    "example": "nanoRangeForRepairIsMelee: true",
+    "version": "1.13.3"
+  },
+  {
+    "code": "nanoRangeForReclaimIsMelee:",
+    "intro": "Value Type: bool\n描述: 定义此单位是否必须接触目标才能回收。",
+    "example": "nanoRangeForReclaimIsMelee: true",
+    "version": "1.13.3"
+  },
+  {
+    "code": "nanoRangeForRepair:",
+    "intro": "Value Type: int\n描述: 定义此单位修复动作的特定范围。",
+    "example": "nanoRangeForRepair: 60",
+    "version": ""
+  },
+  {
+    "code": "nanoRangeForReclaim:",
+    "intro": "Value Type: int\n描述: 定义此单位回收动作的特定范围。",
+    "example": "nanoRangeForReclaim: 60",
+    "version": ""
+  },
+  {
+    "code": "nanoFactorySpeed:",
+    "intro": "Value Type: float\n描述: 默认为1。如果此单位是工厂，则乘以所创建单位的 buildSpeed 值。",
+    "example": "nanoFactorySpeed: 1.2",
+    "version": ""
+  },
+  {
+    "code": "extraBuildRangeWhenBuildingThis:",
+    "intro": "Value Type: int\n描述: 临时为建造此单位的建造者增加额外建造范围。对水上建筑有用。",
+    "example": "extraBuildRangeWhenBuildingThis: 90",
+    "version": ""
+  },
+  {
+    "code": "builtFrom_{NUM}_name:",
+    "intro": "Value Type: string(s)\n描述: 用于将此单位添加到现有建筑的建造列表中。与 canBuild 方向相反。",
+    "example": "builtFrom_1_name: landFactory, airFactory",
+    "version": ""
+  },
+  {
+    "code": "builtFrom_{NUM}_pos:",
+    "intro": "Value Type: float\n描述: 此建造链接在UI中出现的顺序。更推荐使用 canBuild。",
+    "example": "builtFrom_1_pos: 0.1",
+    "version": ""
+  },
+  {
+    "code": "builtFrom_{NUM}_forceNano:",
+    "intro": "Value Type: bool\n描述: 若为 true，则作为建筑建造（即使是单位）。",
+    "example": "builtFrom_1_forceNano: true",
+    "version": ""
+  },
+  {
+    "code": "builtFrom_{NUM}_isLocked:",
+    "intro": "Value Type: LogicBoolean\n描述: 若为 true，此单位不能通过此建造链接建造（如果使用逻辑布尔值可以有条件）。",
+    "example": "builtFrom_1_isLocked: if self.hp(lessThan=100)",
+    "version": "1.13.3"
+  },
+  {
+    "code": "builtFrom_{NUM}_isLockedMessage:",
+    "intro": "Value Type: LocaleString\n描述: 此建造链接被锁定时显示的消息。",
+    "example": "builtFrom_1_isLockedMessage: -Needs more population",
+    "version": ""
+  },
+  {
+    "code": "exit_x:",
+    "intro": "Value Type: float\n描述: 创建或卸载单位从运输工具或建筑中出现的位置。默认为0。",
+    "example": "exit_x: 0",
+    "version": ""
+  },
+  {
+    "code": "exit_y:",
+    "intro": "Value Type: float\n描述: 创建或卸载单位从运输工具或建筑中出现的位置。默认为5。",
+    "example": "exit_x: 5",
+    "version": ""
+  },
+  {
+    "code": "exit_dirOffset:",
+    "intro": "Value Type: float\n描述: 单位默认为180，建筑默认为0。定义创建或卸载单位的退出方向。",
+    "example": "exit_dirOffset: 140",
+    "version": "1.13"
+  },
+  {
+    "code": "exit_heightOffset:",
+    "intro": "Value Type: float\n描述: 默认为0。定义创建或卸载单位出现的高度。",
+    "example": "exit_heightOffset: 16",
+    "version": ""
+  },
+  {
+    "code": "exit_moveAwayAmount:",
+    "intro": "Value Type: float\n描述: 默认为70。定义创建或卸载单位从此单位移开的距离。",
+    "example": "exit_moveAwayAmount: 10",
+    "version": ""
+  },
+  {
+    "code": "exitHeightIgnoreParent",
+    "intro": "Value Type: bool\n描述: 忽略父级高度用于出口高度；用于将附加组件与其父建筑分离。",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "dieOnConstruct:",
+    "intro": "Value Type: bool\n描述: 若为 true，此单位开始建造时删除自身（目标建筑/单位可能需要设置 selfBuildRate）。",
+    "example": "dieOnConstruct: true",
+    "version": ""
+  },
+  {
+    "code": "dieOnZeroEnergy:",
+    "intro": "Value Type: bool\n描述: 若为 true，能量归零时杀死此单位。",
+    "example": "dieOnZeroEnergy: true",
+    "version": "1.13"
+  },
+  {
+    "code": "numBitsOnDeath:",
+    "intro": "Value Type: int\n描述: 定义此单位死亡时散落的碎片数量。",
+    "example": "numBitsOnDeath: 20",
+    "version": ""
+  },
+  {
+    "code": "nukeOnDeath:",
+    "intro": "Value Type: bool\n描述: 若为 true，单位死亡时会产生内置核爆效果。",
+    "example": "nukeOnDeath: true",
+    "version": ""
+  },
+  {
+    "code": "nukeOnDeathRange:",
+    "intro": "Value Type: float\n描述: 使用 nukeOnDeath 时定义核爆效果范围。",
+    "example": "nukeOnDeathRange: 140",
+    "version": ""
+  },
+  {
+    "code": "nukeOnDeathDamage:",
+    "intro": "Value Type: float\n描述: 使用 nukeOnDeath 时定义核爆范围伤害。",
+    "example": "nukeOnDeathDamage: 2000",
+    "version": ""
+  },
+  {
+    "code": "nukeOnDeathDisableWhenNoNuke:",
+    "intro": "Value Type: bool\n描述: 默认为 false。若为 true，当遭遇战中禁用核弹时，此单位不会核爆。",
+    "example": "nukeOnDeathDisableWhenNoNuke: true",
+    "version": ""
+  },
+  {
+    "code": "fireTurretXAtSelfOnDeath:",
+    "intro": "Value Type: turret ref\n描述: 此单位死亡时自动发射指定炮塔。",
+    "example": "fireTurretXAtSelfOnDeath: turret_1",
+    "version": ""
+  },
+  {
+    "code": "explodeOnDeath:",
+    "intro": "Value Type: bool\n描述: 默认为 true。若为 false，禁用单位死亡时的内置爆炸效果。",
+    "example": "explodeOnDeath: false",
+    "version": "1.13"
+  },
+  {
+    "code": "explodeOnDeathGroundCollision:",
+    "intro": "Value Type: boolean\n描述: 默认为 true。若为 false，单位触地死亡时禁用内置爆炸效果。",
+    "example": "explodeOnDeathGroundCollision: false",
+    "version": ""
+  },
+  {
+    "code": "explodeTypeOnDeath:",
+    "intro": "Value Type: preset effects\n描述: 选项：verysmall, small, normal, large, largeUnit, building, buildingNoShockwaveOrSmoke, verylargeBuilding",
+    "example": "",
+    "version": "1.14"
+  },
+  {
+    "code": "effectOnDeath:",
+    "intro": "Value Type: effect(s) ref\n描述: 单位死亡时产生内置或自定义效果。",
+    "example": "effectOnDeath: shockwave, CUSTOM:pieces*3, CUSTOM:deathSound",
+    "version": "1.13"
+  },
+  {
+    "code": "effectOnDeathGroundCollision:",
+    "intro": "Value Type: effect(s) ref\n描述: 类似 effectOnDeath，但在单位触地时触发。对飞行单位有用。",
+    "example": "effectOnDeathGroundCollision: CUSTOM:bigExplosion",
+    "version": ""
+  },
+  {
+    "code": "unitsSpawnedOnDeath:",
+    "intro": "Value Type: string(s)\n描述: 死亡时生成这些单位，逗号分隔的单位标识符。",
+    "example": "unitsSpawnedOnDeath: tank*5, hoverTank",
+    "version": ""
+  },
+  {
+    "code": "unitsSpawnedOnDeath_setToTeamOfLastAttacker:",
+    "intro": "Value Type: bool\n描述: 若为 true，死亡时生成的单位将出现在最后攻击者的队伍。",
+    "example": "unitsSpawnedOnDeath_setToTeamOfLastAttacker: true",
+    "version": ""
+  },
+  {
+    "code": "hideScorchMark:",
+    "intro": "Value Type: bool\n描述: 若为 true，禁用单位死亡时留下的烧焦痕迹。",
+    "example": "hideScorchMark: true",
+    "version": ""
+  },
+  {
+    "code": "soundOnDeath:",
+    "intro": "Value Type: string(s)\n描述: 设置此单位死亡的自定义声音。",
+    "example": "soundOnDeath: tankExplosion1.ogg, tankExplosion2.ogg",
+    "version": ""
+  },
+  {
+    "code": "effectOnDeathIfUnbuilt:",
+    "intro": "Value Type: effect(s) ref\n描述: 如果单位未建成且被摧毁，播放此效果。默认为 effectOnDeath。",
+    "example": "effectOnDeathIfUnbuilt: CUSTOM:implode",
+    "version": "1.14"
+  },
+  {
+    "code": "autoTriggerCooldownTime:",
+    "intro": "Value Type: time (seconds)\n描述: 自动动作后的冷却时间（不是检测冷却）。默认为1秒。警告：为许多单位设置太低可能会影响性能，具体取决于动作效果。",
+    "example": "",
+    "version": "1.13.3"
+  },
+  {
+    "code": "autoTriggerCooldownTime_allowDangerousHighCPU:",
+    "intro": "Value Type: bool\n描述: 允许自动动作冷却时间低于0.2秒。默认为 false。不推荐。",
+    "example": "",
+    "version": ""
+  },
+  {
+    "code": "autoTriggerCheckRate:",
+    "intro": "Value Type: enum\n描述: 选项：everyFrame（默认）、every4Frames、every8Frames。注意：所有触发器（无论检查速率如何）在首次创建时和自动动作冷却后都会被检查。注意：在 all-units.template 中添加 [core]autoTriggerCheckRate:every8Frames 可以大幅提升具有复杂 autoTriggers 的模组性能。",
+    "example": "autoTriggerCheckRate:every8Frames",
+    "version": "1.15"
+  },
+  {
+    "code": "autoTriggerCheckWhileNotBuilt:",
+    "intro": "Value Type: bool\n描述: 默认为 false。若为 true，即使单位/建筑未完全建成，autoTrigger 也会检查单位动作。",
+    "example": "autoTriggerCheckWhileNotBuilt: true",
+    "version": "1.15"
+  },
+  {
+    "code": "updateUnitMemory:",
+    "intro": "Value Type: memory\n描述: 比 [action_#] setUnitMemory 更快的内存更新。适用于许多应用场景。",
+    "example": "updateUnitMemory: timeCount += 1",
+    "version": "1.15p10"
+  },
+  {
+    "code": "updateUnitMemoryRate:",
+    "intro": "Value Type: int\n描述: 设置内存更新的频率。默认为1秒。设为0则每帧更新内存。",
+    "example": "updateUnitMemoryRate: 0",
+    "version": ""
+  },
+  {
+    "code": "@memory",
+    "intro": "Value Type: (key-value pairs)\n描述: 一种对模板友好的 defineUnitMemory 方法。用冒号分隔名称和类型。",
+    "example": "@memory fish:unit\n@memory bullets:number",
+    "version": "1.15"
+  },
+  {
+    "code": "@memory (array)",
+    "intro": "Value Type: array\n描述: 添加一对方括号表示数组内存类型。",
+    "example": "@memory myTargets:unit[]",
+    "version": "1.15p11"
+  },
+  {
+    "code": "action_#_convertTo:",
+    "intro": "Value Type: string\n描述: 在1.13中已弃用，请使用 [action_x] 段落代替。",
+    "example": "action_1_convertTo: customTank_2",
+    "version": "depr. 1.13"
+  },
+  {
+    "code": "action_#_pos:",
+    "intro": "Value Type: float\n描述: 动作在UI中出现的顺序。",
+    "example": "action_1_pos: 0.1",
+    "version": ""
+  },
+  {
+    "code": "action_#_price:",
+    "intro": "Value Type: int\n描述: 单位动作的花费（所有子动作将与你使用的#关联）。",
+    "example": "action_1_price: 1000",
+    "version": ""
+  },
+  {
+    "code": "action_#_text:",
+    "intro": "Value Type: string\n描述: 选中单位动作时显示的文本，用于解释其用途。",
+    "example": "action_1_text: Upgrade to Custom Tank 2",
+    "version": ""
+  },
+  {
+    "code": "action_#_description:",
+    "intro": "Value Type: string\n描述: 动作描述。",
+    "example": "action_1_description: -Converts the tank",
+    "version": ""
+  },
+  {
+    "code": "action_#_addEnergy:",
+    "intro": "Value Type: float\n描述: 向单位添加能量。除非设置了 energyMax，否则无效。",
+    "example": "action_1_addEnergy: 10",
+    "version": ""
+  },
+  {
+    "code": "action_#_whenBuilding_cannotMove:",
+    "intro": "Value Type: bool\n描述: 在应用动作时阻止单位移动。对部署类动作有用。",
+    "example": "action_1_whenBuilding_cannotMove: true",
+    "version": ""
+  },
+  {
+    "code": "canBuild_#_name/pos/isLocked:",
+    "intro": "Value Type: string\n描述: 请改用 canBuild 段落。",
+    "example": "canBuild_1_name: tank",
+    "version": ""
+  }
+]
