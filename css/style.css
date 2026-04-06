@@ -1,399 +1,359 @@
 * {
-    box-sizing: border-box;
+	box-sizing: border-box
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-    background: #f0f2f5;
-    margin: 0;
-    padding: 16px 12px;
-    color: #1e2a3a;
+	font-family: 'Segoe UI', Roboto, sans-serif;
+	background: #f0f2f5;
+	margin: 0;
+	padding: 16px 12px;
+	color: #1e2a3a
 }
 
-@media (min-width: 768px) {
-    body {
-        padding: 24px 20px;
-    }
+@media(min-width:768px) {
+	body {
+		padding: 24px 20px
+	}
 }
 
-.app-container {
-    max-width: 1400px;
-    margin: 0 auto;
+.app {
+	max-width: 1400px;
+	margin: 0 auto
 }
 
-/* 固定导航条样式 */
-.sticky-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(10px);
-    border-radius: 0 0 16px 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    margin: -16px -12px 20px -12px;
-    padding: 10px 12px;
+.nav-sticky {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background: rgba(255, 255, 255, .96);
+	backdrop-filter: blur(10px);
+	border-radius: 0 0 16px 16px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+	margin: -16px -12px 20px -12px;
+	padding: 10px 12px
 }
 
-@media (min-width: 768px) {
-    .sticky-nav {
-        margin: -24px -20px 24px -20px;
-        padding: 14px 20px;
-    }
+@media(min-width:768px) {
+	.nav-sticky {
+		margin: -24px -20px 24px -20px;
+		padding: 14px 20px
+	}
 }
 
 .nav-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 12px
 }
 
-.nav-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    flex: 1;
+.nav-btns {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	flex: 1
 }
 
-@media (max-width: 768px) {
-    .nav-buttons {
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        padding-bottom: 6px;
-        -webkit-overflow-scrolling: touch;
-    }
-    .nav-buttons::-webkit-scrollbar {
-        display: none;
-    }
+@media(max-width:768px) {
+	.nav-btns {
+		overflow-x: auto;
+		flex-wrap: nowrap;
+		padding-bottom: 6px
+	}
+
+	.nav-btns::-webkit-scrollbar {
+		display: none
+	}
 }
 
 .nav-btn {
-    background: #f0f4f9;
-    border: none;
-    padding: 8px 16px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #1e466e;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: inherit;
-    -webkit-tap-highlight-color: transparent;
-    white-space: nowrap;
+	background: #f0f4f9;
+	border: none;
+	padding: 8px 16px;
+	font-size: .9rem;
+	font-weight: 600;
+	color: #1e466e;
+	border-radius: 40px;
+	cursor: pointer;
+	transition: .2s;
+	white-space: nowrap
 }
 
 .nav-btn:hover {
-    background: #e2e8f0;
-    transform: translateY(-1px);
+	background: #e2e8f0;
+	transform: translateY(-1px)
 }
 
-@media (max-width: 768px) {
-    .nav-btn {
-        padding: 6px 14px;
-        font-size: 0.85rem;
-    }
+@media(max-width:768px) {
+	.nav-btn {
+		padding: 6px 14px;
+		font-size: .85rem
+	}
 }
 
-/* 版本下拉菜单 */
-.version-dropdown {
-    position: relative;
-    display: inline-block;
+.ver-drop {
+	position: relative;
+	display: inline-block
 }
 
-.version-dropdown-btn {
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    padding: 8px 16px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #1e466e;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: inherit;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+.ver-btn {
+	background: #fff;
+	border: 1px solid #cbd5e1;
+	padding: 8px 16px;
+	font-size: .85rem;
+	font-weight: 500;
+	color: #1e466e;
+	border-radius: 40px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	white-space: nowrap
 }
 
-.version-dropdown-btn:hover {
-    background: #eef2f7;
-    border-color: #8fbbf0;
+.ver-btn:hover {
+	background: #eef2f7;
+	border-color: #8fbbf0
 }
 
-.version-dropdown-menu {
-    position: absolute;
-    top: calc(100% + 8px);
-    right: 0;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    min-width: 220px;
-    max-width: 280px;
-    z-index: 200;
-    display: none;
-    overflow: hidden;
-    border: 1px solid #e2e8f0;
+.ver-menu {
+	position: absolute;
+	top: calc(100% + 8px);
+	right: 0;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+	min-width: 220px;
+	z-index: 200;
+	display: none;
+	border: 1px solid #e2e8f0
 }
 
-.version-check-list {
-    max-height: 260px;
-    overflow-y: auto;
-    padding: 8px 0;
+.ver-list {
+	max-height: 260px;
+	overflow-y: auto;
+	padding: 8px 0
 }
 
-.version-check-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 16px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: background 0.1s;
+.ver-item {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 8px 16px;
+	font-size: .85rem;
+	cursor: pointer
 }
 
-.version-check-item:hover {
-    background: #f8fafc;
+.ver-item:hover {
+	background: #f8fafc
 }
 
-.version-check-item input {
-    margin: 0;
-    cursor: pointer;
+.ver-item input {
+	margin: 0;
+	cursor: pointer
 }
 
-.version-check-item label {
-    flex: 1;
-    cursor: pointer;
-    color: #2c3e50;
+.ver-item label {
+	flex: 1;
+	cursor: pointer;
+	color: #2c3e50
 }
 
-.version-dropdown-actions {
-    display: flex;
-    border-top: 1px solid #e2e8f0;
-    padding: 8px;
-    gap: 8px;
-    background: #f9fafb;
+.ver-actions {
+	display: flex;
+	border-top: 1px solid #e2e8f0;
+	padding: 8px;
+	gap: 8px;
+	background: #f9fafb
 }
 
-.version-action-btn {
-    flex: 1;
-    background: white;
-    border: 1px solid #ccd7e6;
-    padding: 6px 10px;
-    border-radius: 30px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.1s;
-    font-family: inherit;
+.ver-act {
+	flex: 1;
+	background: #fff;
+	border: 1px solid #ccd7e6;
+	padding: 6px 10px;
+	border-radius: 30px;
+	font-size: .75rem;
+	font-weight: 500;
+	cursor: pointer
 }
 
-.version-action-btn:hover {
-    background: #eef2f7;
+.ver-act:hover {
+	background: #eef2f7
 }
 
-/* 抽屉面板 */
 .accordion {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px
 }
 
-@media (min-width: 768px) {
-    .accordion {
-        gap: 16px;
-    }
+@media(min-width:768px) {
+	.accordion {
+		gap: 16px
+	}
 }
 
-.accordion-item {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    overflow: hidden;
+.acc-item {
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+	overflow: hidden
 }
 
-.accordion-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 18px;
-    background: #f9fafc;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border-bottom: 1px solid #e2e8f0;
-    transition: background 0.2s;
-    -webkit-tap-highlight-color: transparent;
+.acc-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 14px 18px;
+	background: #f9fafc;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: .95rem;
+	border-bottom: 1px solid #e2e8f0
 }
 
-@media (min-width: 768px) {
-    .accordion-header {
-        padding: 16px 24px;
-        font-size: 1rem;
-    }
+@media(min-width:768px) {
+	.acc-header {
+		padding: 16px 24px;
+		font-size: 1rem
+	}
 }
 
-.accordion-header:hover {
-    background: #eef2f9;
+.acc-header:hover {
+	background: #eef2f9
 }
 
-.record-count-badge {
-    font-weight: normal;
-    font-size: 0.8rem;
-    color: #4b6a8b;
-    margin-left: 8px;
+.badge {
+	font-weight: 400;
+	font-size: .8rem;
+	color: #4b6a8b;
+	margin-left: 8px
 }
 
-.accordion-icon {
-    font-size: 0.75rem;
-    transition: transform 0.2s;
-    margin-left: 8px;
+.acc-icon {
+	font-size: .75rem;
+	margin-left: 8px
 }
 
-.accordion-content {
-    padding: 0;
-    background: white;
+.acc-content {
+	padding: 0;
+	background: #fff
 }
 
-/* 表格包装器 */
-.table-wrapper {
-    overflow-x: auto;
-    overflow-y: auto;
-    max-height: 70vh;
-    -webkit-overflow-scrolling: touch;
+.table-wrap {
+	overflow-x: auto;
+	overflow-y: auto;
+	max-height: 70vh
 }
 
-/* Excel表格样式 - 字体缩小，代码列/介绍列不换行，实例列保留换行 */
 .excel-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Segoe UI', 'Consolas', monospace;
-    font-size: 12px;          /* 整体字体缩小 */
-    min-width: 800px;         /* 保证横向滚动 */
-}
-
-@media (min-width: 768px) {
-    .excel-table {
-        font-size: 12px;      /* 保持一致，不随屏幕变大 */
-        min-width: 900px;
-    }
+	width: 100%;
+	border-collapse: collapse;
+	font-family: 'Segoe UI', 'Consolas', monospace;
+	font-size: 12px;
+	min-width: 800px
 }
 
 .excel-table th {
-    background: #eef2f7;
-    padding: 8px 12px;
-    border: 1px solid #d4dce6;
-    font-weight: 700;
-    color: #1e3a5f;
-    text-align: left;
-    position: sticky;
-    top: 0;
-    background-color: #eef2f7;
-    z-index: 10;
-    white-space: nowrap;
-    font-size: 13px;
-}
-
-@media (min-width: 768px) {
-    .excel-table th {
-        padding: 10px 16px;
-        font-size: 13px;
-    }
+	background: #eef2f7;
+	padding: 8px 12px;
+	border: 1px solid #d4dce6;
+	font-weight: 700;
+	color: #1e3a5f;
+	text-align: left;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	white-space: nowrap;
+	font-size: 13px
 }
 
 .excel-table td {
-    padding: 6px 12px;
-    border: 1px solid #e2e8f0;
-    vertical-align: top;
-    word-break: break-word;
+	padding: 6px 12px;
+	border: 1px solid #e2e8f0;
+	vertical-align: top
 }
 
-@media (min-width: 768px) {
-    .excel-table td {
-        padding: 8px 16px;
-    }
-}
-
-/* 代码列：允许换行，超出宽度自动换行，保留复制光标 */
 .excel-table td:first-child {
-    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
-    font-weight: 500;
-    color: #0d3b66;
-    background-color: #fefdf7;
-    white-space: normal;      /* 改为 normal，允许自动换行 */
-    word-break: break-word;   /* 长单词或代码断行 */
-    cursor: pointer;
-    transition: background 0.1s;
-	min-width: 250px;
+	font-family: 'SF Mono', 'Consolas', monospace;
+	font-weight: 400;
+	color: #0d3b66;
+	background: #fefdf7;
+	white-space: normal;
+	word-break: break-word;
+	cursor: pointer;
+	min-width: 210px
 }
+
 .excel-table td:first-child:hover {
-    background-color: #e8f0fe;
+	background: #e8f0fe
 }
 
-/* 介绍列：不换行 */
 .excel-table td:nth-child(2) {
-    font-size: 12px;
-    color: #2c3e50;
-    white-space: pre;
+	white-space: pre
 }
 
-/* 实例列：保留换行，字体稍小 */
 .excel-table td:nth-child(3) {
-    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
-    font-size: 11px;
-    background-color: #fafcff;
-    white-space: pre;
-    word-break: break-word;
-    max-width: 300px;
+	font-family: 'SF Mono', 'Consolas', monospace;
+	font-size: 11px;
+	background: #fafcff;
+	white-space: pre;
+	word-break: break-word;
+	max-width: 300px
 }
 
-/* 版本列：居中，不换行 */
 .excel-table td:last-child {
-    font-size: 11px;
-    color: #4a627a;
-    text-align: center;
-    background-color: #f9fbfd;
-    white-space: nowrap;
+	font-size: 11px;
+	color: #4a627a;
+	text-align: center;
+	background: #f9fbfd;
+	white-space: nowrap
 }
 
 .excel-table tbody tr:hover td {
-    background-color: #f0f7ff;
+	background: #f0f7ff
 }
 
-/* 空行提示 */
 .empty-row td {
-    text-align: center;
-    color: #8a99aa;
-    font-style: italic;
-    padding: 48px 16px;
-    background: #fbfdfe;
-    white-space: normal;
+	text-align: center;
+	color: #8a99aa;
+	font-style: italic;
+	padding: 48px 16px;
+	background: #fbfdfe
 }
 
-.error-message, .empty-message {
-    padding: 24px 16px;
-    text-align: center;
-    color: #b91c1c;
-    background: #fff5f5;
-    font-size: 14px;
+.error-msg {
+	padding: 24px 16px;
+	text-align: center;
+	color: #b91c1c;
+	background: #fff5f5;
+	font-size: 14px
 }
 
-.empty-message {
-    color: #6c7a91;
-    background: #fafcff;
-}
-
-@media (max-width: 768px) {
-    .error-message, .empty-message {
-        padding: 20px 12px;
-        font-size: 13px;
-    }
-}
-
-/* 复制提示框 */
 #copyToast {
-    font-family: 'Segoe UI', monospace;
-    pointer-events: none;
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: #1e6faf;
+	color: #fff;
+	padding: 8px 16px;
+	border-radius: 40px;
+	font-size: 13px;
+	z-index: 1000;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+	white-space: nowrap;
+	pointer-events: none;
+	display: none
+}
+
+/* 手机端介绍栏最小宽度300px */
+@media (max-width: 768px) {
+	.excel-table td:nth-child(2) {
+		min-width: 300px;
+		white-space: normal;
+		/* 允许换行，配合最小宽度 */
+	}
 }
