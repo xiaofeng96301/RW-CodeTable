@@ -378,7 +378,6 @@ body {
 
 	.excel-table td:nth-child(3) {
 		min-width: 300px;
-		white-space: normal;
 		font-size: 9px;
 	}
 

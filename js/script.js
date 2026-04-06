@@ -87,7 +87,7 @@ function renderAccordion() {
     const header = document.createElement('div');
     header.className = 'acc-header';
     const title = document.createElement('span');
-    title.textContent = `📄 ${f}`;
+    title.textContent = `📄 ${f.replace('.json', '')}`;
     header.appendChild(title);
     const badge = document.createElement('span');
     badge.className = 'badge';
