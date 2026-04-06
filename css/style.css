@@ -271,7 +271,7 @@ body {
 }
 
 .excel-table td {
-	padding: 6px 12px;
+	padding: 6px 5px;
 	border: 1px solid #e2e8f0;
 	vertical-align: top;
 }
@@ -291,7 +291,7 @@ body {
 	background: #e8f0fe
 }
 
-.excel-table td:first-child(2) {
+.excel-table td:nth-child(2){
 	font-family: 'SF Mono', 'Consolas', monospace;
 	font-weight: 500;
 	color: #0d3b66;
@@ -299,7 +299,7 @@ body {
 	white-space: normal;
 	word-break: break-word;
 	cursor: pointer;
-	min-width: 100px
+	min-width: 110px;
 }
 .excel-table td:nth-child(3) {
 	white-space: pre
@@ -330,7 +330,7 @@ body {
 	text-align: center;
 	color: #8a99aa;
 	font-style: italic;
-	padding: 48px 16px;
+	padding: 48px 5px;
 	background: #fbfdfe
 }
 
@@ -390,7 +390,7 @@ body {
 	.excel-table td:last-child {
 		font-size: 9px;
 	}
-	.excel-table td:last-child(2) {
+	.excel-table td:nth-child(2) {
 		font-size: 9px;
 	}
 }
