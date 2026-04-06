@@ -21,7 +21,7 @@ body {
     margin: 0 auto;
 }
 
-/* ========= 固定导航条样式 ========= */
+/* 固定导航条样式 */
 .sticky-nav {
     position: sticky;
     top: 0;
@@ -194,7 +194,7 @@ body {
     background: #eef2f7;
 }
 
-/* 抽屉面板样式 */
+/* 抽屉面板 */
 .accordion {
     display: flex;
     flex-direction: column;
@@ -257,6 +257,7 @@ body {
     background: white;
 }
 
+/* 表格包装器 */
 .table-wrapper {
     overflow-x: auto;
     overflow-y: auto;
@@ -264,24 +265,25 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+/* Excel表格样式 - 字体缩小，代码列/介绍列不换行，实例列保留换行 */
 .excel-table {
     width: 100%;
     border-collapse: collapse;
     font-family: 'Segoe UI', 'Consolas', monospace;
-    font-size: 13px;
-    min-width: 700px;
+    font-size: 12px;          /* 整体字体缩小 */
+    min-width: 800px;         /* 保证横向滚动 */
 }
 
 @media (min-width: 768px) {
     .excel-table {
-        font-size: 14px;
-        min-width: 800px;
+        font-size: 12px;      /* 保持一致，不随屏幕变大 */
+        min-width: 900px;
     }
 }
 
 .excel-table th {
     background: #eef2f7;
-    padding: 10px 12px;
+    padding: 8px 12px;
     border: 1px solid #d4dce6;
     font-weight: 700;
     color: #1e3a5f;
@@ -291,55 +293,83 @@ body {
     background-color: #eef2f7;
     z-index: 10;
     white-space: nowrap;
+    font-size: 13px;
 }
 
 @media (min-width: 768px) {
     .excel-table th {
-        padding: 12px 16px;
+        padding: 10px 16px;
+        font-size: 13px;
     }
 }
 
 .excel-table td {
-    padding: 8px 12px;
+    padding: 6px 12px;
     border: 1px solid #e2e8f0;
     vertical-align: top;
-    white-space: pre-wrap;
     word-break: break-word;
 }
 
 @media (min-width: 768px) {
     .excel-table td {
-        padding: 10px 16px;
+        padding: 8px 16px;
     }
+}
+
+/* 代码列：允许换行，超出宽度自动换行，保留复制光标 */
+.excel-table td:first-child {
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+    font-weight: 500;
+    color: #0d3b66;
+    background-color: #fefdf7;
+    white-space: normal;      /* 改为 normal，允许自动换行 */
+    word-break: break-word;   /* 长单词或代码断行 */
+    cursor: pointer;
+    transition: background 0.1s;
+	min-width: 250px;
+}
+.excel-table td:first-child:hover {
+    background-color: #e8f0fe;
+}
+
+/* 介绍列：不换行 */
+.excel-table td:nth-child(2) {
+    font-size: 12px;
+    color: #2c3e50;
+    white-space: pre;
+}
+
+/* 实例列：保留换行，字体稍小 */
+.excel-table td:nth-child(3) {
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 11px;
+    background-color: #fafcff;
+    white-space: pre;
+    word-break: break-word;
+    max-width: 300px;
+}
+
+/* 版本列：居中，不换行 */
+.excel-table td:last-child {
+    font-size: 11px;
+    color: #4a627a;
+    text-align: center;
+    background-color: #f9fbfd;
+    white-space: nowrap;
 }
 
 .excel-table tbody tr:hover td {
     background-color: #f0f7ff;
 }
 
-.excel-table td:first-child {
-    font-family: monospace;
-    font-weight: 500;
-    background-color: #fefdf7;
-}
-
-.excel-table td:nth-child(3) {
-    font-family: monospace;
-    font-size: 12px;
-    background-color: #fafcff;
-}
-
-@media (min-width: 768px) {
-    .excel-table td:nth-child(3) {
-        font-size: 13px;
-    }
-}
-
-.excel-table td:last-child {
-    font-size: 12px;
-    color: #4a627a;
+/* 空行提示 */
+.empty-row td {
     text-align: center;
-    background-color: #f9fbfd;
+    color: #8a99aa;
+    font-style: italic;
+    padding: 48px 16px;
+    background: #fbfdfe;
+    white-space: normal;
 }
 
 .error-message, .empty-message {
@@ -360,4 +390,10 @@ body {
         padding: 20px 12px;
         font-size: 13px;
     }
+}
+
+/* 复制提示框 */
+#copyToast {
+    font-family: 'Segoe UI', monospace;
+    pointer-events: none;
 }

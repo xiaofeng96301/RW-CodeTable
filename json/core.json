@@ -961,7 +961,7 @@
   },
   {
     "code": "autoTriggerCheckRate:",
-    "intro": "Value Type: enum\n描述: 选项：everyFrame（默认）、every4Frames、every8Frames。注意：所有触发器（无论检查速率如何）在首次创建时和自动动作冷却后都会被检查。注意：在 all-units.template 中添加 [core]autoTriggerCheckRate:every8Frames 可以大幅提升具有复杂 autoTriggers 的模组性能。",
+    "intro": "Value Type: enum\n描述: 选项：everyFrame（默认）、every4Frames、every8Frames。注意：所有触发器（无论检查速率如何）在首次创建时和自动动作冷却后都会被检查。\n注意：在 all-units.template 中添加 [core]autoTriggerCheckRate:every8Frames 可以大幅提升具有复杂 autoTriggers 的模组性能。",
     "example": "autoTriggerCheckRate:every8Frames",
     "version": "1.15"
   },

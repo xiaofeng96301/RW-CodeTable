@@ -30,6 +30,8 @@
             </div>
         </div>
     </nav>
+
+    <h1>📁 分类数据表格</h1>
     <div id="accordionContainer" class="accordion"></div>
 </div>
 
@@ -38,11 +40,10 @@
     const jsonFiles = ['core.json', 'move.json'];
     const categories = {};
 
-    // 版本管理：存储所有出现的版本（不含通用）
+    // 版本管理
     let allVersions = [];
-    // 当前选中的版本集合（版本字符串，不包含'common'，通用单独控制）
-    let selectedVersions = new Set();     // 初始全选
-    let includeCommon = true;             // 是否包含通用条目（未填写 version 的条目）
+    let selectedVersions = new Set();
+    let includeCommon = true;
 
     // 加载数据
     async function loadAllData() {
@@ -60,23 +61,20 @@
         });
         await Promise.all(promises);
         
-        // 收集所有版本
         collectVersions();
-        // 初始化选中状态：默认全选所有版本 + 包含通用
         includeCommon = true;
         selectedVersions.clear();
         for (const v of allVersions) {
             selectedVersions.add(v);
         }
         
-        renderAccordion();       // 构建抽屉面板（默认展开）
-        renderNav();             // 构建分类导航按钮
-        buildVersionDropdown();  // 构建下拉菜单中的版本复选框
-        applyVersionFilter();    // 应用过滤
-        attachDropdownEvents();  // 绑定下拉菜单打开/关闭
+        renderAccordion();
+        renderNav();
+        buildVersionDropdown();
+        applyVersionFilter();
+        attachDropdownEvents();
     }
 
-    // 扫描所有原始数据，收集 version 值（排除空、null、undefined）
     function collectVersions() {
         const versionSet = new Set();
         for (const fileName of jsonFiles) {
@@ -92,21 +90,16 @@
         allVersions = Array.from(versionSet).sort();
     }
 
-    // 根据选中的版本和 includeCommon 过滤数据
     function filterDataByVersion(rawData) {
         if (!Array.isArray(rawData)) return [];
         return rawData.filter(item => {
             const itemVersion = item.version;
             const isCommon = (itemVersion === undefined || itemVersion === null || itemVersion === '');
-            if (isCommon) {
-                return includeCommon;
-            } else {
-                return selectedVersions.has(itemVersion);
-            }
+            if (isCommon) return includeCommon;
+            return selectedVersions.has(itemVersion);
         });
     }
 
-    // 渲染所有抽屉面板，默认全部展开
     function renderAccordion() {
         const container = document.getElementById('accordionContainer');
         if (!container) return;
@@ -118,7 +111,6 @@
             panel.className = 'accordion-item';
             panel.id = `panel-${panelId}`;
 
-            // 标题栏
             const header = document.createElement('div');
             header.className = 'accordion-header';
             const titleSpan = document.createElement('span');
@@ -129,10 +121,9 @@
             header.appendChild(countSpan);
             const icon = document.createElement('span');
             icon.className = 'accordion-icon';
-            icon.textContent = '▲';   // 默认展开图标向上
+            icon.textContent = '▲';
             header.appendChild(icon);
 
-            // 内容区（表格容器），默认显示
             const content = document.createElement('div');
             content.className = 'accordion-content';
             content.style.display = 'block';
@@ -144,7 +135,7 @@
                 errorDiv.textContent = `❌ 加载失败: ${error}`;
                 content.appendChild(errorDiv);
                 tableWrapper = null;
-                table = null; 
+                table = null;
             } else {
                 tableWrapper = document.createElement('div');
                 tableWrapper.className = 'table-wrapper';
@@ -170,15 +161,13 @@
             panel.appendChild(content);
             container.appendChild(panel);
 
-            // 存储引用
             categories[fileName].panel = panel;
             categories[fileName].content = content;
             categories[fileName].icon = icon;
-            categories[fileName].isOpen = true;    // 默认展开
+            categories[fileName].isOpen = true;
             categories[fileName].table = table;
             categories[fileName].countSpan = countSpan;
 
-            // 绑定标题点击事件（展开/折叠）
             header.addEventListener('click', (e) => {
                 e.stopPropagation();
                 togglePanel(fileName);
@@ -186,7 +175,6 @@
         }
     }
 
-    // 切换面板展开/折叠
     function togglePanel(fileName) {
         const cat = categories[fileName];
         if (!cat || !cat.content) return;
@@ -196,7 +184,6 @@
         cat.isOpen = !isOpen;
     }
 
-    // 展开并滚动到指定面板（不改变展开状态，但若折叠则展开）
     function expandAndScrollTo(fileName) {
         const cat = categories[fileName];
         if (!cat || !cat.panel) return;
@@ -206,7 +193,71 @@
         cat.panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    // 更新单个表格内容
+    // 复制代码功能
+    function attachCopyCodeHandler() {
+        // 使用事件委托监听所有 .excel-table 内的 td:first-child
+        document.querySelectorAll('.excel-table').forEach(table => {
+            table.addEventListener('click', (e) => {
+                const td = e.target.closest('td');
+                if (td && td.parentElement) {
+                    const row = td.parentElement;
+                    const firstTd = row.firstElementChild;
+                    if (firstTd === td) {
+                        // 点击的是第一列（代码列）
+                        const codeText = td.textContent || '';
+                        if (codeText && codeText !== '—') {
+                            copyToClipboard(codeText);
+                        } else {
+                            showCopyToast('无有效代码', false);
+                        }
+                    }
+                }
+            });
+        });
+    }
+
+    async function copyToClipboard(text) {
+        try {
+            await navigator.clipboard.writeText(text);
+            showCopyToast(`✅ 已复制: ${text.substring(0, 50)}${text.length > 50 ? '…' : ''}`, true);
+        } catch (err) {
+            // fallback
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            showCopyToast(`📋 已复制: ${text.substring(0, 50)}${text.length > 50 ? '…' : ''}`, true);
+        }
+    }
+
+    function showCopyToast(msg, success) {
+        let toast = document.getElementById('copyToast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'copyToast';
+            toast.style.position = 'fixed';
+            toast.style.bottom = '20px';
+            toast.style.left = '50%';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.backgroundColor = success ? '#1e6faf' : '#b91c1c';
+            toast.style.color = 'white';
+            toast.style.padding = '8px 16px';
+            toast.style.borderRadius = '40px';
+            toast.style.fontSize = '13px';
+            toast.style.zIndex = '1000';
+            toast.style.boxShadow = '0 2px 8px rgba(0,0,0,0.2)';
+            toast.style.whiteSpace = 'nowrap';
+            document.body.appendChild(toast);
+        }
+        toast.textContent = msg;
+        toast.style.display = 'block';
+        setTimeout(() => {
+            toast.style.display = 'none';
+        }, 2000);
+    }
+
     function updateTableBody(fileName, filteredData) {
         const cat = categories[fileName];
         if (!cat || !cat.table) return;
@@ -245,9 +296,10 @@
         if (cat.countSpan) {
             cat.countSpan.textContent = ` (${filteredData.length} 条)`;
         }
+        // 重新绑定复制事件（因为表格内容被替换了）
+        attachCopyCodeHandler();
     }
 
-    // 全局应用过滤
     function applyVersionFilter() {
         for (const fileName of jsonFiles) {
             const cat = categories[fileName];
@@ -257,13 +309,11 @@
         }
     }
 
-    // 构建版本下拉菜单中的复选框列表
     function buildVersionDropdown() {
         const container = document.getElementById('versionCheckList');
         if (!container) return;
         container.innerHTML = '';
         
-        // 添加“通用”选项
         const commonDiv = document.createElement('div');
         commonDiv.className = 'version-check-item';
         const commonCheck = document.createElement('input');
@@ -281,7 +331,6 @@
         commonDiv.appendChild(commonLabel);
         container.appendChild(commonDiv);
         
-        // 添加每个具体版本
         for (const ver of allVersions) {
             const div = document.createElement('div');
             div.className = 'version-check-item';
@@ -307,14 +356,12 @@
         }
     }
     
-    // 全选/取消全选逻辑
     function selectAllVersions() {
         includeCommon = true;
         selectedVersions.clear();
         for (const v of allVersions) {
             selectedVersions.add(v);
         }
-        // 同步复选框状态
         const commonCheck = document.getElementById('version-common');
         if (commonCheck) commonCheck.checked = true;
         for (const ver of allVersions) {
@@ -336,7 +383,6 @@
         applyVersionFilter();
     }
     
-    // 绑定下拉菜单的打开/关闭和全选按钮
     function attachDropdownEvents() {
         const dropdownBtn = document.getElementById('versionDropdownBtn');
         const dropdownMenu = document.getElementById('versionDropdownMenu');
@@ -348,7 +394,6 @@
             dropdownMenu.style.display = isOpen ? 'none' : 'block';
         });
         
-        // 点击页面其他位置关闭下拉菜单
         document.addEventListener('click', (e) => {
             if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
                 dropdownMenu.style.display = 'none';
@@ -361,7 +406,6 @@
         if (deselectAllBtn) deselectAllBtn.addEventListener('click', deselectAllVersions);
     }
     
-    // 渲染顶部导航分类按钮
     function renderNav() {
         const navInner = document.getElementById('navInner');
         if (!navInner) return;
@@ -378,7 +422,6 @@
         });
     }
     
-    // 启动
     loadAllData();
 </script>
 </body>
